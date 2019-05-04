@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "declaration": false,
+    "importHelpers": true,
+    "jsx": "react",
+    "lib": ["dom", "es2015", "es2017"],
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext"
+  }
+}
