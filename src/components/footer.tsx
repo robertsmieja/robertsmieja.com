@@ -6,7 +6,9 @@ interface FooterProperties {
 
 const Footer = ({ siteAuthor }: FooterProperties) => (
   <footer>
-    © {new Date().getFullYear()}, {siteAuthor}
+    <div className="text-center text-muted">
+      © {new Date().getFullYear()}, {siteAuthor}
+    </div>
   </footer>
 )
 
