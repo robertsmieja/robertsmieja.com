@@ -27,7 +27,6 @@ const ResumePage = () => (
           Bachelor of Science, Double Major in Computer Science & Interactive
           Media and Game Development, May 2015
         </dd>
-        {/* <dl> */}
         <dt>Related Coursework</dt>
         <dd>
           Software Engineering, Operating Systems, Object-Oriented Design
@@ -35,29 +34,29 @@ const ResumePage = () => (
           Organization and Assembly Language, Computer Networks, The Game
           Development Process, Critical Studies of Interactive Media and Games
         </dd>
-        {/* </dl> */}
-        {/* <dl> */}
         <dt>Received</dt>
         <dd>WPI Presidential Merit Scholarship, 2011 – 2015</dd>
-        {/* </dl> */}
-      </dl>
-
-      <dl>
-        University of Hartford High School of Science and Engineering, Hartford,
-        CT High School Diploma, June 2011 College level courses taken at
-        University of Hartford: Computer Programming I, Engineering Computer
-        Applications, Calculus I, Humanoid Robotics, Graphic Communication
+        <dt>
+          University of Hartford High School of Science and Engineering,
+          Hartford, CT High School Diploma, June 2011
+        </dt>
+        <dd>
+          College level courses taken at University of Hartford: Computer
+          Programming I, Engineering Computer Applications, Calculus I, Humanoid
+          Robotics, Graphic Communication
+        </dd>
       </dl>
 
       <h2>Experience</h2>
       <dl>
-        Vantv - eCommerce, Lowell, MA, May 2015 – Present Software Engineer
-        Worked on a large code base with a team of interns and co-ops using pair
-        programming. Projects included a C# XML parsing SDK, working with Spring
-        Framework, working with Groovy/Grails, and working with Gradle.
-      </dl>
-
-      <dl>
+        <dt>
+          Vantv - eCommerce, Lowell, MA, May 2015 – Present Software Engineer
+        </dt>
+        <dd>
+          Worked on a large code base with a team of interns and co-ops using
+          pair programming. Projects included a C# XML parsing SDK, working with
+          Spring Framework, working with Groovy/Grails, and working with Gradle.
+        </dd>
         <dt>
           Litle & Co, Lowell, MA, May 2013 – August 2013, May 2014 – August 2014
         </dt>
@@ -67,9 +66,6 @@ const ResumePage = () => (
           parsing SDK, working with Spring Framework, working with
           Groovy/Grails, and working with Gradle.
         </dd>
-      </dl>
-
-      <dl>
         <dt>
           WPI Helpdesk, Worcester, MA , September 2012 – May 2015 Helpdesk
         </dt>
