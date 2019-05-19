@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Robert Smieja`,
     description: ``,
-    author: `@robertsmieja`,
+    author: `Robert Smieja`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,7 +13,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -36,15 +36,10 @@ module.exports = {
         isTSX: true, // defaults to false
         // jsxPragma: `jsx`, // defaults to "React"
         allExtensions: true, // defaults to false
-      }
+      },
     },
     `gatsby-plugin-typescript-checker`,
     `gatsby-plugin-tslint`,
-    // {
-    //   resolve: `gatsby-plugin-ts-loader`,
-    //   options: {
-    //     tslint: true, // false or exclude to disable tslint
-    //   },
-    // },
+    `gatsby-transformer-sharp`,
   ],
 }
