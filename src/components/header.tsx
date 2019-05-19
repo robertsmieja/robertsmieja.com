@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
@@ -8,6 +8,8 @@ import FormControl from "react-bootstrap/FormControl"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavDropdown from "react-bootstrap/NavDropdown"
+import NavItem from "react-bootstrap/NavItem"
+import NavLink from "react-bootstrap/NavLink"
 
 interface HeaderProperties {
   siteTitle: string
@@ -22,9 +24,10 @@ const Header = ({ siteTitle }: HeaderProperties) => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+          <Link className="nav-link" to="/resume">
+            Résumé
+          </Link>
+          {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
               Another action
@@ -34,7 +37,7 @@ const Header = ({ siteTitle }: HeaderProperties) => (
             <NavDropdown.Item href="#action/3.4">
               Separated link
             </NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
         </Nav>
         {/* <Form inline={true}>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
