@@ -8,12 +8,10 @@ import SEO from "../components/seo"
 const ResumePage = () => (
   <Layout>
     <SEO
-      title="Home"
+      title="Résumé"
       keywords={[`robertsmieja`, `robert`, `smieja`, `resume`, `résumé`]}
     />
     <Container>
-      <h1>Résumé</h1>
-
       <h2>Objective</h2>
       <dl>
         To learn interesting and new technologies, and to challenge and push my
