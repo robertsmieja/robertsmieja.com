@@ -24,6 +24,7 @@ const Header = ({ siteTitle }: HeaderProperties) => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
+          <NavLink href="https://github.com/robertsmieja">GitHub</NavLink>
           <Link className="nav-link" to="/resume">
             Résumé
           </Link>
