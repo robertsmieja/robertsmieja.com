@@ -23,10 +23,22 @@ module.exports = {
         name: `Robert Smieja`,
         short_name: `Robert Smieja`,
         start_url: `/`,
-        // background_color: `#663399`,
-        // theme_color: `#663399`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: "src/images/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "src/images/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
       },
     },
     `gatsby-plugin-sitemap`,
