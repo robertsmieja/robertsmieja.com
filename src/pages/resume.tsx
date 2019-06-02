@@ -1,7 +1,12 @@
 import React from "react"
 
+import {
+  faBriefcase,
+  faTasks,
+  faUniversity,
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Container from "react-bootstrap/Container"
-import Image from "../components/image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -18,7 +23,9 @@ const ResumePage = () => (
         skills and abilities related to computer science.
       </dl>
 
-      <h2>Education</h2>
+      <h2>
+        <FontAwesomeIcon icon={faUniversity} /> Education
+      </h2>
       <dl>
         <dt>Worcester Polytechnic Institute, Worcester, MA</dt>
         <dd>
@@ -45,7 +52,9 @@ const ResumePage = () => (
         </dd>
       </dl>
 
-      <h2>Experience</h2>
+      <h2>
+        <FontAwesomeIcon icon={faBriefcase} /> Experience
+      </h2>
       <dl>
         <dt>
           Vantv - eCommerce, Lowell, MA, May 2015 – Present Software Engineer
@@ -73,7 +82,9 @@ const ResumePage = () => (
         </dd>
       </dl>
 
-      <h2>Computer Skills</h2>
+      <h2>
+        <FontAwesomeIcon icon={faTasks} /> Computer Skills
+      </h2>
       <dl>
         <dt>Operating Systems</dt>
         <dd>Windows, Mac OS X, Linux (RHEL)</dd>
