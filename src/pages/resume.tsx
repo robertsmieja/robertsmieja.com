@@ -2,8 +2,6 @@ import React from "react"
 
 import {
   faApple,
-  faJava,
-  faJsSquare,
   faRedhat,
   faWindows,
 } from "@fortawesome/free-brands-svg-icons"
@@ -22,11 +20,18 @@ const ResumePage = () => (
     <SEO
       title="Résumé"
       keywords={[
+        `back`,
+        `backend`,
+        `developer`,
+        `engineer`,
+        `full`,
+        `fullstack`,
         `robertsmieja`,
         `robert`,
         `smieja`,
         `resume`,
         `résumé`,
+        `software`,
         `wpi`,
         `worcester`,
         `polytechnic`,
@@ -51,10 +56,15 @@ const ResumePage = () => (
         </dd>
         <dt>Related Coursework</dt>
         <dd>
-          Software Engineering, Operating Systems, Object-Oriented Design
-          Concepts, Systems Programming Concepts, Introduction to Machine
-          Organization and Assembly Language, Computer Networks, The Game
-          Development Process, Critical Studies of Interactive Media and Games
+          <ul>
+            <li>Software Engineering</li> <li>Operating Systems</li>
+            <li>Object-Oriented Design Concepts</li>
+            <li>Systems Programming Concepts</li>
+            <li>Introduction to Machine Organization and Assembly Language</li>
+            <li>Computer Networks</li>
+            <li>The Game Development Process</li>
+            <li>Critical Studies of Interactive Media and Games</li>
+          </ul>
         </dd>
         <dt>Received</dt>
         <dd>WPI Presidential Merit Scholarship, 2011 – 2015</dd>
@@ -63,18 +73,33 @@ const ResumePage = () => (
           Hartford, CT High School Diploma, June 2011
         </dt>
         <dd>
-          College level courses taken at University of Hartford: Computer
-          Programming I, Engineering Computer Applications, Calculus I, Humanoid
-          Robotics, Graphic Communication
+          College level courses taken at University of Hartford:
+          <ul>
+            <li>Computer Programming I</li>
+            <li>Engineering Computer Applications</li>
+            <li>Calculus I</li>
+            <li>Humanoid Robotics</li>
+            <li>Graphic Communication</li>
+          </ul>
         </dd>
       </dl>
-
       <h2>
         <FontAwesomeIcon icon={faBriefcase} /> Experience
       </h2>
       <dl>
         <dt>
-          Vantv - eCommerce, Lowell, MA, May 2015 – Present Software Engineer
+          <p>Vantiv, now WorldPay, Lowell, MA, August 2017 – Present</p>
+          <p>Senior Software Engineer</p>
+        </dt>
+        <dd>
+          Worked on the WorldPay integration with AmazonPay as the first
+          acquirer to partner with AmazonPay. Currently working as a
+          Automation/DevOps working on development and production infrastructure
+          automation in Puppet.
+        </dd>
+        <dt>
+          <p>Vantv - eCommerce, Lowell, MA, May 2015 – August 2017</p>
+          <p>Software Engineer</p>
         </dt>
         <dd>
           Worked on a large code base with a team of interns and co-ops using
@@ -83,22 +108,22 @@ const ResumePage = () => (
         </dd>
         <dt>
           Litle & Co, Lowell, MA, May 2013 – August 2013, May 2014 – August 2014
+          <p>Software Engineer Intern</p>
         </dt>
         <dd>
-          Software Engineer Intern Worked on a large code base with a team of
-          interns and co-ops using pair programming. Projects included a C# XML
-          parsing SDK, working with Spring Framework, working with
-          Groovy/Grails, and working with Gradle.
+          Worked on a large code base with a team of interns and co-ops using
+          pair programming. Projects included a C# XML parsing SDK, working with
+          Spring Framework, working with Groovy/Grails, and working with Gradle.
         </dd>
         <dt>
-          WPI Helpdesk, Worcester, MA , September 2012 – May 2015 Helpdesk
+          WPI Helpdesk, Worcester, MA , September 2012 – May 2015
+          <p>Helpdesk Specialist</p>
         </dt>
         <dd>
-          Specialist Provided remote troubleshooting and support through phone,
-          e-mail and in-person for WPI faculty, staff, and students.
+          Provided remote troubleshooting and support through phone, e-mail and
+          in-person for WPI faculty, staff, and students.
         </dd>
       </dl>
-
       <h2>
         <FontAwesomeIcon icon={faCode} /> Technologies
       </h2>
@@ -120,7 +145,7 @@ const ResumePage = () => (
 
         <dt>Programming Languages</dt>
         <dd>
-          In order of proficiency:
+          In order of experience/proficiency:
           <ol>
             <li>
               {/* <FontAwesomeIcon icon={faJava} />  */}
@@ -145,9 +170,11 @@ const ResumePage = () => (
         <dt>Frameworks and Libraries</dt>
         <dd>
           <ul>
+            <li>Ansible</li>
             <li>Gatsby.js</li>
             <li>Grails</li>
             <li>Gradle</li>
+            <li>Puppet</li>
             <li>React</li>
             <li>Spring MVC</li>
             <li>Spring Data</li>
@@ -157,8 +184,8 @@ const ResumePage = () => (
         <dt>Databases</dt>
         <dd>
           <ul>
-            <li>DB2 (LUW)</li>
             <li>Amazon DynamoDB</li>
+            <li>DB2 (LUW)</li>
           </ul>
         </dd>
       </dl>
