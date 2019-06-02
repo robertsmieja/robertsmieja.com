@@ -145,8 +145,10 @@ const ResumePage = () => (
         <dt>Frameworks and Libraries</dt>
         <dd>
           <ul>
+            <li>Gatsby.js</li>
             <li>Grails</li>
             <li>Gradle</li>
+            <li>React</li>
             <li>Spring MVC</li>
             <li>Spring Data</li>
           </ul>
