@@ -1,15 +1,12 @@
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import Button from "react-bootstrap/Button"
-import Form from "react-bootstrap/Form"
-import FormControl from "react-bootstrap/FormControl"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavDropdown from "react-bootstrap/NavDropdown"
-import NavItem from "react-bootstrap/NavItem"
-import NavLink from "react-bootstrap/NavLink"
 
 interface HeaderProperties {
   siteTitle: string
@@ -18,27 +15,26 @@ interface HeaderProperties {
 const Header = ({ siteTitle }: HeaderProperties) => (
   <header>
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand>
         <Link to="/">{siteTitle}</Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <NavLink href="https://github.com/robertsmieja">GitHub</NavLink>
-          <Link className="nav-link" to="/resume">
-            Résumé
+          <Link className="nav-link" to="/">
+            Home
           </Link>
-          {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
+          <NavDropdown id="nav-dropdown-links" title="Links">
+            <NavDropdown.Item href="https://github.com/robertsmieja">
+              <FontAwesomeIcon icon={faGithub} /> GitHub
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
+            <NavDropdown.Item href="https://www.linkedin.com/in/robertsmieja/">
+              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </NavDropdown.Item>
-          </NavDropdown> */}
+            <Link className="nav-link" to="/resume/">
+              Résumé
+            </Link>
+          </NavDropdown>
         </Nav>
         {/* <Form inline={true}>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
