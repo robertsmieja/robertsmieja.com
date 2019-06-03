@@ -31,10 +31,10 @@ const Header = ({ siteTitle }: HeaderProperties) => (
             <NavDropdown.Item href="https://www.linkedin.com/in/robertsmieja/">
               <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </NavDropdown.Item>
-            <Link className="nav-link" to="/resume/">
-              Résumé
-            </Link>
           </NavDropdown>
+          <Link className="nav-link" to="/resume/">
+            Résumé
+          </Link>
         </Nav>
         {/* <Form inline={true}>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
