@@ -53,7 +53,10 @@
     "prettier": "^1.17.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "robert",
+    "robertsmieja",
+    "smieja"
   ],
   "license": "MIT",
   "scripts": {
@@ -68,9 +71,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/robertsmieja/robertsmieja.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/robertsmieja/robertsmieja.com/issues"
   }
 }
