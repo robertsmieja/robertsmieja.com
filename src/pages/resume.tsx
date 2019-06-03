@@ -167,13 +167,14 @@ const ResumePage = () => (
           </ol>
         </dd>
 
-        <dt>Frameworks and Libraries</dt>
+        <dt>Frameworks/Libraries/Software</dt>
         <dd>
           <ul>
             <li>Ansible</li>
             <li>Gatsby.js</li>
             <li>Grails</li>
             <li>Gradle</li>
+            <li>Kafka</li>
             <li>Puppet</li>
             <li>React</li>
             <li>Spring MVC</li>
