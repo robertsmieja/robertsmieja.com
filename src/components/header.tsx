@@ -34,6 +34,9 @@ const Header = ({ siteTitle }: HeaderProperties) => (
               <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </NavDropdown.Item>
           </NavDropdown>
+          <Link className="nav-link" to="/presentations/">
+            Presentations
+          </Link>
           <Link className="nav-link" to="/resume/">
             Résumé
           </Link>
