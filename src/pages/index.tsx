@@ -18,13 +18,16 @@ const IndexPage = () => (
         Most experience with Java and other JVM-based languages (Kotlin, Groovy,
         Scala, etc.).
       </p>
+      <p className="mb-0">
+        Recently I have begun exporing the JavaScript/Node.js ecosystem.
+      </p>
       <p>
-        Recently I have begun exporing the JavaScript/Node.js ecosystem. For
-        example,{" "}
+        For example,{" "}
         <a href="https://github.com/robertsmieja/robertsmieja.com">
           <FontAwesomeIcon icon={faGithub} /> this site
         </a>{" "}
-        is written using Gatsby.js, TypeScript, and React.
+        is written using Gatsby.js, TypeScript, and React and running on AWS S3
+        and AWS CloudFront.
       </p>
       <p>
         I'm interested in the application of technology to solve problems:
