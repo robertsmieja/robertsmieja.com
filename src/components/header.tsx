@@ -29,6 +29,9 @@ const Header = ({ siteTitle }: HeaderProperties) => (
           <Link className="nav-link" to="/presentations/">
             Presentations
           </Link>
+          <Link className="nav-link" to="/projects/">
+            Projects
+          </Link>
           <Link className="nav-link" to="/resume/">
             Résumé
           </Link>
