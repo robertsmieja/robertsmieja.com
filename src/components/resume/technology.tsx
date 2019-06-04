@@ -8,7 +8,7 @@ import ProgramingLanguages from "./technology/programmingLanguages"
 
 const Technology = () => (
   <div id="technology">
-    <h2>
+    <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faCode} /> Technologies
     </h2>
     <Databases />

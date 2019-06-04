@@ -4,7 +4,7 @@ import React from "react"
 
 const Experience = () => (
   <div id="experience">
-    <h2>
+    <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faBriefcase} /> Experience
     </h2>
     <dl>

@@ -6,7 +6,7 @@ import College from "./education/college"
 
 const Education = () => (
   <div id="education">
-    <h2>
+    <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faUniversity} /> Education
     </h2>
     <dl>

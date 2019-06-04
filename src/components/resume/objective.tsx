@@ -1,11 +1,10 @@
 import { faBullseye } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
-import Row from "react-bootstrap/Row"
 
 const Objective = () => (
   <div id="objective">
-    <h2>
+    <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faBullseye} /> Objective
     </h2>
     <dl>
