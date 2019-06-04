@@ -6,7 +6,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
-import NavDropdown from "react-bootstrap/NavDropdown"
+import NavItem from "react-bootstrap/NavItem"
 
 interface HeaderProperties {
   siteTitle: string
@@ -26,14 +26,6 @@ const Header = ({ siteTitle }: HeaderProperties) => (
           <Link className="nav-link" to="/">
             Home
           </Link>
-          <NavDropdown id="nav-dropdown-links" title="Links">
-            <NavDropdown.Item href="https://github.com/robertsmieja">
-              <FontAwesomeIcon icon={faGithub} /> GitHub
-            </NavDropdown.Item>
-            <NavDropdown.Item href="https://www.linkedin.com/in/robertsmieja/">
-              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-            </NavDropdown.Item>
-          </NavDropdown>
           <Link className="nav-link" to="/presentations/">
             Presentations
           </Link>
@@ -41,6 +33,20 @@ const Header = ({ siteTitle }: HeaderProperties) => (
             Résumé
           </Link>
         </Nav>
+        <Navbar.Collapse className="justify-content-end">
+          <Nav>
+            <NavItem className="mr-sm-2">
+              <a href="https://github.com/robertsmieja">
+                <FontAwesomeIcon icon={faGithub} /> GitHub
+              </a>
+            </NavItem>
+            <NavItem className="mr-sm-2">
+              <a href="https://www.linkedin.com/in/robertsmieja/">
+                <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+              </a>
+            </NavItem>
+          </Nav>
+        </Navbar.Collapse>
         {/* <Form inline={true}>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
