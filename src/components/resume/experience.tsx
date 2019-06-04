@@ -17,7 +17,7 @@ const Experience = () => (
       <p className="mb-0">
         Worked on the WorldPay integration with AmazonPay as the first acquirer
         to partner with AmazonPay, and on Vantiv eCommerce iQ Chargeback Engine
-        as part of Visa Claims Resolution enchancements.
+        as part of Visa Claims Resolution enhancements.
       </p>
       <p>
         Currently working as a Automation/DevOps working on development and
@@ -53,7 +53,7 @@ const Experience = () => (
         Spring MVC Framework, and working with Groovy/Grails.
       </p>
     </ExperienceEntry>
-    <ExperienceEntry
+    {/* <ExperienceEntry
       company="WPI Helpdesk"
       location="Worcester, MA"
       dateRange="September 2012 – May 2015"
@@ -63,7 +63,7 @@ const Experience = () => (
         Provided remote troubleshooting and support through phone, e-mail and
         in-person for WPI faculty, staff, and students.
       </p>
-    </ExperienceEntry>
+    </ExperienceEntry> */}
   </div>
 )
 

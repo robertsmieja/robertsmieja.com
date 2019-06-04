@@ -19,7 +19,7 @@ const IndexPage = () => (
         Scala, etc.).
       </p>
       <p className="mb-0">
-        Recently I have begun exporing the JavaScript/Node.js ecosystem.
+        Recently I have begun exploring the JavaScript/Node.js ecosystem.
       </p>
       <p>
         For example,{" "}
