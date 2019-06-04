@@ -33,20 +33,18 @@ const Header = ({ siteTitle }: HeaderProperties) => (
             Résumé
           </Link>
         </Nav>
-        <Navbar.Collapse className="justify-content-end">
-          <Nav>
-            <NavItem className="mr-sm-2">
-              <a href="https://github.com/robertsmieja">
-                <FontAwesomeIcon icon={faGithub} /> GitHub
-              </a>
-            </NavItem>
-            <NavItem className="mr-sm-2">
-              <a href="https://www.linkedin.com/in/robertsmieja/">
-                <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-              </a>
-            </NavItem>
-          </Nav>
-        </Navbar.Collapse>
+        <Nav className="justify-content-end">
+          <NavItem className="mr-sm-2">
+            <a href="https://github.com/robertsmieja">
+              <FontAwesomeIcon icon={faGithub} /> GitHub
+            </a>
+          </NavItem>
+          <NavItem className="mr-sm-2">
+            <a href="https://www.linkedin.com/in/robertsmieja/">
+              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+            </a>
+          </NavItem>
+        </Nav>
         {/* <Form inline={true}>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
