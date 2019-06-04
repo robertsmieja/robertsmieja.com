@@ -1,8 +1,5 @@
 import React from "react"
 
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Link } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
