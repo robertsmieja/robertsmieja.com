@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Children } from "react"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
@@ -7,7 +7,7 @@ interface ExperienceEntryProperties {
   location: string
   dateRange: string
   jobTitle: string
-  description: string
+  children: React.ReactElement | React.ReactElement[]
 }
 
 const ExperienceEntry = (properties: ExperienceEntryProperties) => (
@@ -40,9 +40,7 @@ const ExperienceEntry = (properties: ExperienceEntryProperties) => (
         </Col>
       </Row>
       <Row noGutters={true}>
-        <Col>
-          <p>{properties.description}</p>
-        </Col>
+        <Col>{properties.children}</Col>
       </Row>
     </Col>
   </Row>

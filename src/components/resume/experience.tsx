@@ -13,38 +13,57 @@ const Experience = () => (
       location="Lowell, MA"
       dateRange="August 2017 – Present"
       jobTitle="Senior Software Engineer"
-      description="Worked on the WorldPay integration with AmazonPay as the first acquirer
-      to partner with AmazonPay, and on Vantiv eCommerce iQ Chargeback Engine as part of Visa Claims Resolution enchancements.
-      Currently working as a Automation/DevOps working on development and production infrastructure automation in Puppet."
-    />
+    >
+      <p className="mb-0">
+        Worked on the WorldPay integration with AmazonPay as the first acquirer
+        to partner with AmazonPay, and on Vantiv eCommerce iQ Chargeback Engine
+        as part of Visa Claims Resolution enchancements.
+      </p>
+      <p>
+        Currently working as a Automation/DevOps working on development and
+        production infrastructure automation in Puppet.
+      </p>
+    </ExperienceEntry>
     <ExperienceEntry
       company="Vantiv"
       location="Lowell, MA"
       dateRange="May 2015 – August 2017"
       jobTitle="Senior Software Engineer, Software Engineer"
-      description="Worked on a large Java code base as part of System and Platform teams.
-      Projects include:
-      Ant to Gradle conversion
-      Grails 1.X to 2.X Upgrade
-      Coherence Upgrades and Improvements"
-    />
+    >
+      <p>
+        Worked on a large Java code base as part of System and Platform teams.
+        Projects include:
+        <ul>
+          <li>Ant to Gradle conversion</li>
+          <li>Grails 1.X to 2.X Upgrade</li>
+          <li>Coherence Upgrades and Improvements</li>
+        </ul>
+      </p>
+    </ExperienceEntry>
     <ExperienceEntry
       company="Litle & Co"
       location="Lowell, MA"
-      dateRange="May 2013 – August 2013, May 2014 – August 2014"
+      dateRange="May 2013 – August
+      2013, May 2014 – August 2014"
       jobTitle="Software Engineer Intern"
-      description="Worked on a large Java code base with a team of interns and co-ops using pair
-        programming. Projects included a C# XML parsing SDK, working with Spring
-        Framework, and working with Groovy/Grails."
-    />
+    >
+      <p>
+        Worked on a large Java code base with a team of interns and co-ops using
+        pair programming. Projects included a C# XML SDK, working with the
+        Spring MVC Framework, and working with Groovy/Grails.
+      </p>
+    </ExperienceEntry>
     <ExperienceEntry
       company="WPI Helpdesk"
       location="Worcester, MA"
       dateRange="September 2012 – May 2015"
       jobTitle="Helpdesk Specialist"
-      description="Provided remote troubleshooting and support through phone, e-mail and
-        in-person for WPI faculty, staff, and students."
-    />
+    >
+      <p>
+        Provided remote troubleshooting and support through phone, e-mail and
+        in-person for WPI faculty, staff, and students.
+      </p>
+    </ExperienceEntry>
   </div>
 )
 
