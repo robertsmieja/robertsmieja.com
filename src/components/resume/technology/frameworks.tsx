@@ -10,6 +10,8 @@ const Frameworks = () => (
         <li>Grails</li>
         <li>Gradle</li>
         <li>Kafka</li>
+        <li>Oracle Coherence</li>
+        <li>Oracle GoldenGate</li>
         <li>Puppet</li>
         <li>React</li>
         <li>Spring MVC</li>
