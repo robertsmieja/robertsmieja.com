@@ -3,15 +3,9 @@ module.exports = {
     title: `Robert Smieja`,
     description: `Personal homepage for Robert Smieja`,
     author: `Robert Smieja`,
-    siteUrl: `https://www.robertsmieja.com`,
+    siteUrl: `https://robertsmieja.com`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: "https://www.robertsmieja.com",
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,14 +15,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-robots-txt`,
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: `www.robertsmieja.com`,
-        protocol: `https`,
-        hostname: `www.robertsmieja.com`,
-      },
-    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     {
