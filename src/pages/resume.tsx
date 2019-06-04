@@ -49,18 +49,10 @@ const ResumePage = () => (
       <Row>
         <Col md="6">
           <Objective />
-        </Col>
-      </Row>
-      <Row>
-        <Col md="6">
-          <Education />
-        </Col>
-        <Col md="6">
           <Technology />
         </Col>
-      </Row>
-      <Row>
         <Col md="6">
+          <Education />
           <Experience />
         </Col>
       </Row>
