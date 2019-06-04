@@ -1,17 +1,5 @@
 import React from "react"
 
-import {
-  faApple,
-  faRedhat,
-  faWindows,
-} from "@fortawesome/free-brands-svg-icons"
-import {
-  faBriefcase,
-  faBullseye,
-  faCode,
-  faUniversity,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -30,12 +18,14 @@ const ResumePage = () => (
         `back`,
         `backend`,
         `developer`,
+        `devops`,
         `engineer`,
         `full`,
         `fullstack`,
         `robertsmieja`,
         `robert`,
         `smieja`,
+        `stack`,
         `resume`,
         `résumé`,
         `software`,
@@ -46,6 +36,16 @@ const ResumePage = () => (
       ]}
     />
     <Container>
+      <Row>
+        <Col>
+          <Row className="justify-content-md-center">
+            <p className="display-4">Robert Smieja</p>
+          </Row>
+          <Row className="justify-content-md-center">
+            <p className="lead">Polyglot Full-stack Software/DevOps Engineer</p>
+          </Row>
+        </Col>
+      </Row>
       <Row>
         <Col md="6">
           <Objective />
