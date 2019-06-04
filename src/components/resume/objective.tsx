@@ -8,8 +8,9 @@ const Objective = () => (
       <FontAwesomeIcon icon={faBullseye} /> Objective
     </h2>
     <dl>
-      To learn interesting and new technologies, and to challenge and push my
-      skills and abilities related to computer science.
+      To apply technology to solve business problems and deliver products, as
+      well as furthering my own skills and abilities related to computer
+      science.
     </dl>
   </div>
 )

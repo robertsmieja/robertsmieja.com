@@ -30,7 +30,8 @@ const IndexPage = () => (
         and AWS CloudFront.
       </p>
       <p>
-        I'm interested in the application of technology to solve problems:
+        I'm interested in being a lifelong learner, and in the application of
+        technology to solve problems:
         <ul>
           <li>What does this new programming languages/framework offer?</li>
           <ul>
