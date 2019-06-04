@@ -10,6 +10,7 @@ const Frameworks = () => (
         <li>Gatsby.js</li>
         <li>Grails</li>
         <li>Gradle</li>
+        <li>JavaEE</li>
         <li>Kafka</li>
         <li>Oracle Coherence</li>
         <li>Oracle GoldenGate</li>
@@ -17,6 +18,7 @@ const Frameworks = () => (
         <li>React</li>
         <li>Spring MVC</li>
         <li>Spring Data</li>
+        <li>TomEE</li>
       </ul>
     </dd>
   </dl>
