@@ -10,16 +10,18 @@ phases:
     commands:
       - npm run build
       #- npm run test:coverage
+    finally:
+      - npm prune
   post_build:
     commands:
-      - npm prune
+      - npm run deploy
 
-artifacts:
-  files:
-    - "**/*"
-  base-directory: "public"
-  # remove 'build/' prefix from output files
-  # discard-paths: yes
+#artifacts:
+#  files:
+#    - "**/*"
+#  base-directory: "public"
+# remove 'build/' prefix from output files
+# discard-paths: yes
 
 cache:
   paths:
