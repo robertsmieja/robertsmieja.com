@@ -9,37 +9,52 @@ const Experience = () => (
       <FontAwesomeIcon icon={faBriefcase} /> Experience
     </h2>
     <ExperienceEntry
-      company="Vantiv, now WorldPay"
+      company="Vantiv/WorldPay"
       location="Lowell, MA"
-      dateRange="August 2017 – Present"
+      dateRange="May 2015 – Present"
       jobTitle="Senior Software Engineer"
     >
       <p className="mb-0">
-        Worked on the WorldPay integration with AmazonPay as the first acquirer
-        to partner with AmazonPay, and on Vantiv eCommerce iQ Chargeback Engine
-        as part of Visa Claims Resolution enhancements.
-      </p>
-      <p>
-        Currently working as a Automation/DevOps working on development and
-        production infrastructure automation in Puppet.
+        <ul>
+          <li>
+            Currently working as a Automation/DevOps working on development and
+            production infrastructure automation in Puppet.
+          </li>
+          <li>
+            Participate in company-wide and office-wide hackathons as Team
+            Captain
+          </li>
+          <li>
+            Designed and implemented AmazonPay integration as the first
+            acquirer. Served as a Senior Engineer leading a team of new and
+            junior Software Engineers while integrating with AmazonPay as
+          </li>
+          <li>
+            Worked on Vantiv eCommerce iQ Chargeback Engine as part of Visa
+            Claims Resolution overhaul
+          </li>
+          <li>
+            Worked on converting large Java codebase of 1 million+ lines from
+            Ant to Gradle conversion
+          </li>
+          <li>
+            Upgraded internal Grails application for configuration management
+            from Grails 1.X to 2.X
+          </li>
+          {/* <li>Coherence Upgrades and Improvements</li> */}
+        </ul>
       </p>
     </ExperienceEntry>
-    <ExperienceEntry
+    {/* <ExperienceEntry
       company="Vantiv"
       location="Lowell, MA"
-      dateRange="May 2015 – August 2017"
+      dateRange=" – August 2017"
       jobTitle="Senior Software Engineer, Software Engineer"
     >
       <p>
         Worked on a large Java code base as part of System and Platform teams.
-        Projects include:
-        <ul>
-          <li>Ant to Gradle conversion</li>
-          <li>Grails 1.X to 2.X Upgrade</li>
-          <li>Coherence Upgrades and Improvements</li>
-        </ul>
-      </p>
-    </ExperienceEntry>
+      </p> 
+    </ExperienceEntry> */}
     <ExperienceEntry
       company="Litle & Co"
       location="Lowell, MA"
@@ -48,9 +63,18 @@ const Experience = () => (
       jobTitle="Software Engineer Intern"
     >
       <p>
-        Worked on a large Java code base with a team of interns and co-ops using
-        pair programming. Projects included a C# XML SDK, working with the
-        Spring MVC Framework, and working with Groovy/Grails.
+        <ul>
+          <li>
+            Worked on a large Java code base with a team of interns and co-ops
+            using pair programming.
+          </li>
+          <li>Add batch transaction processing to C# XML SDK</li>
+          <li>Work in Spring MVC to add improvements to iQ Reporting UI</li>
+          <li>
+            Add enhancements to internal configuration web application written
+            in Grails
+          </li>
+        </ul>
       </p>
     </ExperienceEntry>
     {/* <ExperienceEntry

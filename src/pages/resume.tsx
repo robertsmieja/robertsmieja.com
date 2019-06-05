@@ -48,7 +48,7 @@ const ResumePage = () => (
       </Row>
       <Row>
         <Col md="6">
-          <Objective />
+          {/* <Objective /> */}
           <Technology />
         </Col>
         <Col md="6">

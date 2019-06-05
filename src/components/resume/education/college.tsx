@@ -7,7 +7,7 @@ const College = () => (
       Bachelor of Science, Double Major in Computer Science & Interactive Media
       and Game Development, May 2015
     </dd>
-    <dt>Related Coursework</dt>
+    {/* <dt>Related Coursework</dt>
     <dd>
       <ul>
         <li>Software Engineering</li> <li>Operating Systems</li>
@@ -18,7 +18,7 @@ const College = () => (
         <li>The Game Development Process</li>
         <li>Critical Studies of Interactive Media and Games</li>
       </ul>
-    </dd>
+    </dd> */}
     <dt>Received</dt>
     <dd>WPI Presidential Merit Scholarship, 2011 – 2015</dd>
   </div>
