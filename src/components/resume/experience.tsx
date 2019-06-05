@@ -27,7 +27,7 @@ const Experience = () => (
           <li>
             Designed and implemented AmazonPay integration as the first
             acquirer. Served as a Senior Engineer leading a team of new and
-            junior Software Engineers while integrating with AmazonPay as
+            junior Software Engineers while integrating with AmazonPay. 
           </li>
           <li>
             Worked on Vantiv eCommerce iQ Chargeback Engine as part of Visa
