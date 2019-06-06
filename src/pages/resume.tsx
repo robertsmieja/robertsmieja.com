@@ -9,6 +9,7 @@ import Experience from "../components/resume/experience"
 import Objective from "../components/resume/objective"
 import Technology from "../components/resume/technology"
 import SEO from "../components/seo"
+import Profile from "../components/resume/profile"
 
 const ResumePage = () => (
   <Layout>
@@ -48,6 +49,7 @@ const ResumePage = () => (
       </Row>
       <Row>
         <Col md="6">
+          <Profile />
           {/* <Objective /> */}
           <Technology />
         </Col>
