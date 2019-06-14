@@ -1,13 +1,12 @@
 import React from "react"
 
 import Container from "react-bootstrap/Container"
+import isBrowserAvailable from "../checkIfLoaded"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const browser = typeof window !== "undefined" && window
-
 const NotFoundPage = () =>
-  browser && (
+  isBrowserAvailable && (
     <Layout>
       <SEO title="404: Not found" />
       <Container>
