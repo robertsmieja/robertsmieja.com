@@ -52,13 +52,12 @@ const ResumePage = () =>
         </Row>
         <Row>
           <Col md="6">
-            <Profile />
-            {/* <Objective /> */}
             <Technology />
           </Col>
           <Col md="6">
             <Education />
             <Experience />
+            <Profile />
           </Col>
         </Row>
       </Container>
