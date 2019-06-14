@@ -11,6 +11,7 @@ const Frameworks = () => (
         <li>Grails</li>
         <li>Gradle</li>
         <li>JavaEE</li>
+        <li>JUnit 4/5</li>
         <li>Kafka</li>
         <li>Oracle Coherence</li>
         <li>Oracle GoldenGate</li>
