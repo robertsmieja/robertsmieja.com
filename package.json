@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "jshint": "^2.10.2",
-    "prettier": "^1.17.1"
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby",
