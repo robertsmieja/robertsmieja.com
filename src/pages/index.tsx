@@ -51,7 +51,7 @@ const IndexPage = () =>
         </p>
         <p>
           This site is under construction, I recommend checking out my{" "}
-          <Link to="/resume">résumé</Link> for now.
+          <Link to="/resume/">résumé</Link> for now.
         </p>
       </Container>
     </Layout>

@@ -24,7 +24,7 @@ const ProjectsPage = () => (
       <ul>
         <li>
           2019 -{" "}
-          <a href="https://github.com/robertsmieja/robertsmieja.com">
+          <a href="https://github.com/robertsmieja/robertsmieja.com/">
             robertsmieja.com
           </a>{" "}
           - This website provides me an opportunity to demo my skills related to
@@ -33,7 +33,7 @@ const ProjectsPage = () => (
 
         <li>
           2017 -{" "}
-          <a href="https://github.com/robertsmieja/java-test-utils">
+          <a href="https://github.com/robertsmieja/java-test-utils/">
             Java Test Utils
           </a>{" "}
           - JUnit 5 Extension back before JUnit 5 was released, utilizing new
@@ -45,7 +45,7 @@ const ProjectsPage = () => (
 
         <li>
           2017 -{" "}
-          <a href="https://github.com/robertsmieja/ANTLR4-Packet-Parser">
+          <a href="https://github.com/robertsmieja/ANTLR4-Packet-Parser/">
             ANTLR4 Packet Parser
           </a>{" "}
           - This project demonstrates the flexibility of ANTLR4, and it's
@@ -53,14 +53,15 @@ const ProjectsPage = () => (
         </li>
 
         <li>
-          2014 - <a href="https://github.com/robertsmieja/UE4-Maze">UE4-Maze</a>{" "}
-          - The end result of a tutorial for procedurally generating a maze in
-          Unreal Engine 4.4.
+          2014 -{" "}
+          <a href="https://github.com/robertsmieja/UE4-Maze/">UE4-Maze</a> - The
+          end result of a tutorial for procedurally generating a maze in Unreal
+          Engine 4.4.
         </li>
 
         <li>
           2013 -{" "}
-          <a href="https://github.com/robertsmieja/Gw2InfoViewer">
+          <a href="https://github.com/robertsmieja/Gw2InfoViewer/">
             Gw2InfoViewer
           </a>{" "}
           - Java 7 Swing application to visualize a JSON API End-Point for the

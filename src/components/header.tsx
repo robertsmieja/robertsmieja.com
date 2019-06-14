@@ -38,7 +38,7 @@ const Header = ({ siteTitle }: HeaderProperties) => (
         </Nav>
         <Nav className="justify-content-end">
           <NavItem className="mr-sm-2">
-            <a href="https://github.com/robertsmieja">
+            <a href="https://github.com/robertsmieja/">
               <FontAwesomeIcon icon={faGithub} /> GitHub
             </a>
           </NavItem>
