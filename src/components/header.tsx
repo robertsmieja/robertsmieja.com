@@ -48,10 +48,6 @@ const Header = ({ siteTitle }: HeaderProperties) => (
             </a>
           </NavItem>
         </Nav>
-        {/* <Form inline={true}>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form> */}
       </Navbar.Collapse>
     </Navbar>
     <h1 style={{ margin: 0 }} />
