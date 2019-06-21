@@ -16,7 +16,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@types/react": "^16.8.21",
+    "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/react-fontawesome": "^1.6.4",
     "@types/react-helmet": "^5.0.8",
