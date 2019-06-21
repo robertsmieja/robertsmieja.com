@@ -31,7 +31,7 @@
     "gatsby-plugin-sharp": "^2.1.9",
     "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-plugin-tslint": "0.0.2",
-    "gatsby-plugin-typescript": "^2.0.15",
+    "gatsby-plugin-typescript": "^2.1.0",
     "gatsby-plugin-typescript-checker": "^1.0.3",
     "gatsby-source-filesystem": "^2.0.43",
     "gatsby-transformer-sharp": "^2.1.21",
