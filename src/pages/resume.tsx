@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import isBrowserAvailable from "../checkIfLoaded"
 import Layout from "../components/layout"
+import DevOps from "../components/resume/devops"
 import Education from "../components/resume/education"
 import Experience from "../components/resume/experience"
 import Profile from "../components/resume/profile"
@@ -41,20 +42,19 @@ const ResumePage = () =>
         <Row>
           <Col>
             <Row className="justify-content-md-center">
-              <p className="display-4">Robert Smieja</p>
+              <p className="display-4 my-0">Robert Smieja</p>
             </Row>
             <Row className="justify-content-md-center">
-              <p className="lead">
-                Polyglot Full-stack Software/DevOps Engineer
-              </p>
+              <p className="lead my-1">Polyglot Full-stack Software Engineer</p>
             </Row>
           </Col>
         </Row>
-        <Row>
+        <Row className="mt-0">
           <Col md="6">
             <Technology />
           </Col>
           <Col md="6">
+            <DevOps />
             <Education />
             <Experience />
             <Profile />
