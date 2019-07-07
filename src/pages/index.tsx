@@ -28,8 +28,9 @@ const IndexPage = () =>
           <a href="https://github.com/robertsmieja/robertsmieja.com">
             <FontAwesomeIcon icon={faGithub} /> this site
           </a>{" "}
-          is written using Gatsby.js, TypeScript, and React and running on AWS
-          S3 and AWS CloudFront.
+          is written using Gatsby.js, TypeScript, and React and running on{" "}
+          <a href="https://aws.amazon.com/cloudfront/">AWS CloudFront</a> and{" "}
+          <a href="https://www.netlify.com/">Netlify</a>.
         </p>
         <p>
           I'm interested in being a lifelong learner, and in applying technology
