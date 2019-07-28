@@ -13,6 +13,7 @@ const Frameworks = () => (
         <li>JavaEE</li>
         <li>JUnit 4/5</li>
         <li>Kafka</li>
+        <li>Kubernetes</li>
         <li>Oracle Coherence</li>
         <li>Oracle GoldenGate</li>
         <li>Puppet</li>
