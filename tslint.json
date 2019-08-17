@@ -1,38 +1,34 @@
 {
-    "defaultSeverity": "warn",
-    "extends": [
-        "tslint:recommended", "tslint-react", "tslint-config-prettier"
-    ],
-    "rules": {
-        "ban-types": false,
-        "callable-types": false,
-        "interface-name": false,
-        "import-name": false,
-        "jsx-no-multiline-js": false,
-        "jsx-no-lambda": false,
-        "object-literal-shorthand": false,
-        "object-literal-sort-keys": false,
-        "max-line-length": false,
-        "no-floating-promises": true,
-        "prettier": true,
-        // "semicolon": [
-        //     false,
-        //     "always",
-        //     "strict-bound-class-methods"
-        // ],
-        "trailing-comma": [
-            true,
-            {
-                "multiline": "always",
-                "singleline": "never",
-                "esSpecCompliant": true
-            }
-        ]
-    },
-    "rulesDirectory": ["tslint-plugin-prettier"],
-    "linterOptions": {
-        "exclude": [
-            "node_modules/**"
-        ]
-    }
+  "defaultSeverity": "warn",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "ban-types": false,
+    "callable-types": false,
+    "interface-name": false,
+    "import-name": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "object-literal-shorthand": false,
+    "object-literal-sort-keys": false,
+    "max-line-length": false,
+    "no-floating-promises": true,
+    "prettier": true,
+    // "semicolon": [
+    //     false,
+    //     "always",
+    //     "strict-bound-class-methods"
+    // ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ]
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  }
 }
