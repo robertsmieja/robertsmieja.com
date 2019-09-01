@@ -29,7 +29,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sass": "^2.1.12",
     "gatsby-plugin-sharp": "^2.2.18",
-    "gatsby-plugin-sitemap": "^2.2.9",
+    "gatsby-plugin-sitemap": "^2.2.10",
     "gatsby-plugin-tslint": "0.0.2",
     "gatsby-plugin-typescript": "^2.1.5",
     "gatsby-plugin-typescript-checker": "^1.1.1",
