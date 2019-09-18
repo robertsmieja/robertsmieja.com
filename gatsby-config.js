@@ -3,7 +3,7 @@ module.exports = {
     title: `Robert Smieja`,
     description: `Personal homepage for Robert Smieja`,
     author: `Robert Smieja`,
-    siteUrl: `https://robertsmieja.com`,
+    siteUrl: `https://robertsmieja.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,8 +11,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sass`,
@@ -26,8 +26,8 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/android-chrome-512x512.png` // This path is relative to the root of the site.
+      }
     },
     `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -38,11 +38,10 @@ module.exports = {
       options: {
         isTSX: true, // defaults to false
         // jsxPragma: `jsx`, // defaults to `React`
-        allExtensions: true, // defaults to false
-      },
+        allExtensions: true // defaults to false
+      }
     },
     `gatsby-plugin-typescript-checker`,
-    `gatsby-plugin-tslint`,
-    `gatsby-transformer-sharp`,
-  ],
+    `gatsby-transformer-sharp`
+  ]
 }
