@@ -2,7 +2,7 @@ import { faBullseye } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 
-const Objective = () => (
+const Objective: React.FC = () => (
   <div id="objective">
     <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faBullseye} /> Objective

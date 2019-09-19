@@ -1,11 +1,10 @@
 import React from "react"
-
 import Container from "react-bootstrap/Container"
 import Layout from "../components/layout"
 import ProjectEntry from "../components/projects/projectEntry"
 import SEO from "../components/seo"
 
-const ProjectsPage = () => (
+const ProjectsPage: React.FC = () => (
   <Layout>
     <SEO
       title="Projects"
@@ -19,8 +18,8 @@ const ProjectsPage = () => (
         source code, to help other developers.
       </p>
       <p>
-        Here some of the projects I'd like to highlight. The rest of them are
-        available on my personal GitHub page.
+        Here some of the projects I{`'`}d like to highlight. The rest of them
+        are available on my personal GitHub page.
       </p>
       <ul>
         <ProjectEntry
@@ -29,7 +28,7 @@ const ProjectsPage = () => (
           title="robertsmieja.com"
         >
           This website provides me an opportunity to demo my skills related to
-          Front-End development, React, and TypeScript/JavaScript"
+          Front-End development, React, and TypeScript/JavaScript
         </ProjectEntry>
         <ProjectEntry
           year="2017"
@@ -40,15 +39,15 @@ const ProjectsPage = () => (
           8 interface features and reflection to automatic test Getters and
           Setters, hashCode(), equals(), etc. I would recommend using a tool
           such as <a href="https://projectlombok.org/">Lombok</a> to generate
-          "data" methods instead.
+          {`"data"`} methods instead.
         </ProjectEntry>
         <ProjectEntry
           year="2017"
           link="https://github.com/robertsmieja/ANTLR4-Packet-Parser/"
           title="ANTLR4 Packet Parser"
         >
-          This project demonstrates the flexibility of ANTLR4, and it's ability
-          to even parse out binary format files.
+          This project demonstrates the flexibility of ANTLR4, and it{`'`}s
+          ability to even parse out binary format files.
         </ProjectEntry>
         <ProjectEntry
           year="2014"
@@ -56,7 +55,7 @@ const ProjectsPage = () => (
           title="UE4-Maze"
         >
           The end result of a tutorial for procedurally generating a maze in
-          Unreal Engine 4.4."
+          Unreal Engine 4.4.
         </ProjectEntry>
         <ProjectEntry
           year="2013"

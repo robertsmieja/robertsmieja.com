@@ -1,6 +1,6 @@
 import React from "react"
 
-const Frameworks = () => (
+const Frameworks: React.FC = () => (
   <dl>
     <dt>Frameworks/Libraries/Software</dt>
     <dd>

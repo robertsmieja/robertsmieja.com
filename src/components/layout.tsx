@@ -8,7 +8,6 @@
 import { graphql, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
 import "../scss/layout.scss"
 import Footer from "./footer"
 import Header from "./header"
@@ -17,7 +16,7 @@ interface LayoutProperties {
   children: React.ReactElement[]
 }
 
-const Layout = ({ children }: LayoutProperties) => (
+const Layout: React.FC = ({ children }: LayoutProperties) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -49,7 +48,7 @@ const Layout = ({ children }: LayoutProperties) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

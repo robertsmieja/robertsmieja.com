@@ -2,7 +2,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 
-const Profile = () => (
+const Profile: React.FC = () => (
   <div id="profile">
     <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faUser} /> Profile

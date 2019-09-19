@@ -1,12 +1,12 @@
 import {
   faApple,
   faRedhat,
-  faWindows,
+  faWindows
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 
-const OperatingSystems = () => (
+const OperatingSystems: React.FC = () => (
   <dl>
     <dt>Operating Systems</dt>
     <dd>

@@ -1,6 +1,6 @@
 import React from "react"
 
-const Clouds = () => (
+const Clouds: React.FC = () => (
   <dl>
     <dt>Clouds</dt>
     <dd>

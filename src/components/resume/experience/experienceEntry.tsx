@@ -1,4 +1,4 @@
-import React, { Children } from "react"
+import React from "react"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
@@ -10,7 +10,7 @@ interface ExperienceEntryProperties {
   children: React.ReactElement | React.ReactElement[]
 }
 
-const ExperienceEntry = (properties: ExperienceEntryProperties) => (
+const ExperienceEntry: React.FC<ExperienceEntryProperties> = properties => (
   <Row noGutters={true}>
     <Col>
       <Row noGutters={true}>

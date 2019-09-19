@@ -1,6 +1,6 @@
 import React from "react"
 
-const Databases = () => (
+const Databases: React.FC = () => (
   <dl>
     <dt>Databases</dt>
     <dd>

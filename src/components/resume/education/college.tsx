@@ -1,6 +1,6 @@
 import React from "react"
 
-const College = () => (
+const College: React.FC = () => (
   <div id="college">
     <dt>Worcester Polytechnic Institute, Worcester, MA</dt>
     <dd>

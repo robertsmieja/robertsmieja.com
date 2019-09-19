@@ -1,10 +1,9 @@
 import React from "react"
-
 import Container from "react-bootstrap/Container"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const PresentationsPage = () => (
+const PresentationsPage: React.FC = () => (
   <Layout>
     <SEO
       title="Presentations"
@@ -13,9 +12,9 @@ const PresentationsPage = () => (
     <Container>
       <p className="display-4">Presentations</p>
       <p>
-        I've created a number of presentations for various frameworks and
-        technologies during my lifetime as a Software Engineer. I've listed them
-        below in the hopes that you will find them useful.
+        I{`'`}ve created a number of presentations for various frameworks and
+        technologies during my lifetime as a Software Engineer. I{`'`}ve listed
+        them below in the hopes that you will find them useful.
       </p>
       <ul>
         <li>2019</li>

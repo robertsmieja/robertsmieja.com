@@ -1,10 +1,9 @@
 import { faUniversity } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
-import Row from "react-bootstrap/Row"
 import College from "./education/college"
 
-const Education = () => (
+const Education: React.FC = () => (
   <div id="education">
     <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faUniversity} /> Education

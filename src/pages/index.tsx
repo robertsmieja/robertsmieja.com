@@ -1,14 +1,13 @@
-import React from "react"
-
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
+import React from "react"
 import Container from "react-bootstrap/Container"
 import isBrowserAvailable from "../checkIfLoaded"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () =>
+const IndexPage: React.FC = () =>
   isBrowserAvailable && (
     <Layout>
       <SEO title="Home" keywords={[`robertsmieja`, `robert`, `smieja`]} />
@@ -33,8 +32,8 @@ const IndexPage = () =>
           <a href="https://www.netlify.com/">Netlify</a>.
         </p>
         <p>
-          I'm interested in being a lifelong learner, and in applying technology
-          to solve problems:
+          I{`'`}m interested in being a lifelong learner, and in applying
+          technology to solve problems:
           <ul>
             <li>What does this new programming languages/framework offer?</li>
             <ul>

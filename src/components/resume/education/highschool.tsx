@@ -1,6 +1,6 @@
 import React from "react"
 
-const HighSchool = () => (
+const HighSchool: React.FC = () => (
   <div id="highschool">
     <dt>
       University of Hartford High School of Science and Engineering, Hartford,

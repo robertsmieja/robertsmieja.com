@@ -1,6 +1,6 @@
 import React from "react"
 
-const ProgramingLanguages = () => (
+const ProgramingLanguages: React.FC = () => (
   <dl>
     <dt>Programming Languages</dt>
     <dd>

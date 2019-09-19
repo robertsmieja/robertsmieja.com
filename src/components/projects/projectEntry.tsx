@@ -8,7 +8,7 @@ interface ProjectEntryProperties {
 }
 
 const ProjectEntry: FunctionComponent<ProjectEntryProperties> = (
-  properties: ProjectEntryProperties,
+  properties: ProjectEntryProperties
 ) => (
   <li>
     {properties.year} - <a href={`${properties.link}`}>{properties.title}</a> -{" "}

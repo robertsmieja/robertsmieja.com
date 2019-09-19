@@ -1,9 +1,8 @@
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavItem from "react-bootstrap/NavItem"
@@ -12,7 +11,7 @@ interface HeaderProperties {
   siteTitle: string
 }
 
-const Header = ({ siteTitle }: HeaderProperties) => (
+const Header: React.FC = ({ siteTitle }: HeaderProperties) => (
   <header>
     <Navbar bg="dark" variant="dark" expand="lg">
       {/* <Navbar.Brand> */}
@@ -55,11 +54,11 @@ const Header = ({ siteTitle }: HeaderProperties) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: ``
 }
 
 export default Header

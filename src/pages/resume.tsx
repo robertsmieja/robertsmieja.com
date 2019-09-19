@@ -1,5 +1,4 @@
 import React from "react"
-
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -12,7 +11,7 @@ import Profile from "../components/resume/profile"
 import Technology from "../components/resume/technology"
 import SEO from "../components/seo"
 
-const ResumePage = () =>
+const ResumePage: React.FC = () =>
   isBrowserAvailable && (
     <Layout>
       <SEO
@@ -35,7 +34,7 @@ const ResumePage = () =>
           `wpi`,
           `worcester`,
           `polytechnic`,
-          `institute`,
+          `institute`
         ]}
       />
       <Container>

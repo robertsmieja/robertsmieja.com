@@ -7,7 +7,7 @@ import Frameworks from "./technology/frameworks"
 import OperatingSystems from "./technology/operatingSystems"
 import ProgramingLanguages from "./technology/programmingLanguages"
 
-const Technology = () => (
+const Technology: React.FC = () => (
   <div id="technology">
     <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faCode} /> Technologies

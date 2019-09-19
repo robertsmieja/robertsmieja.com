@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import ExperienceEntry from "./experience/experienceEntry"
 
-const Experience = () => (
+const Experience: React.FC = () => (
   <div id="experience">
     <h2 className="font-weight-light">
       <FontAwesomeIcon icon={faBriefcase} /> Experience
@@ -27,7 +27,7 @@ const Experience = () => (
           <li>
             Designed and implemented AmazonPay integration as the first
             acquirer. Served as a Senior Engineer leading a team of new and
-            junior Software Engineers while integrating with AmazonPay. 
+            junior Software Engineers while integrating with AmazonPay.
           </li>
           <li>
             Worked on Vantiv eCommerce iQ Chargeback Engine as part of Visa
