@@ -1,3 +1,4 @@
-const isBrowserAvailable = () => typeof window !== "undefined" && window
+const isBrowserAvailable = (): boolean =>
+  (typeof window !== "undefined" && window) as boolean
 
 export default isBrowserAvailable
