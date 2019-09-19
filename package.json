@@ -75,5 +75,22 @@
   },
   "bugs": {
     "url": "https://github.com/robertsmieja/robertsmieja.com/issues"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ]
+    }
   }
 }
