@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
@@ -11,7 +11,7 @@ interface HeaderProperties {
   siteTitle: string
 }
 
-const Header: React.FC = ({ siteTitle }: HeaderProperties) => (
+const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
   <header>
     <Navbar bg="dark" variant="dark" expand="lg">
       {/* <Navbar.Brand> */}
@@ -53,9 +53,9 @@ const Header: React.FC = ({ siteTitle }: HeaderProperties) => (
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string
+// }
 
 Header.defaultProps = {
   siteTitle: ``

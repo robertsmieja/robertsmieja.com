@@ -12,11 +12,11 @@ import "../scss/layout.scss"
 import Footer from "./footer"
 import Header from "./header"
 
-interface LayoutProperties {
-  children: React.ReactElement[]
-}
+// interface LayoutProperties {
+//   children: ReactNode
+// }
 
-const Layout: React.FC = ({ children }: LayoutProperties) => (
+const Layout: React.FC = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
