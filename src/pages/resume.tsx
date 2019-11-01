@@ -34,7 +34,7 @@ const ResumePage: React.FC = () =>
           `wpi`,
           `worcester`,
           `polytechnic`,
-          `institute`
+          `institute`,
         ]}
       />
       <Container>

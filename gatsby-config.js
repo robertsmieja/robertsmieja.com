@@ -4,7 +4,7 @@ module.exports = {
     title: `Robert Smieja`,
     description: `Personal homepage for Robert Smieja`,
     author: `Robert Smieja`,
-    siteUrl: `https://robertsmieja.com`
+    siteUrl: `https://robertsmieja.com`,
   },
   plugins: [
     `gatsby-plugin-catch-links`,
@@ -69,8 +69,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
 
     `gatsby-plugin-robots-txt`,
@@ -85,8 +85,8 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/android-chrome-512x512.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
+      },
     },
     `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -97,8 +97,8 @@ module.exports = {
       options: {
         isTSX: true, // defaults to false
         // jsxPragma: `jsx`, // defaults to `React`
-        allExtensions: true // defaults to false
-      }
+        allExtensions: true, // defaults to false
+      },
     },
     `gatsby-plugin-typescript-checker`,
     {
@@ -108,33 +108,33 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
-            }
+              maxWidth: 590,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           "gatsby-remark-autolink-headers",
           {
             resolve: "gatsby-remark-prismjs",
             options: {
-              inlineCodeMarker: "÷"
-            }
+              inlineCodeMarker: "÷",
+            },
           },
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-smartypants",
           {
             resolve: "gatsby-remark-external-links",
             options: {
-              target: "_blank"
-            }
-          }
-        ]
-      }
+              target: "_blank",
+            },
+          },
+        ],
+      },
     },
-    `gatsby-transformer-sharp`
-  ]
+    `gatsby-transformer-sharp`,
+  ],
 }

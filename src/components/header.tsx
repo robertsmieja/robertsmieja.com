@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
 // }
 
 Header.defaultProps = {
-  siteTitle: ``
+  siteTitle: ``,
 }
 
 export default Header

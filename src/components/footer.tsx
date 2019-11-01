@@ -5,7 +5,7 @@ interface FooterProperties {
 }
 
 const Footer: React.FC<FooterProperties> = ({
-  siteAuthor
+  siteAuthor,
 }: FooterProperties) => (
   <footer className="d-print-none">
     <div className="text-center text-muted">

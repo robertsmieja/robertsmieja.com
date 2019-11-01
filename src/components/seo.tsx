@@ -40,7 +40,7 @@ const SEO: React.FC<SEOProperties> = props => {
   return (
     <Helmet
       htmlAttributes={{
-        lang
+        lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -48,42 +48,42 @@ const SEO: React.FC<SEOProperties> = props => {
         .concat([
           {
             name: `description`,
-            content: metaDescription
+            content: metaDescription,
           },
           {
             property: `og:title`,
-            content: title
+            content: title,
           },
           {
             property: `og:description`,
-            content: metaDescription
+            content: metaDescription,
           },
           {
             property: `og:type`,
-            content: `website`
+            content: `website`,
           },
           {
             name: `twitter:card`,
-            content: `summary`
+            content: `summary`,
           },
           {
             name: `twitter:creator`,
-            content: site.siteMetadata.author
+            content: site.siteMetadata.author,
           },
           {
             name: `twitter:title`,
-            content: title
+            content: title,
           },
           {
             name: `twitter:description`,
-            content: metaDescription
-          }
+            content: metaDescription,
+          },
         ])
         .concat(
           keywords!.length > 0
             ? {
                 name: `keywords`,
-                content: keywords!.join(`, `)
+                content: keywords!.join(`, `),
               }
             : []
         )}
@@ -103,7 +103,7 @@ SEO.defaultProps = {
   description: ``,
   lang: `en`,
   meta: [],
-  keywords: []
+  keywords: [],
 }
 
 export default SEO
