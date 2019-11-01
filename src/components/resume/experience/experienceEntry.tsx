@@ -11,11 +11,11 @@ interface ExperienceEntryProperties {
 }
 
 const ExperienceEntry: React.FC<ExperienceEntryProperties> = properties => (
-  <Row noGutters={true}>
+  <Row noGutters>
     <Col>
-      <Row noGutters={true}>
+      <Row noGutters>
         <Col>
-          <Row className="justify-content-between" noGutters={true}>
+          <Row className="justify-content-between" noGutters>
             <Col xs="auto">
               <p className="font-weight-bold mb-0 text-left">
                 {properties.company}
@@ -30,7 +30,7 @@ const ExperienceEntry: React.FC<ExperienceEntryProperties> = properties => (
               </p>
             </Col>
           </Row>
-          <Row noGutters={true}>
+          <Row noGutters>
             <Col>
               <p className="font-weight-bold mb-0 text-left">
                 {properties.jobTitle}
@@ -39,7 +39,7 @@ const ExperienceEntry: React.FC<ExperienceEntryProperties> = properties => (
           </Row>
         </Col>
       </Row>
-      <Row noGutters={true}>
+      <Row noGutters>
         <Col>{properties.children}</Col>
       </Row>
     </Col>

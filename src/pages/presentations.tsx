@@ -12,8 +12,8 @@ const PresentationsPage: React.FC = () => (
     <Container>
       <p className="display-4">Presentations</p>
       <p>
-        I{`'`}ve created a number of presentations for various frameworks and
-        technologies during my lifetime as a Software Engineer. I{`'`}ve listed
+        I&apos;ve created a number of presentations for various frameworks and
+        technologies during my lifetime as a Software Engineer. I&apos;ve listed
         them below in the hopes that you will find them useful.
       </p>
       <ul>

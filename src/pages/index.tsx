@@ -32,7 +32,7 @@ const IndexPage: React.FC = () =>
           <a href="https://www.netlify.com/">Netlify</a>.
         </p>
         <p>
-          I{`'`}m interested in being a lifelong learner, and in applying
+          I&apos;m interested in being a lifelong learner, and in applying
           technology to solve problems:
           <ul>
             <li>What does this new programming languages/framework offer?</li>

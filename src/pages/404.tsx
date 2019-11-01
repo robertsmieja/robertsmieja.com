@@ -10,7 +10,7 @@ const NotFoundPage: React.FC = () =>
       <SEO title="404: Not found" />
       <Container>
         <h1>404, Not Found</h1>
-        <p>You just hit a route that doesn{`'`}t exist...</p>
+        <p>You just hit a route that doesn&apos;t exist...</p>
       </Container>
     </Layout>
   )

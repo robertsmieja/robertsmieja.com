@@ -49,7 +49,6 @@ const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-    <h1 style={{ margin: 0 }} />
   </header>
 )
 

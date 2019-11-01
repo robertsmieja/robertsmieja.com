@@ -18,7 +18,7 @@ const ProjectsPage: React.FC = () => (
         source code, to help other developers.
       </p>
       <p>
-        Here some of the projects I{`'`}d like to highlight. The rest of them
+        Here some of the projects I&apos;d like to highlight. The rest of them
         are available on my personal GitHub page.
       </p>
       <ul>
@@ -39,14 +39,14 @@ const ProjectsPage: React.FC = () => (
           8 interface features and reflection to automatic test Getters and
           Setters, hashCode(), equals(), etc. I would recommend using a tool
           such as <a href="https://projectlombok.org/">Lombok</a> to generate
-          {`"data"`} methods instead.
+          &rdquo;data&ldquo; methods instead.
         </ProjectEntry>
         <ProjectEntry
           year="2017"
           link="https://github.com/robertsmieja/ANTLR4-Packet-Parser/"
           title="ANTLR4 Packet Parser"
         >
-          This project demonstrates the flexibility of ANTLR4, and it{`'`}s
+          This project demonstrates the flexibility of ANTLR4, and it&apos;s
           ability to even parse out binary format files.
         </ProjectEntry>
         <ProjectEntry

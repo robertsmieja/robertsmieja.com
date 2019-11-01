@@ -44,7 +44,7 @@ const SEO: React.FC<SEOProperties> = props => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={meta!
+      meta={meta
         .concat([
           {
             name: `description`,
@@ -80,10 +80,10 @@ const SEO: React.FC<SEOProperties> = props => {
           },
         ])
         .concat(
-          keywords!.length > 0
+          keywords.length > 0
             ? {
                 name: `keywords`,
-                content: keywords!.join(`, `),
+                content: keywords.join(`, `),
               }
             : []
         )}
