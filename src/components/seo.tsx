@@ -8,19 +8,22 @@
 
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import Helmet from "react-helmet"
+import Helmet, { HelmetProps } from "react-helmet"
 
 type MetaProps = JSX.IntrinsicElements["meta"]
 
-interface SEOProperties {
+interface SEOProperties extends HelmetProps {
   description?: string
   lang?: string
-  meta?: MetaProps[]
   keywords?: string[]
   title: string
 }
+
 const SEO: React.FC<SEOProperties> = props => {
-  const { description, lang, meta, keywords, title } = props
+  const { description, lang, meta, keywords, title } = props as Required<
+    SEOProperties
+  >
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -44,7 +47,7 @@ const SEO: React.FC<SEOProperties> = props => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={meta
+      meta={(meta || [])
         .concat([
           {
             name: `description`,
@@ -104,6 +107,6 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
-}
+} as Partial<SEOProperties>
 
 export default SEO
