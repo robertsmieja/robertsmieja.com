@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /**
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
@@ -9,8 +8,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Helmet, { HelmetProps } from "react-helmet"
-
-type MetaProps = JSX.IntrinsicElements["meta"]
 
 interface SEOProperties extends HelmetProps {
   description?: string
@@ -93,14 +90,6 @@ const SEO: React.FC<SEOProperties> = props => {
     />
   )
 }
-
-// SEO.propTypes = {
-//   description: PropTypes.string.isRequired,
-//   lang: PropTypes.string.isRequired,
-//   meta: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-//   title: PropTypes.string.isRequired
-// }
 
 SEO.defaultProps = {
   description: ``,
