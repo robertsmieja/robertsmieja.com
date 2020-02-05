@@ -9,16 +9,36 @@ const Experience: React.FC = () => (
       <FontAwesomeIcon icon={faBriefcase} /> Experience
     </h2>
     <ExperienceEntry
+      company="Hitachi Vantara"
+      location="Waltham, MA"
+      dateRange="July 2019 – Present"
+      jobTitle="Senior Full Stack Engineer"
+    >
+      <p className="mb-0">
+        <ul>
+          <li>
+            Currently working on rewrite of internal product development
+            platform, leveraging Kubernetes and open-source technologies to
+            target both Software-as-a-Service and Software Appliances use cases.
+          </li>
+          <li>
+            Currently working on a brand new UI written in React/TypeScript for
+            an internal administrative UI for Hitachi Vantara products.
+          </li>
+        </ul>
+      </p>
+    </ExperienceEntry>
+    <ExperienceEntry
       company="Vantiv/WorldPay"
       location="Lowell, MA"
-      dateRange="May 2015 – Present"
+      dateRange="May 2015 – July 2019"
       jobTitle="Senior Software Engineer"
     >
       <p className="mb-0">
         <ul>
           <li>
-            Currently working as a Automation/DevOps working on development and
-            production infrastructure automation in Puppet.
+            Worked an Automation/DevOps working on development and production
+            infrastructure automation in Puppet.
           </li>
           <li>
             Participate in company-wide and office-wide hackathons as Team
