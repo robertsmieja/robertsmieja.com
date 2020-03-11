@@ -7,20 +7,21 @@
 
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import Helmet, { HelmetProps } from "react-helmet"
+import Helmet from "react-helmet"
+import PropTypes, { InferProps } from "prop-types"
 
-interface SEOProperties extends HelmetProps {
-  description?: string
-  lang?: string
-  keywords?: string[]
-  title: string
+const propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.any),
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string.isRequired,
 }
 
-const SEO: React.FC<SEOProperties> = props => {
-  const { description, lang, meta, keywords, title } = props as Required<
-    SEOProperties
-  >
+type SEOProperties = NonNullable<InferProps<typeof propTypes>>
 
+const SEO: React.FC<SEOProperties> = props => {
+  const { description, lang, meta, keywords, title } = props
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -40,7 +41,7 @@ const SEO: React.FC<SEOProperties> = props => {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: lang ?? undefined,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -80,10 +81,10 @@ const SEO: React.FC<SEOProperties> = props => {
           },
         ])
         .concat(
-          keywords.length > 0
+          (keywords?.length ?? 0) > 0
             ? {
                 name: `keywords`,
-                content: keywords.join(`, `),
+                content: keywords?.join(`, `),
               }
             : []
         )}
@@ -96,6 +97,8 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
-} as Partial<SEOProperties>
+}
+
+SEO.propTypes = propTypes
 
 export default SEO
