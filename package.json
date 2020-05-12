@@ -14,7 +14,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-fontawesome": "^1.6.4",
     "@types/react-helmet": "^5.0.15",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "gatsby": "^2.19.49",
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-catch-links": "^2.1.28",
