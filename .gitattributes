@@ -16,3 +16,5 @@
 *.md      text eol=lf
 *.sh      text eol=lf
 *.txt     text eol=lf
+
+package-lock.json -diff eol=lf
