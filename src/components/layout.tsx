@@ -28,7 +28,7 @@ const Layout: React.FC = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         {/* <div

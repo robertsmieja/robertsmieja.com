@@ -10,7 +10,7 @@ interface ExperienceEntryProperties {
   children: React.ReactElement | React.ReactElement[]
 }
 
-const ExperienceEntry: React.FC<ExperienceEntryProperties> = properties => (
+const ExperienceEntry: React.FC<ExperienceEntryProperties> = (properties) => (
   <Row noGutters>
     <Col>
       <Row noGutters>
