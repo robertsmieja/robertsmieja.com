@@ -4,7 +4,7 @@ This is the source code for my personal website, written in [TypeScript](https:/
 
 ## Requirements
 
-- [Node.js 10.X or higher](https://nodejs.org/en/)
+- [Node.js 12.X or higher](https://nodejs.org/en/)
 
 ### Optional but Recommended
 
