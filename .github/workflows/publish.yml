@@ -16,7 +16,7 @@ jobs:
     - name: Publish
       uses: docker/build-push-action@v1
       with: 
-        build_args: awsAccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }},awsSecretAccessKey=${{ secrets.AWS_SECRET_ACCESS_KEY }},targetS3Bucket=www.robertsmieja.com
+        build_args: awsAccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }},awsSecretAccessKey=${{ secrets.AWS_SECRET_ACCESS_KEY }},targetS3Bucket=arn:aws:s3:::www.robertsmieja.com
         cache_froms: node:14-alpine,amazon/aws-cli:latest
         dockerfile: ./build.Dockerfile
         repository: dummy
