@@ -25,6 +25,6 @@ jobs:
     - uses: pnpm/action-setup@v1.2.0
       with:
         version: 5.5.11
-    - run: pnpm ci
+    - run: pnpm install
     - run: pnpm run build --if-present
 #     - run: npm test
