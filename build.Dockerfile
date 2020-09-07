@@ -18,7 +18,7 @@ ARG awsSecretAccessKey
 RUN aws configure set aws_access_key_id ${awsAccessKeyId} && \
     aws configure set aws_secret_access_key ${awsSecretAccessKey}
 
-COPY --from=build /home/node/dist/ .
+COPY --from=build /home/node/public/ .
 
 ARG targetS3Bucket
 RUN aws s3 cp . s3://${targetS3Bucket}/ --recursive --acl public-read
