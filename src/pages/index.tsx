@@ -33,7 +33,7 @@ const IndexPage: React.FC = () => (
         </a>{" "}
         is written using Gatsby.js, TypeScript, and React and running on{" "}
         <a href="https://aws.amazon.com/cloudfront/">AWS CloudFront</a> and{" "}
-        <a href="https://www.netlify.com/">Netlify</a>
+        <a href="https://aws.amazon.com/s3/">AWS S3</a>
       </p>
       <p>
         I&apos;m interested in being a lifelong learner, and in applying
