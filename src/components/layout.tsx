@@ -5,6 +5,7 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 // fix for font-awesome large icon on initial load - https://github.com/FortAwesome/react-fontawesome#nextjs
 import "@fortawesome/fontawesome-svg-core/styles.css" // Import the CSS
 import PropTypes from "prop-types"
+import React from "react"
 import isBrowserAvailable from "../checkIfLoaded"
 import useSiteMetadata from "../lib/hooks/useSiteMetadata"
 import Footer from "./footer"

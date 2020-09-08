@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
+import React from "react"
 import Layout from "../components/layout"
 import DevOps from "../components/resume/devops"
 import Education from "../components/resume/education"
