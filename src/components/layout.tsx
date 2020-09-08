@@ -1,11 +1,17 @@
 /** @jsx jsx */
-import PropTypes from "prop-types"
-import { css, Global, jsx } from "@emotion/core"
 import * as normalize from "@csstools/normalize.css"
+import { css, Global, jsx } from "@emotion/core"
+import { config } from "@fortawesome/fontawesome-svg-core"
+// fix for font-awesome large icon on initial load - https://github.com/FortAwesome/react-fontawesome#nextjs
+import "@fortawesome/fontawesome-svg-core/styles.css" // Import the CSS
+import PropTypes from "prop-types"
+import isBrowserAvailable from "../checkIfLoaded"
+import useSiteMetadata from "../lib/hooks/useSiteMetadata"
 import Footer from "./footer"
 import Header from "./header"
-import useSiteMetadata from "../lib/hooks/useSiteMetadata"
-import isBrowserAvailable from "../checkIfLoaded"
+
+// Import the CSS
+config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 const globalCss = css`
   ${normalize}
