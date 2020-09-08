@@ -13,12 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Publish
-      uses: docker/build-push-action@v1
-      with: 
-        build_args: awsAccessKeyId=${{ secrets.AWS_ACCESS_KEY_ID }},awsSecretAccessKey=${{ secrets.AWS_SECRET_ACCESS_KEY }},targetS3Bucket=arn:aws:s3:::www.robertsmieja.com
-        cache_froms: node:14-alpine,amazon/aws-cli:latest
-        dockerfile: ./build.Dockerfile
-        repository: dummy
-        push: false
-        tag_with_sha: true
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v1.2.0
+      with:
+        version: 5.5.11
+    - run: pnpm install
+    - run: pnpm run build --if-present
+    - name: Publish to S3 Bucket
+      run: |
+        cd public/
+        aws s3 sync . s3://arn:aws:s3:::www.robertsmieja.com/ --acl public-read --delete
