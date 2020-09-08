@@ -28,4 +28,4 @@ jobs:
     - name: Publish to S3 Bucket
       run: |
         cd public/
-        aws s3 sync . s3://arn:aws:s3:::www.robertsmieja.com/ --acl public-read --delete
+        aws s3 sync . s3://www.robertsmieja.com --acl public-read --delete
