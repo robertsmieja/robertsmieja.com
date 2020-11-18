@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import * as normalize from "@csstools/normalize.css"
-import { css, Global, jsx } from "@emotion/core"
+import { css, Global, jsx } from "@emotion/react"
 import { config } from "@fortawesome/fontawesome-svg-core"
 // fix for font-awesome large icon on initial load - https://github.com/FortAwesome/react-fontawesome#nextjs
 import "@fortawesome/fontawesome-svg-core/styles.css" // Import the CSS
