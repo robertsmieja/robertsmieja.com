@@ -40,7 +40,7 @@
     "gatsby-remark-images": "^3.7.1",
     "gatsby-remark-prismjs": "^3.9.0",
     "gatsby-remark-responsive-iframe": "^2.7.0",
-    "gatsby-remark-smartypants": "^2.6.0",
+    "gatsby-remark-smartypants": "^3.1.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
     "node-sass": "^5.0.0",
