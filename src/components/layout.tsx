@@ -43,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
   const { title, author } = useSiteMetadata()
 
   return (
-    isBrowserAvailable && (
+    (isBrowserAvailable() && (
       <div
         css={css`
           display: grid;
@@ -82,7 +82,7 @@ const Layout: React.FC = ({ children }) => {
         />
         <Footer siteAuthor={author} />
       </div>
-    )
+    )) || <React.Fragment></React.Fragment>
   )
 }
 
