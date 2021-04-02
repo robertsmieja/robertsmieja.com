@@ -7,5 +7,6 @@
     "fortawesome",
     "robertsmieja"
   ],
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "discord.enabled": false
 }
