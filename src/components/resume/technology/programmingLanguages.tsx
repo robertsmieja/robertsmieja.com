@@ -10,14 +10,15 @@ const ProgramingLanguages: React.FC = () => (
           {/* <FontAwesomeIcon icon={faJava} />  */}
           Java
         </li>
-        <li>Groovy</li>
-        <li>SQL</li>
-        <li>Kotlin</li>
         <li>TypeScript</li>
         <li>
           {/* <FontAwesomeIcon icon={faJsSquare} /> */}
           JavaScript
         </li>
+        <li>Kotlin</li>
+        <li>Groovy</li>
+        <li>Golang</li>
+        <li>SQL</li>
         <li>Ruby</li>
         <li>C#</li>
         <li>Perl</li>
