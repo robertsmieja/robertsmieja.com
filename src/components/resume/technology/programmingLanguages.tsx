@@ -22,6 +22,8 @@ const ProgramingLanguages: React.FC = () => (
         <li>Ruby</li>
         <li>C#</li>
         <li>Perl</li>
+        <li>Powershell</li>
+        <li>POSIX Shell/Bash</li>
         <li>C/C++</li>
         <li>Scala</li>
       </ol>
