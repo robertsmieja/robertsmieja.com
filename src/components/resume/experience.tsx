@@ -21,9 +21,10 @@ const Experience: React.FC = () => (
           Software-as-a-Service and Software Appliances use cases.
         </li>
         <li>
-          Currently working on a brand new UI written in React/TypeScript for an
-          internal administrative UI for Hitachi Vantara products.
+          Worked on a brand new UI written in React/TypeScript for an internal
+          administrative UI for Hitachi Vantara products.
         </li>
+        <li>Introduced Ansible to simplify development lab management.</li>
       </ul>
     </ExperienceEntry>
     <ExperienceEntry
@@ -57,19 +58,8 @@ const Experience: React.FC = () => (
           Upgraded internal Grails application for configuration management from
           Grails 1.X to 2.X
         </li>
-        {/* <li>Coherence Upgrades and Improvements</li> */}
       </ul>
     </ExperienceEntry>
-    {/* <ExperienceEntry
-      company="Vantiv"
-      location="Lowell, MA"
-      dateRange=" – August 2017"
-      jobTitle="Senior Software Engineer, Software Engineer"
-    >
-      <Text>
-        Worked on a large Java code base as part of System and Platform teams.
-      </Text> 
-    </ExperienceEntry> */}
     <ExperienceEntry
       company="Litle & Co"
       location="Lowell, MA"
@@ -90,17 +80,6 @@ const Experience: React.FC = () => (
         </li>
       </ul>
     </ExperienceEntry>
-    {/* <ExperienceEntry
-      company="WPI Helpdesk"
-      location="Worcester, MA"
-      dateRange="September 2012 – May 2015"
-      jobTitle="Helpdesk Speciaul"
-    >
-      <Text>
-        Provided remote troubleshooting and support through phone, e-mail and
-        in-person for WPI faculty, staff, and students.
-      </Text>
-    </ExperienceEntry> */}
   </div>
 )
 

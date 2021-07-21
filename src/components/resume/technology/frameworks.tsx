@@ -20,7 +20,6 @@ const Frameworks: React.FC = () => (
         <li>React</li>
         <li>Spring MVC</li>
         <li>Spring Data</li>
-        <li>TomEE</li>
       </ul>
     </dd>
   </dl>

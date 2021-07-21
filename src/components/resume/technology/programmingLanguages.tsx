@@ -6,24 +6,18 @@ const ProgramingLanguages: React.FC = () => (
     <dd>
       In order of experience/proficiency:
       <ol>
-        <li>
-          {/* <FontAwesomeIcon icon={faJava} />  */}
-          Java
-        </li>
-        <li>TypeScript</li>
-        <li>
-          {/* <FontAwesomeIcon icon={faJsSquare} /> */}
-          JavaScript
-        </li>
+        <li>Java</li>
+        <li>TypeScript/JavaScript</li>
         <li>Kotlin</li>
         <li>Groovy</li>
         <li>Golang</li>
         <li>SQL</li>
-        <li>Ruby</li>
-        <li>C#</li>
-        <li>Perl</li>
         <li>Powershell</li>
         <li>POSIX Shell/Bash</li>
+        <li>C#</li>
+        <li>Python</li>
+        <li>Perl</li>
+        <li>Ruby</li>
         <li>C/C++</li>
         <li>Scala</li>
       </ol>
