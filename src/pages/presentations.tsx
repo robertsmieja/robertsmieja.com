@@ -43,7 +43,7 @@ const PresentationsPage: React.FC = () => (
             <a href="https://drive.google.com/open?id=16jnaqvufQd43odXG8TmrdweUpRGJxjBwpEywuZI9KOU">
               ANTLR4 - NEJUG Edition
             </a>{" "}
-            (<a href="https://vimeo.com/199478127">Video Recording</a>)
+            <a href="https://vimeo.com/199478127">(Video Recording)</a>
           </li>
         </ul>
         <li>2016</li>
