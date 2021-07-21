@@ -8,17 +8,23 @@ interface ExperienceEntryProperties {
   children: React.ReactElement | React.ReactElement[]
 }
 
-const ExperienceEntry: React.FC<ExperienceEntryProperties> = (properties) => (
-  <div id={`experience-${properties.company.replace(" ", "_")}`}>
+const ExperienceEntry: React.FC<ExperienceEntryProperties> = ({
+  children,
+  company,
+  dateRange,
+  jobTitle,
+  location,
+}: ExperienceEntryProperties) => (
+  <div id={`experience-${company.replace(" ", "_")}`}>
     <div>
-      <p>{properties.company}</p>
-      <p>{properties.location}</p>
+      <p>{company}</p>
+      <p>{location}</p>
     </div>
     <div>
-      <p>{properties.dateRange}</p>
+      <p>{dateRange}</p>
     </div>
-    <p>{properties.jobTitle}</p>
-    <div>{properties.children}</div>
+    <p>{jobTitle}</p>
+    <div>{children}</div>
   </div>
 )
 

@@ -82,7 +82,7 @@ const Layout: React.FC = ({ children }) => {
         />
         <Footer siteAuthor={author} />
       </div>
-    )) || <React.Fragment></React.Fragment>
+    )) || <React.Fragment />
   )
 }
 

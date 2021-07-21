@@ -7,12 +7,14 @@ interface ProjectEntryProperties {
   children: ReactNode
 }
 
-const ProjectEntry: FunctionComponent<ProjectEntryProperties> = (
-  properties: ProjectEntryProperties
-) => (
+const ProjectEntry: FunctionComponent<ProjectEntryProperties> = ({
+  children,
+  link,
+  title,
+  year,
+}: ProjectEntryProperties) => (
   <li>
-    {properties.year} - <a href={`${properties.link}`}>{properties.title}</a> -{" "}
-    {properties.children}
+    {year} - <a href={`${link}`}>{title}</a> - {children}
   </li>
 )
 
