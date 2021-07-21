@@ -24,7 +24,14 @@ const Experience: React.FC = () => (
           Worked on a brand new UI written in React/TypeScript for an internal
           administrative UI for Hitachi Vantara products.
         </li>
-        <li>Introduced Ansible to simplify development lab management.</li>
+        <li>
+          Simplified management of development lab management by introducing
+          Ansible.
+        </li>
+        <li>
+          Improved internal product development platform documentation website
+          by introducing Docusaurus
+        </li>
       </ul>
     </ExperienceEntry>
     <ExperienceEntry
