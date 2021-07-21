@@ -64,11 +64,7 @@ const Layout: React.FC = ({ children }) => {
         <main
           css={css`
             grid-column: 2 / 3;
-            height: 100%;
-
-            div & {
-              margin: auto;
-            }
+            margin: 0 auto;
           `}
         >
           {children}
