@@ -13,7 +13,7 @@ import useSiteMetadata from "../lib/hooks/useSiteMetadata"
 const propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.any),
+  meta: PropTypes.arrayOf(PropTypes.shape({name: PropTypes.string, content: PropTypes.string, property: PropTypes.string})),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 }

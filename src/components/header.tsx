@@ -8,7 +8,7 @@ import { css, jsx } from "@emotion/react"
 import { mq } from "../breakpoints"
 
 interface HeaderProperties {
-  siteTitle: string
+  siteTitle?: string
 }
 
 const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
