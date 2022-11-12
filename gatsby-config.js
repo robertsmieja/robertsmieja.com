@@ -75,7 +75,6 @@ module.exports = {
     },
 
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -101,7 +100,6 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
-    `gatsby-plugin-typescript-checker`,
     `gatsby-transformer-sharp`,
   ],
 }
