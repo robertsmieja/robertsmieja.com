@@ -9,14 +9,34 @@ const Experience: React.FC = () => (
       <FontAwesomeIcon icon={faBriefcase} /> Experience
     </h2>
     <ExperienceEntry
+      company="Quattr"
+      location="Remote - Palo Alto, CA"
+      dateRange="August 2021 - Present"
+      jobTitle="Principle Full Stack Engineer">
+      <ul>
+        <li>
+          Lead Full-Stack Chapter to improve code quality by promoting best practices and cross-team cooperation.
+        </li>
+        <li>
+          Contributed to rules engine design to enable customers to categorize search intents
+        </li>
+        <li>
+          Achieved a 15% reduction in AWS Cloud costs by deleting and compressing objects in S3 buckets
+        </li>
+        <li>
+          Created e-mail based secure password-less login system for Test Drive demos
+        </li>
+      </ul>
+    </ExperienceEntry>
+    <ExperienceEntry
       company="Hitachi Vantara"
       location="Waltham, MA"
-      dateRange="July 2019 – Present"
+      dateRange="July 2019 - August 2021"
       jobTitle="Senior Full Stack Engineer"
     >
       <ul>
         <li>
-          Currently working on rewrite of internal product development platform,
+          Worked on rewrite of internal product development platform,
           leveraging Kubernetes and open-source technologies to target both
           Software-as-a-Service and Software Appliances use cases.
         </li>
@@ -37,7 +57,7 @@ const Experience: React.FC = () => (
     <ExperienceEntry
       company="Vantiv/WorldPay"
       location="Lowell, MA"
-      dateRange="May 2015 – July 2019"
+      dateRange="May 2015 - July 2019"
       jobTitle="Senior Software Engineer"
     >
       <ul>
@@ -70,8 +90,8 @@ const Experience: React.FC = () => (
     <ExperienceEntry
       company="Litle & Co"
       location="Lowell, MA"
-      dateRange="May 2013 – August
-      2013, May 2014 – August 2014"
+      dateRange="May 2013 - August
+      2013, May 2014 - August 2014"
       jobTitle="Software Engineer Intern"
     >
       <ul>

@@ -1,6 +1,7 @@
 import {
   faApple,
   faRedhat,
+  faUbuntu,
   faWindows,
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -18,7 +19,7 @@ const OperatingSystems: React.FC = () => (
           <FontAwesomeIcon icon={faApple} /> Mac OS X
         </li>
         <li>
-          <FontAwesomeIcon icon={faRedhat} /> Linux (RHEL)
+          <FontAwesomeIcon icon={faRedhat} />/<FontAwesomeIcon icon={faUbuntu} /> Linux (RHEL/Ubuntu)
         </li>
       </ul>
     </dd>

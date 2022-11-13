@@ -11,15 +11,16 @@ const Frameworks: React.FC = () => (
         <li>Grails</li>
         <li>Gradle</li>
         <li>JavaEE</li>
-        <li>JUnit 4/5</li>
+        <li>JUnit 5</li>
         <li>Kafka</li>
         <li>Kubernetes</li>
-        <li>Oracle Coherence</li>
-        <li>Oracle GoldenGate</li>
+        <li>NextJS</li>
+        <li>PostgreSQL</li>
         <li>Puppet</li>
         <li>React</li>
-        <li>Spring MVC</li>
-        <li>Spring Data</li>
+        <li>Snowflake</li>
+        <li>Spring MVC 5</li>
+        <li>Spring Data 5</li>
       </ul>
     </dd>
   </dl>
