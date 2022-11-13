@@ -4,7 +4,7 @@ import { css, Global, jsx } from "@emotion/react"
 import { config } from "@fortawesome/fontawesome-svg-core"
 // fix for font-awesome large icon on initial load - https://github.com/FortAwesome/react-fontawesome#nextjs
 import "@fortawesome/fontawesome-svg-core/styles.css" // Import the CSS
-import PropTypes from "prop-types"
+import PropTypes, { InferProps } from "prop-types"
 import React from "react"
 import isBrowserAvailable from "../checkIfLoaded"
 import useSiteMetadata from "../lib/hooks/useSiteMetadata"
@@ -39,7 +39,9 @@ const globalCss = css`
   }
 `
 
-const Layout: React.FC = ({ children }) => {
+type LayoutProperties = InferProps<typeof propTypes>
+
+const Layout: React.FC<LayoutProperties> = ({ children }) => {
   const { title, author } = useSiteMetadata()
 
   return (
@@ -82,8 +84,10 @@ const Layout: React.FC = ({ children }) => {
   )
 }
 
-Layout.propTypes = {
+const propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+Layout.propTypes = propTypes
 
 export default Layout
