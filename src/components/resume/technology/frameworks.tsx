@@ -15,10 +15,8 @@ const Frameworks: React.FC = () => (
         <li>Kafka</li>
         <li>Kubernetes</li>
         <li>NextJS</li>
-        <li>PostgreSQL</li>
         <li>Puppet</li>
         <li>React</li>
-        <li>Snowflake</li>
         <li>Spring MVC 5</li>
         <li>Spring Data 5</li>
       </ul>

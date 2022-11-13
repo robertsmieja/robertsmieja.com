@@ -7,6 +7,8 @@ const Databases: React.FC = () => (
       <ul>
         <li>Amazon DynamoDB</li>
         <li>DB2 (LUW)</li>
+        <li>PostgreSQL</li>
+        <li>Snowflake</li>
       </ul>
     </dd>
   </dl>
