@@ -26,5 +26,5 @@ jobs:
       with:
         version: 7.15.0
     - run: pnpm install
-    - run: pnpm run build --if-present
+    - run: pnpm run --if-present build 
 #     - run: npm test
