@@ -4,14 +4,16 @@
     "esModuleInterop": true,
     "declaration": false,
     "importHelpers": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "lib": ["dom", "es2015", "es2017"],
     "module": "commonjs",
     "noImplicitAny": true,
     "noUnusedLocals": false,
     "outDir": "./dist/",
     "sourceMap": true,
+    "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
   }
 }

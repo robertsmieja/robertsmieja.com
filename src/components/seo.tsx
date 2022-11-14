@@ -34,6 +34,8 @@ const SEO: React.FC<SEOProperties> = (props) => {
       }}
       title={title}
       titleTemplate={`%s | ${siteMetadata.title}`}
+      // @ts-expect-error legacy code from pre-Gatsby 5.0 starter
+      // needs to be revisited
       meta={(meta || [])
         .concat([
           {
