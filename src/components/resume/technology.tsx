@@ -12,11 +12,11 @@ const Technology: React.FC = () => (
     <h2>
       <FontAwesomeIcon icon={faCode} /> Technologies
     </h2>
+    <ProgramingLanguages />
     <Clouds />
     <Databases />
     <Frameworks />
     <OperatingSystems />
-    <ProgramingLanguages />
   </div>
 )
 

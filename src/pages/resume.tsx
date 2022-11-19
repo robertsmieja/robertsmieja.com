@@ -60,9 +60,9 @@ const ResumePage: React.FC = () => (
     >
       <Technology />
       <DevOps />
-      <Education />
       <Experience />
       <Profile />
+      <Education />
     </div>
   </Layout>
 )
