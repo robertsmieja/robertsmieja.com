@@ -8,8 +8,7 @@ const Profile: React.FC = () => (
       <FontAwesomeIcon icon={faUser} /> Profile
     </h2>
     <dl>
-      Innovative problem solver. Life long learner, who constantly on the look
-      out for new technology, to find new solutions to problems.
+      Innovative problem solver. Life long learner, who is constantly on the lookout for new technology, to find new solutions to problems.
     </dl>
   </div>
 )
