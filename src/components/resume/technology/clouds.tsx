@@ -4,10 +4,15 @@ const Clouds: React.FC = () => (
   <dl>
     <dt>Clouds</dt>
     <dd>
-      <ul>
-        <li>Amazon Web Services (AWS)</li>
-        <li>Google Cloud Platform (GCP)</li>
-        <li>Microsoft Azure</li>
+      <ul css={{
+        "li": {
+          marginLeft: "25px",
+          float: "left"
+        }
+      }}>
+        <li>AWS</li>
+        <li>GCP</li>
+        <li>Azure</li>
       </ul>
     </dd>
   </dl>
