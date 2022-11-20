@@ -5,18 +5,17 @@ const Frameworks: React.FC = () => (
     <dt>Frameworks/Libraries/Software</dt>
     <dd>
       <ul>
-        <li>Ansible</li>
         <li>Docker</li>
-        <li>Gatsby.js</li>
-        <li>Grails</li>
-        <li>Gradle</li>
-        <li>JavaEE</li>
-        <li>JUnit 5</li>
-        <li>Kafka</li>
         <li>Kubernetes</li>
-        <li>NextJS</li>
-        <li>Puppet</li>
         <li>React</li>
+        <li>NextJS</li>
+        <li>Gatsby.js</li>
+        <li>Kafka</li>
+        <li>Ansible</li>
+        <li>Puppet</li>
+        <li>Gradle</li>
+        <li>Grails</li>
+        <li>JavaEE</li>
         <li>Spring MVC 5</li>
         <li>Spring Data 5</li>
       </ul>
