@@ -6,7 +6,7 @@ const Clouds: React.FC = () => (
     <dd>
       <ul css={{
         "li": {
-          marginLeft: "25px",
+          marginLeft: "2rem",
           float: "left"
         }
       }}>
