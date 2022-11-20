@@ -5,7 +5,12 @@ const ProgramingLanguages: React.FC = () => (
     <dt>Programming Languages</dt>
     <dd>
       In order of experience/proficiency:
-      <ol>
+      <ul css={{
+        "li": {
+          marginLeft: "2rem",
+          float: "left"
+        }
+      }}>
         <li>TypeScript/JavaScript</li>
         <li>Java</li>
         <li>Groovy</li>
@@ -20,7 +25,7 @@ const ProgramingLanguages: React.FC = () => (
         <li>Ruby</li>
         <li>C/C++</li>
         <li>Scala</li>
-      </ol>
+      </ul>
     </dd>
   </dl>
 )
