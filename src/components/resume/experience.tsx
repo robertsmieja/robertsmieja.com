@@ -62,28 +62,28 @@ const Experience: React.FC = () => (
     >
       <ul>
         <li>
+          Upgraded internal Grails application for configuration management from
+          Grails 1.X to 2.X
+        </li>
+        <li>
           Worked an Automation/DevOps working on development and production
           infrastructure automation in Puppet.
         </li>
         <li>
-          Participate in company-wide and office-wide hackathons as Team Captain
+          Led teams in company-wide and office-wide hackathons as Team Captain
         </li>
         <li>
-          Designed and implemented AmazonPay integration as the first acquirer.
+          Designed and implemented AmazonPay integration.
           Served as a Senior Engineer leading a team of new and junior Software
           Engineers while integrating with AmazonPay.
         </li>
         <li>
-          Worked on Vantiv eCommerce iQ Chargeback Engine as part of Visa Claims
+          Implemented Vantiv eCommerce iQ Chargeback Engine as part of Visa Claims
           Resolution overhaul
         </li>
         <li>
-          Worked on converting large Java codebase of 1 million+ lines from Ant
-          to Gradle conversion
-        </li>
-        <li>
-          Upgraded internal Grails application for configuration management from
-          Grails 1.X to 2.X
+          Converted large Java codebase of 1 million+ lines from Ant
+          to Gradle to reduce build times by 15%
         </li>
       </ul>
     </ExperienceEntry>
