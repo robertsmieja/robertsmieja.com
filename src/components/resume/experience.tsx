@@ -15,7 +15,7 @@ const Experience: React.FC = () => (
       jobTitle="Principle Full Stack Engineer">
       <ul>
         <li>
-          Lead Full-Stack Chapter to improve code quality by promoting best practices and cross-team cooperation.
+          Led Full-Stack Chapter to improve code quality by promoting best practices and cross-team cooperation.
         </li>
         <li>
           Contributed to rules engine design to enable customers to categorize search intents
@@ -41,7 +41,7 @@ const Experience: React.FC = () => (
           Software-as-a-Service and Software Appliances use cases.
         </li>
         <li>
-          Worked on a brand new UI written in React/TypeScript for an internal
+          Implemented brand new UI written in React/TypeScript for an internal
           administrative UI for Hitachi Vantara products.
         </li>
         <li>
@@ -66,8 +66,8 @@ const Experience: React.FC = () => (
           Grails 1.X to 2.X
         </li>
         <li>
-          Worked an Automation/DevOps working on development and production
-          infrastructure automation in Puppet.
+          Implemented changes in development and production
+          infrastructure automation in Puppet as a Automation/DevOps engineer.
         </li>
         <li>
           Led teams in company-wide and office-wide hackathons as Team Captain with 1 victory
@@ -94,13 +94,13 @@ const Experience: React.FC = () => (
     >
       <ul>
         <li>
-          Worked on a large Java code base with a team of interns and co-ops
+          Implemented features in production in a large Java code base with a team of interns and co-ops
           using pair programming.
         </li>
-        <li>Add batch transaction processing to C# XML SDK</li>
-        <li>Work in Spring MVC to add improvements to iQ Reporting UI</li>
+        <li>Added batch transaction processing to C# XML SDK</li>
+        <li>Implemented improvements and features in customer facing UI, using Spring MVC</li>
         <li>
-          Add enhancements to internal configuration web application written in
+          Implemented enhancements to internal configuration web application written in
           Grails
         </li>
       </ul>
