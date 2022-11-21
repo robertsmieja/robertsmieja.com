@@ -36,7 +36,7 @@ const Experience: React.FC = () => (
     >
       <ul>
         <li>
-          Worked on rewrite of internal product development platform,
+          Drove design and implemented rewrite of internal product development platform,
           leveraging Kubernetes and open-source technologies to target both
           Software-as-a-Service and Software Appliances use cases.
         </li>
@@ -49,8 +49,8 @@ const Experience: React.FC = () => (
           Ansible.
         </li>
         <li>
-          Improved internal product development platform documentation website
-          by introducing Docusaurus
+          Improved accessibility and quality of internal product development platform documentation website
+          by introducing Docusaurus for other Hitachi developers.
         </li>
       </ul>
     </ExperienceEntry>
@@ -70,20 +70,18 @@ const Experience: React.FC = () => (
           infrastructure automation in Puppet.
         </li>
         <li>
-          Led teams in company-wide and office-wide hackathons as Team Captain
+          Led teams in company-wide and office-wide hackathons as Team Captain with 1 victory
         </li>
         <li>
-          Designed and implemented AmazonPay integration.
-          Served as a Senior Engineer leading a team of new and junior Software
-          Engineers while integrating with AmazonPay.
+          Led a team of 4 junior engineers in an integration with AmazonPay as its first external client; drove the design and mentored the team in the implementation.
         </li>
         <li>
-          Implemented Vantiv eCommerce iQ Chargeback Engine as part of Visa Claims
+          Implemented Operations UI Dispute engine as part of Visa Claims
           Resolution overhaul
         </li>
         <li>
           Converted large Java codebase of 1 million+ lines from Ant
-          to Gradle to reduce build times by 15%
+          to Gradle to reduce build times by ~15%
         </li>
       </ul>
     </ExperienceEntry>
