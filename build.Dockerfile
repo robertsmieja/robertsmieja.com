@@ -1,4 +1,4 @@
-FROM node:14-alpine AS build
+FROM node:20-alpine AS build
 # For mozjpeg
 RUN apk add --no-cache autoconf automake build-base libtool nasm pkgconf
 RUN npm install -g pnpm
