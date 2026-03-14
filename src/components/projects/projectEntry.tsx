@@ -14,7 +14,11 @@ const ProjectEntry: FunctionComponent<ProjectEntryProperties> = ({
   year,
 }: ProjectEntryProperties) => (
   <li>
-    {year} - <a href={`${link}`}>{title}</a> - {children}
+    {year} -{" "}
+    <a href={`${link}`} target="_blank" rel="noopener noreferrer">
+      {title}
+    </a>{" "}
+    - {children}
   </li>
 )
 

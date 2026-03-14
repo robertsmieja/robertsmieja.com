@@ -37,8 +37,15 @@ const ProjectsPage: React.FC = () => (
           JUnit 5 Extension back before JUnit 5 was released, utilizing new Java
           8 interface features and reflection to automatic test Getters and
           Setters, hashCode(), equals(), etc. I would recommend using a tool
-          such as <a href="https://projectlombok.org/">Lombok</a> to generate
-          &rdquo;data&ldquo; methods instead.
+          such as{" "}
+          <a
+            href="https://projectlombok.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lombok
+          </a>{" "}
+          to generate &rdquo;data&ldquo; methods instead.
         </ProjectEntry>
         <ProjectEntry
           year="2017"

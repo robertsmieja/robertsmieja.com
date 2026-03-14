@@ -28,12 +28,29 @@ const IndexPage: React.FC = () => (
       <p>Recently I have begun exploring the JavaScript/Node.js ecosystem.</p>
       <p>
         For example,{" "}
-        <a href="https://github.com/robertsmieja/robertsmieja.com">
+        <a
+          href="https://github.com/robertsmieja/robertsmieja.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faGithub} /> this site
         </a>{" "}
         is written using Gatsby.js, TypeScript, and React and running on{" "}
-        <a href="https://aws.amazon.com/cloudfront/">AWS CloudFront</a> and{" "}
-        <a href="https://aws.amazon.com/s3/">AWS S3</a>
+        <a
+          href="https://aws.amazon.com/cloudfront/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AWS CloudFront
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://aws.amazon.com/s3/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AWS S3
+        </a>
       </p>
       <p>
         I&apos;m interested in being a lifelong learner, and in applying
