@@ -1,0 +1,4 @@
+## 2024-05-18 - Missing Target and Rel Attributes on External Links
+**Vulnerability:** External links were missing the `target="_blank"` and `rel="noopener noreferrer"` attributes.
+**Learning:** Opening external links in the same tab is poor UX, and typically external links are opened in a new tab using `target="_blank"`. When using `target="_blank"`, it is a security vulnerability (Reverse Tabnabbing) to omit `rel="noopener noreferrer"`. The newly opened tab can gain access to the `window.opener` object and could potentially redirect the original page to a malicious site. Even if `target="_blank"` isn't currently used, adding it to external links along with the secure `rel` attribute is a good security enhancement and best practice.
+**Prevention:** Always add `target="_blank" rel="noopener noreferrer"` to external links.

@@ -84,12 +84,20 @@ const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
           `}
         >
           <li>
-            <a href="https://github.com/robertsmieja/">
+            <a
+              href="https://github.com/robertsmieja/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faGithub} /> GitHub
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/robertsmieja/">
+            <a
+              href="https://www.linkedin.com/in/robertsmieja/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </a>
           </li>

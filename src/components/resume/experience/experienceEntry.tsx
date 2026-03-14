@@ -17,7 +17,9 @@ const ExperienceEntry: React.FC<ExperienceEntryProperties> = ({
 }: ExperienceEntryProperties) => (
   <div id={`experience-${company.replace(" ", "_")}`}>
     <div>
-      <p>{company}, {location}, {dateRange}</p>
+      <p>
+        {company}, {location}, {dateRange}
+      </p>
     </div>
     <p>{jobTitle}</p>
     <div>{children}</div>
