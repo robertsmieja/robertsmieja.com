@@ -19,7 +19,8 @@ const OperatingSystems: React.FC = () => (
           <FontAwesomeIcon icon={faApple} /> Mac OS X
         </li>
         <li>
-          <FontAwesomeIcon icon={faRedhat} />/<FontAwesomeIcon icon={faUbuntu} /> Linux (RHEL/Ubuntu)
+          <FontAwesomeIcon icon={faRedhat} />/
+          <FontAwesomeIcon icon={faUbuntu} /> Linux (RHEL/Ubuntu)
         </li>
       </ul>
     </dd>
