@@ -58,6 +58,12 @@ const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
           a {
             color: black;
             text-decoration: none;
+
+            &:hover,
+            &:focus-visible {
+              text-decoration: underline;
+              text-underline-offset: 4px;
+            }
           }
         `}
       >
@@ -78,22 +84,30 @@ const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
         <li>
           <Link to="/resume/">Résumé</Link>
         </li>
-        <div
+        <li
           css={css`
             margin-left: auto;
           `}
         >
-          <li>
-            <a href="https://github.com/robertsmieja/">
-              <FontAwesomeIcon icon={faGithub} /> GitHub
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/robertsmieja/">
-              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-            </a>
-          </li>
-        </div>
+          <a
+            href="https://github.com/robertsmieja/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Robert Smieja's GitHub Profile"
+          >
+            <FontAwesomeIcon icon={faGithub} /> GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/robertsmieja/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Robert Smieja's LinkedIn Profile"
+          >
+            <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+          </a>
+        </li>
       </ul>
     </nav>
     {/* </Navbar> */}
