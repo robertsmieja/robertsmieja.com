@@ -37,7 +37,7 @@ const globalCss = css`
   }
 `
 
-type LayoutProperties = {
+interface LayoutProperties {
   children: React.ReactNode
 }
 
