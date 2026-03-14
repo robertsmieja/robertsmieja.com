@@ -4,9 +4,7 @@ import { css, Global, jsx } from "@emotion/react"
 import { config } from "@fortawesome/fontawesome-svg-core"
 // fix for font-awesome large icon on initial load - https://github.com/FortAwesome/react-fontawesome#nextjs
 import "@fortawesome/fontawesome-svg-core/styles.css" // Import the CSS
-import PropTypes, { InferProps } from "prop-types"
 import React from "react"
-import isBrowserAvailable from "../checkIfLoaded"
 import useSiteMetadata from "../lib/hooks/useSiteMetadata"
 import Footer from "./footer"
 import Header from "./header"
@@ -39,55 +37,53 @@ const globalCss = css`
   }
 `
 
-type LayoutProperties = InferProps<typeof propTypes>
+type LayoutProperties = {
+  children: React.ReactNode
+}
 
 const Layout: React.FC<LayoutProperties> = ({ children }) => {
   const { title, author } = useSiteMetadata()
 
+  // ⚡ Bolt: Removed client-side window check (`isBrowserAvailable`) that was blocking Gatsby SSG.
+  // By returning the layout natively, Gatsby can pre-render the entire HTML structure on the server.
+  // This drastically improves initial page load times and SEO performance since the browser
+  // doesn't have to wait for JavaScript to hydrate before showing content.
   return (
-    (isBrowserAvailable() && (
-      <div
-        css={css`
-          display: grid;
-          grid-template: auto 1fr auto / auto 1fr auto;
+    <div
+      css={css`
+        display: grid;
+        grid-template: auto 1fr auto / auto 1fr auto;
 
-          height: 100%;
+        height: 100%;
+      `}
+    >
+      <Global styles={globalCss} />
+      <Header siteTitle={title} />
+      <aside
+        id="left"
+        css={css`
+          padding: 2rem;
+          grid-column: 1 / 2;
+        `}
+      />
+      <main
+        css={css`
+          grid-column: 2 / 3;
+          margin: 0 auto;
         `}
       >
-        <Global styles={globalCss} />
-        <Header siteTitle={title} />
-        <aside
-          id="left"
-          css={css`
-            padding: 2rem;
-            grid-column: 1 / 2;
-          `}
-        />
-        <main
-          css={css`
-            grid-column: 2 / 3;
-            margin: 0 auto;
-          `}
-        >
-          {children}
-        </main>
-        <aside
-          id="right"
-          css={css`
-            padding: 2rem;
-            grid-column: 3 / 4;
-          `}
-        />
-        <Footer siteAuthor={author} />
-      </div>
-    )) || <React.Fragment />
+        {children}
+      </main>
+      <aside
+        id="right"
+        css={css`
+          padding: 2rem;
+          grid-column: 3 / 4;
+        `}
+      />
+      <Footer siteAuthor={author} />
+    </div>
   )
 }
-
-const propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-Layout.propTypes = propTypes
 
 export default Layout
