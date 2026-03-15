@@ -7,3 +7,7 @@
 **Vulnerability:** AWS credentials were being passed into the Docker build process using `ARG` and persisted in the image via `aws configure`. Build arguments are stored in the image history and metadata, and `aws configure` writes secrets to the filesystem in a layer.
 **Learning:** `ARG` is not suitable for secrets as they are baked into the image's config and history. Using `RUN aws configure` further persists secrets in the image's filesystem layers. Docker BuildKit's `--mount=type=secret` allows passing secrets during build time without them being stored in the final image or its history.
 **Prevention:** Never use `ARG` or environment variables for secrets in Dockerfiles. Use Docker BuildKit's secret mounts (`--mount=type=secret`) to securely handle sensitive information during the build process.
+## 2024-05-30 - Override Vulnerable Dependencies
+**Vulnerability:** Found 2 high severity vulnerabilities in transitive dependencies using `pnpm audit --prod`: `serialize-javascript` (RCE via RegExp.flags and Date.prototype.toISOString()) and `immutable` (Prototype Pollution).
+**Learning:** Legacy projects often accumulate vulnerable dependencies via old toolchains (like Gatsby 5's indirect dependencies on older webpack plugins/compilers) that aren't easily patchable via direct dependency upgrades.
+**Prevention:** Use package manager overrides (`pnpm.overrides` in `package.json`) to enforce safer versions of transitive dependencies without having to fork or refactor the top-level tools.
