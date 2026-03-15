@@ -10,7 +10,9 @@ interface HeaderProperties {
   siteTitle?: string
 }
 
-const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
+// Wrapped static layout component with React.memo() to prevent
+// unnecessary re-renders when the parent Layout/Page changes state.
+const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
   <header
     css={css`
       @media print {
@@ -111,14 +113,10 @@ const Header: React.FC<HeaderProperties> = ({ siteTitle }) => (
     </nav>
     {/* </Navbar> */}
   </header>
-)
+))
 
 // Header.propTypes = {
 //   siteTitle: PropTypes.string
 // }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
