@@ -101,7 +101,7 @@
     "preinstall": "npx only-allow pnpm",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://www.gatsbyjs.com/docs/unit-testing/\"",
+    "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
     "type-check": "tsc --noEmit"
   },
   "repository": {
