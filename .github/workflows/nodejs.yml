@@ -14,17 +14,20 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [22.x]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 10
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 7.15.0
+        cache: 'pnpm'
+    - run: pnpm config set ignore-scripts false
     - run: pnpm install
+    - run: npm rebuild sharp
     - run: pnpm run --if-present build 
 #     - run: npm test
