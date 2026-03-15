@@ -5,6 +5,7 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 // fix for font-awesome large icon on initial load - https://github.com/FortAwesome/react-fontawesome#nextjs
 import "@fortawesome/fontawesome-svg-core/styles.css" // Import the CSS
 import React from "react"
+import isBrowserAvailable from "../checkIfLoaded"
 import useSiteMetadata from "../lib/hooks/useSiteMetadata"
 import Footer from "./footer"
 import Header from "./header"
@@ -44,10 +45,10 @@ interface LayoutProperties {
 const Layout: React.FC<LayoutProperties> = ({ children }) => {
   const { title, author } = useSiteMetadata()
 
-  // ⚡ Bolt: Removed client-side window check (`isBrowserAvailable`) that was blocking Gatsby SSG.
-  // By returning the layout natively, Gatsby can pre-render the entire HTML structure on the server.
-  // This drastically improves initial page load times and SEO performance since the browser
-  // doesn't have to wait for JavaScript to hydrate before showing content.
+  if (!isBrowserAvailable()) {
+    return null
+  }
+
   return (
     <div
       css={css`
