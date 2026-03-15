@@ -6,27 +6,29 @@ interface FooterProperties {
   siteAuthor: string
 }
 
-const Footer: React.FC<FooterProperties> = ({
-  siteAuthor,
-}: FooterProperties) => (
-  <footer
-    css={css`
-      @media print {
-        display: none;
-      }
-
-      padding: 2rem;
-      grid-column: 1 / 4;
-    `}
-  >
-    <div
+// ⚡ Bolt: Wrapped static layout component with React.memo() to prevent
+// unnecessary re-renders when the parent Layout/Page changes state.
+const Footer = React.memo<FooterProperties>(
+  ({ siteAuthor }: FooterProperties) => (
+    <footer
       css={css`
-        text-align: center;
+        @media print {
+          display: none;
+        }
+
+        padding: 2rem;
+        grid-column: 1 / 4;
       `}
     >
-      © {new Date().getFullYear()}, {siteAuthor}
-    </div>
-  </footer>
+      <div
+        css={css`
+          text-align: center;
+        `}
+      >
+        © {new Date().getFullYear()}, {siteAuthor}
+      </div>
+    </footer>
+  )
 )
 
 export default Footer
