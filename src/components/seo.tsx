@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useMemo } from "react"
 import { Helmet } from "react-helmet"
 import PropTypes, { InferProps } from "prop-types"
 import useSiteMetadata from "../lib/hooks/useSiteMetadata"
@@ -33,16 +33,9 @@ const SEO: React.FC<SEOProperties> = (props) => {
   const description = props.description || siteMetadata.description
   const { lang, meta, keywords, title } = props
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang: lang ?? undefined,
-      }}
-      title={title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
-      // @ts-expect-error legacy code from pre-Gatsby 5.0 starter
-      // needs to be revisited
-      meta={(meta || [])
+  const metaTags = useMemo(
+    () =>
+      (meta || [])
         .concat([
           {
             name: `description`,
@@ -79,12 +72,27 @@ const SEO: React.FC<SEOProperties> = (props) => {
         ])
         .concat(
           (keywords?.length ?? 0) > 0
-            ? {
-                name: `keywords`,
-                content: keywords?.join(`, `),
-              }
+            ? [
+                {
+                  name: `keywords`,
+                  content: keywords?.join(`, `),
+                },
+              ]
             : []
-        )}
+        ),
+    [description, keywords, meta, siteMetadata.author, title]
+  )
+
+  return (
+    <Helmet
+      htmlAttributes={{
+        lang: lang ?? undefined,
+      }}
+      title={title}
+      titleTemplate={`%s | ${siteMetadata.title}`}
+      // @ts-expect-error legacy code from pre-Gatsby 5.0 starter
+      // needs to be revisited
+      meta={metaTags}
     />
   )
 }
