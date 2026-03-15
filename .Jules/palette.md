@@ -1,3 +1,7 @@
 ## 2023-10-27 - Header Navigation Accessibility & Semantic Fixes
 **Learning:** This app's header previously used a `div` as a direct child of a `ul` to group right-aligned navigation links. This is invalid semantic HTML and breaks screen reader list counting. Furthermore, icon-only buttons like the GitHub and LinkedIn links lacked `aria-label`s, rendering them completely inaccessible to screen readers.
 **Action:** Always ensure `ul`/`ol` elements only contain `li` elements. When using flexbox to align items, apply layout utilities (like `margin-left: auto`) directly to the `li` wrapper instead of introducing non-semantic grouping divs. Always provide descriptive `aria-label`s for icon-only links.
+
+## 2026-03-15 - Skip Link Implementation Details
+**Learning:** When adding a "Skip to main content" link to the Gatsby `<Layout>`, targeting `<main>` with an `id` is insufficient for proper focus management if the user clicks the link. The `<main>` element must also receive `tabIndex={-1}` so it can programmatically accept focus without being in the regular tab order. Furthermore, applying `outline: none` to the `<main>` element is critical, otherwise clicking the skip link applies an unsightly default browser focus ring around the entire page content.
+**Action:** Always pair skip link anchor targets with `tabIndex={-1}` and `outline: none` (or equivalent utility classes) to ensure correct keyboard routing without degrading visual UX.

@@ -54,6 +54,30 @@ const Layout: React.FC<LayoutProperties> = ({ children }) => {
       `}
     >
       <Global styles={globalCss} />
+      <a
+        href="#main-content"
+        css={css`
+          position: absolute;
+          left: -10000px;
+          top: auto;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+
+          &:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 1rem;
+            background: #fff;
+            color: #000;
+            z-index: 1000;
+            text-decoration: underline;
+          }
+        `}
+      >
+        Skip to main content
+      </a>
       <Header siteTitle={title} />
       <aside
         id="left"
@@ -63,9 +87,12 @@ const Layout: React.FC<LayoutProperties> = ({ children }) => {
         `}
       />
       <main
+        id="main-content"
+        tabIndex={-1}
         css={css`
           grid-column: 2 / 3;
           margin: 0 auto;
+          outline: none; /* Hide focus ring when skip link targets main */
         `}
       >
         {children}
