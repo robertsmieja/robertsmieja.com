@@ -6,6 +6,7 @@ RUN npm install -g pnpm@10
 WORKDIR /home/node
 
 COPY . .
+RUN pnpm config set ignore-scripts false
 RUN pnpm install
 RUN pnpm run build
 
