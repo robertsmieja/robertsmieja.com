@@ -8,6 +8,7 @@ WORKDIR /home/node
 COPY . .
 RUN pnpm config set ignore-scripts false
 RUN pnpm install
+RUN npm rebuild sharp
 RUN pnpm run build
 
 FROM amazon/aws-cli:latest AS publish
