@@ -3,17 +3,18 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 10
+      nodejs: 22
     commands:
-      - npm install
+      - npm install -g pnpm@10
+      - pnpm install
       - curl -s -o mime.types "https://svn.apache.org/viewvc/httpd/httpd/trunk/docs/conf/mime.types?view=co"
       - mv mime.types /etc/
   build:
     commands:
-      - npm run build
-      #- npm run test:coverage
+      - pnpm run build
+      #- pnpm run test:coverage
     finally:
-      - npm prune
+      - pnpm prune
   post_build:
     commands:
       - aws s3 sync --delete public "s3://www.robertsmieja.com/"
