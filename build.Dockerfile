@@ -14,16 +14,14 @@ RUN pnpm run build
 FROM amazon/aws-cli:latest AS publish
 WORKDIR /usr/src
 
-ARG awsAccessKeyId
-ARG awsSecretAccessKey
-
-RUN aws configure set aws_access_key_id ${awsAccessKeyId} && \
-    aws configure set aws_secret_access_key ${awsSecretAccessKey}
-
 COPY --from=build /home/node/public/ .
 
 ARG targetS3Bucket
-RUN aws s3 sync . s3://${targetS3Bucket}/ --acl public-read
+RUN --mount=type=secret,id=AWS_ACCESS_KEY_ID \
+    --mount=type=secret,id=AWS_SECRET_ACCESS_KEY \
+    export AWS_ACCESS_KEY_ID=$(cat /run/secrets/AWS_ACCESS_KEY_ID) && \
+    export AWS_SECRET_ACCESS_KEY=$(cat /run/secrets/AWS_SECRET_ACCESS_KEY) && \
+    aws s3 sync . s3://${targetS3Bucket}/ --acl public-read
 
 # Noop, we never want to save this container
 CMD ["/bin/sh"]
