@@ -12,7 +12,7 @@ const Experience: React.FC = () => (
       company="Quattr"
       location="Remote - Palo Alto, CA"
       dateRange="August 2021 - Present"
-      jobTitle="Principle Full Stack Engineer"
+      jobTitle="Principal Full-Stack Engineer"
     >
       <ul>
         <li>
