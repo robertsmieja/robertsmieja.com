@@ -6,7 +6,7 @@ interface FooterProperties {
   siteAuthor: string
 }
 
-// ⚡ Bolt: Wrapped static layout component with React.memo() to prevent
+// Wrapped static layout component with React.memo() to prevent
 // unnecessary re-renders when the parent Layout/Page changes state.
 const Footer = React.memo<FooterProperties>(
   ({ siteAuthor }: FooterProperties) => (
