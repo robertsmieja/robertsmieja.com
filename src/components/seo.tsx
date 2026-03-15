@@ -26,12 +26,16 @@ const propTypes = {
 
 type SEOProperties = NonNullable<InferProps<typeof propTypes>>
 
-const SEO: React.FC<SEOProperties> = (props) => {
+const SEO: React.FC<SEOProperties> = ({
+  description: propsDescription,
+  lang,
+  meta,
+  keywords,
+  title,
+}) => {
   const siteMetadata = useSiteMetadata()
 
-  // eslint-disable-next-line react/destructuring-assignment
-  const description = props.description || siteMetadata.description
-  const { lang, meta, keywords, title } = props
+  const description = propsDescription || siteMetadata.description
 
   return (
     <Helmet
