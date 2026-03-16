@@ -13,14 +13,34 @@ const OperatingSystems: React.FC = () => (
     <dd>
       <ul>
         <li>
-          <FontAwesomeIcon icon={faWindows} /> Windows
+          <FontAwesomeIcon
+            icon={
+              faWindows as unknown as import("@fortawesome/fontawesome-svg-core").IconProp
+            }
+          />{" "}
+          Windows
         </li>
         <li>
-          <FontAwesomeIcon icon={faApple} /> Mac OS X
+          <FontAwesomeIcon
+            icon={
+              faApple as unknown as import("@fortawesome/fontawesome-svg-core").IconProp
+            }
+          />{" "}
+          Mac OS X
         </li>
         <li>
-          <FontAwesomeIcon icon={faRedhat} />/
-          <FontAwesomeIcon icon={faUbuntu} /> Linux (RHEL/Ubuntu)
+          <FontAwesomeIcon
+            icon={
+              faRedhat as unknown as import("@fortawesome/fontawesome-svg-core").IconProp
+            }
+          />
+          /
+          <FontAwesomeIcon
+            icon={
+              faUbuntu as unknown as import("@fortawesome/fontawesome-svg-core").IconProp
+            }
+          />{" "}
+          Linux (RHEL/Ubuntu)
         </li>
       </ul>
     </dd>
