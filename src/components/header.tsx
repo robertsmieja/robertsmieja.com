@@ -61,9 +61,14 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
             text-decoration: none;
 
             &:hover,
-            &:focus-visible {
+            &:focus-visible,
+            &.active {
               text-decoration: underline;
               text-underline-offset: 4px;
+            }
+
+            &.active {
+              font-weight: bold;
             }
           }
         `}
@@ -74,16 +79,24 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
           </Link>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" activeClassName="active">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/presentations/">Presentations</Link>
+          <Link to="/presentations/" activeClassName="active">
+            Presentations
+          </Link>
         </li>
         <li>
-          <Link to="/projects/">Projects</Link>
+          <Link to="/projects/" activeClassName="active">
+            Projects
+          </Link>
         </li>
         <li>
-          <Link to="/resume/">Résumé</Link>
+          <Link to="/resume/" activeClassName="active">
+            Résumé
+          </Link>
         </li>
         <li
           css={css`
