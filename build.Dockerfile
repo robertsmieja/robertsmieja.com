@@ -17,10 +17,8 @@ WORKDIR /usr/src
 COPY --from=build /home/node/public/ .
 
 ARG targetS3Bucket
-RUN --mount=type=secret,id=AWS_ACCESS_KEY_ID \
-    --mount=type=secret,id=AWS_SECRET_ACCESS_KEY \
-    export AWS_ACCESS_KEY_ID=$(cat /run/secrets/AWS_ACCESS_KEY_ID) && \
-    export AWS_SECRET_ACCESS_KEY=$(cat /run/secrets/AWS_SECRET_ACCESS_KEY) && \
+RUN --mount=type=secret,id=AWS_ACCESS_KEY_ID,env=AWS_ACCESS_KEY_ID \
+    --mount=type=secret,id=AWS_SECRET_ACCESS_KEY,env=AWS_SECRET_ACCESS_KEY \
     aws s3 sync . s3://${targetS3Bucket}/ --acl public-read
 
 # Noop, we never want to save this container
