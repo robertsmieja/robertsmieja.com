@@ -139,7 +139,8 @@
       "micromatch": ">=4.0.8",
       "cookie": ">=0.7.0",
       "tmp": ">=0.2.4",
-      "webpack": ">=5.104.1"
+      "webpack": ">=5.104.1",
+      "socket.io-parser": ">=4.2.6"
     }
   }
 }
