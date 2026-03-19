@@ -67,6 +67,11 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
               text-underline-offset: 4px;
             }
 
+            &:focus-visible {
+              outline: 2px solid black;
+              outline-offset: 2px;
+            }
+
             &.active {
               font-weight: bold;
             }

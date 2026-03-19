@@ -35,6 +35,12 @@ const globalCss = css`
   * {
     box-sizing: border-box;
   }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
 `
 
 interface LayoutProperties {
