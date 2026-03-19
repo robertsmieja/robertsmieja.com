@@ -11,3 +11,7 @@
 **Vulnerability:** Found 2 high severity vulnerabilities in transitive dependencies using `pnpm audit --prod`: `serialize-javascript` (RCE via RegExp.flags and Date.prototype.toISOString()) and `immutable` (Prototype Pollution).
 **Learning:** Legacy projects often accumulate vulnerable dependencies via old toolchains (like Gatsby 5's indirect dependencies on older webpack plugins/compilers) that aren't easily patchable via direct dependency upgrades.
 **Prevention:** Use package manager overrides (`pnpm.overrides` in `package.json`) to enforce safer versions of transitive dependencies without having to fork or refactor the top-level tools.
+## 2024-05-24 - [socket.io-parser vulnerable version override]
+**Vulnerability:** A "high" severity vulnerability in `socket.io-parser` (<4.2.6) which allowed an unbounded number of binary attachments. This dependency was brought in as a transitive dependency through `gatsby`.
+**Learning:** `gatsby` and related packages may bring in older transitive dependencies with known CVEs. Using `pnpm.overrides` provides a simple way to force resolution to a patched version across the monorepo without needing to fork or upgrade the top-level parent packages if they are slow to update.
+**Prevention:** Regularly run `pnpm audit` and utilize `pnpm.overrides` for transitive dependency vulnerabilities that cannot be resolved through direct updates, taking care to choose compatible semver bumps (usually patches or minor updates).
