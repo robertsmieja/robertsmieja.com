@@ -57,11 +57,13 @@ const IndexPage: React.FC = () => (
         technology to solve problems:
       </p>
       <ul>
-        <li>What does this new programming languages/framework offer?</li>
-        <ul>
-          <li>How can it help us solve new problems?</li>
-          <li>How can it help us solve old problems in new ways?</li>
-        </ul>
+        <li>
+          What does this new programming languages/framework offer?
+          <ul>
+            <li>How can it help us solve new problems?</li>
+            <li>How can it help us solve old problems in new ways?</li>
+          </ul>
+        </li>
         <li>
           How can automation help developers focus on the problem at hand?
         </li>
