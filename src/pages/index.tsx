@@ -7,17 +7,17 @@ import { css, jsx } from "@emotion/react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+const indexPageCss = css`
+  li,
+  p {
+    text-align: left;
+  }
+`
+
 const IndexPage: React.FC = () => (
   <Layout>
     <SEO title="Home" keywords={[`robertsmieja`, `robert`, `smieja`]} />
-    <div
-      css={css`
-        li,
-        p {
-          text-align: left;
-        }
-      `}
-    >
+    <div css={indexPageCss}>
       <h1>Robert Smieja</h1>
       <h4>Polyglot Full-stack Software/DevOps Engineer</h4>
 

@@ -9,6 +9,25 @@ import Profile from "../components/resume/profile"
 import Technology from "../components/resume/technology"
 import SEO from "../components/seo"
 
+const headerCss = css`
+  text-align: center;
+`
+
+const gridCss = css`
+  display: grid;
+  align-content: start;
+  flex-direction: column;
+
+  @media (min-width: 800px) {
+    flex-wrap: wrap;
+  }
+
+  height: 100%;
+  width: 100%;
+
+  text-align: left;
+`
+
 const ResumePage: React.FC = () => (
   <Layout>
     <SEO
@@ -34,30 +53,11 @@ const ResumePage: React.FC = () => (
         `institute`,
       ]}
     />
-    <div
-      css={css`
-        text-align: center;
-      `}
-    >
+    <div css={headerCss}>
       <h1>Robert Smieja</h1>
       <h4>Polyglot Full-stack Software Engineer</h4>
     </div>
-    <div
-      css={css`
-        display: grid;
-        align-content: start;
-        flex-direction: column;
-
-        @media (min-width: 800px) {
-          flex-wrap: wrap;
-        }
-
-        height: 100%;
-        width: 100%;
-
-        text-align: left;
-      `}
-    >
+    <div css={gridCss}>
       <Technology />
       <DevOps />
       <Experience />

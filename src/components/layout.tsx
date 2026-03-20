@@ -37,6 +37,28 @@ const globalCss = css`
   }
 `
 
+const layoutCss = css`
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+
+  height: 100%;
+`
+
+const asideLeftCss = css`
+  padding: 2rem;
+  grid-column: 1 / 2;
+`
+
+const mainCss = css`
+  grid-column: 2 / 3;
+  margin: 0 auto;
+`
+
+const asideRightCss = css`
+  padding: 2rem;
+  grid-column: 3 / 4;
+`
+
 interface LayoutProperties {
   children: React.ReactNode
 }
@@ -45,38 +67,12 @@ const Layout: React.FC<LayoutProperties> = ({ children }) => {
   const { title, author } = useSiteMetadata()
 
   return (
-    <div
-      css={css`
-        display: grid;
-        grid-template: auto 1fr auto / auto 1fr auto;
-
-        height: 100%;
-      `}
-    >
+    <div css={layoutCss}>
       <Global styles={globalCss} />
       <Header siteTitle={title} />
-      <aside
-        id="left"
-        css={css`
-          padding: 2rem;
-          grid-column: 1 / 2;
-        `}
-      />
-      <main
-        css={css`
-          grid-column: 2 / 3;
-          margin: 0 auto;
-        `}
-      >
-        {children}
-      </main>
-      <aside
-        id="right"
-        css={css`
-          padding: 2rem;
-          grid-column: 3 / 4;
-        `}
-      />
+      <aside id="left" css={asideLeftCss} />
+      <main css={mainCss}>{children}</main>
+      <aside id="right" css={asideRightCss} />
       <Footer siteAuthor={author} />
     </div>
   )
