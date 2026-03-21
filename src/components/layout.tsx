@@ -47,42 +47,39 @@ interface LayoutProperties {
   children: React.ReactNode
 }
 
+// Emotion CSS extracted outside of the component to prevent unnecessary re-serialization on every render
+const layoutCss = css`
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+
+  height: 100%;
+`
+
+const leftAsideCss = css`
+  padding: 2rem;
+  grid-column: 1 / 2;
+`
+
+const mainCss = css`
+  grid-column: 2 / 3;
+  margin: 0 auto;
+`
+
+const rightAsideCss = css`
+  padding: 2rem;
+  grid-column: 3 / 4;
+`
+
 const Layout: React.FC<LayoutProperties> = ({ children }) => {
   const { title, author } = useSiteMetadata()
 
   return (
-    <div
-      css={css`
-        display: grid;
-        grid-template: auto 1fr auto / auto 1fr auto;
-
-        height: 100%;
-      `}
-    >
+    <div css={layoutCss}>
       <Global styles={globalCss} />
       <Header siteTitle={title} />
-      <aside
-        id="left"
-        css={css`
-          padding: 2rem;
-          grid-column: 1 / 2;
-        `}
-      />
-      <main
-        css={css`
-          grid-column: 2 / 3;
-          margin: 0 auto;
-        `}
-      >
-        {children}
-      </main>
-      <aside
-        id="right"
-        css={css`
-          padding: 2rem;
-          grid-column: 3 / 4;
-        `}
-      />
+      <aside id="left" css={leftAsideCss} />
+      <main css={mainCss}>{children}</main>
+      <aside id="right" css={rightAsideCss} />
       <Footer siteAuthor={author} />
     </div>
   )
