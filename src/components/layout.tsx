@@ -35,8 +35,15 @@ const globalCss = css`
   * {
     box-sizing: border-box;
   }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
 `
 
+// Emotion CSS extracted outside of the component to prevent unnecessary re-serialization on every render
 const layoutCss = css`
   display: grid;
   grid-template: auto 1fr auto / auto 1fr auto;
