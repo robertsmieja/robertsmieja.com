@@ -9,3 +9,9 @@
 **Learning:** Large objects or arrays created inside the render body of a React component can lead to unnecessary allocations and GC pressure. They also cause child components (like `react-helmet`) to re-render if they receive a new array reference on every parent render, even if the content hasn't changed.
 
 **Action:** Wrap the `meta` tags array creation in `useMemo` with proper dependencies (`meta`, `description`, `title`, `siteMetadata.author`, and `keywords`) to ensure the array reference is stable between renders unless the underlying data changes.
+
+## 2026-03-21 - Extracted Inline Emotion CSS Template Literals
+
+**Learning:** Emotion (CSS-in-JS) re-serializes and re-evaluates `css` tagged template literals on every render if they are defined inline within a component. This adds unnecessary CPU overhead, especially in frequently rendered or complex components.
+
+**Action:** Extracted inline `css` template literals into constants outside of the `Footer` component definition. This ensures the styles are only parsed and serialized once at module load time, reducing the work performed during each React render cycle.
