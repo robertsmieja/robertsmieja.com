@@ -78,6 +78,11 @@ const SEO: React.FC<SEOProperties> = ({
         httpEquiv: `Content-Security-Policy`,
         content: `upgrade-insecure-requests`,
       },
+      // Security enhancement: Send full URL for same-origin requests, but only the origin for cross-origin requests
+      {
+        name: `referrer`,
+        content: `strict-origin-when-cross-origin`,
+      },
       ...((keywords?.length ?? 0) > 0
         ? [
             {

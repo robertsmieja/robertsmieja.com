@@ -15,3 +15,8 @@
 **Vulnerability:** A "high" severity vulnerability in `socket.io-parser` (<4.2.6) which allowed an unbounded number of binary attachments. This dependency was brought in as a transitive dependency through `gatsby`.
 **Learning:** `gatsby` and related packages may bring in older transitive dependencies with known CVEs. Using `pnpm.overrides` provides a simple way to force resolution to a patched version across the monorepo without needing to fork or upgrade the top-level parent packages if they are slow to update.
 **Prevention:** Regularly run `pnpm audit` and utilize `pnpm.overrides` for transitive dependency vulnerabilities that cannot be resolved through direct updates, taking care to choose compatible semver bumps (usually patches or minor updates).
+
+## 2025-02-17 - Correct Meta Tags for Security Headers
+**Vulnerability:** Attempted to use `<meta http-equiv="...">` for security headers like `X-Content-Type-Options` and `X-XSS-Protection`.
+**Learning:** Modern web browsers do not support setting `X-Content-Type-Options` or `X-XSS-Protection` via `<meta>` tags; these must be delivered as standard HTTP response headers to have any effect. Setting them via `<meta>` tags is non-functional security theater. Furthermore, the correct syntax for a referrer policy via a meta tag is `<meta name="referrer" content="...">`, rather than using `http-equiv="Referrer-Policy"`.
+**Prevention:** Only use `<meta>` tags for security policies that explicitly support them (like `Content-Security-Policy` and `referrer`). For other security headers, ensure they are configured at the server/hosting level.
