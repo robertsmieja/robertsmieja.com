@@ -5,7 +5,7 @@ import React from "react"
 const DevOps: React.FC = () => (
   <div id="devops">
     <h2>
-      <FontAwesomeIcon icon={faCogs} /> DevOps
+      <FontAwesomeIcon icon={faCogs} aria-hidden="true" /> DevOps
     </h2>
     <dl>
       <ul>

@@ -13,14 +13,15 @@ const OperatingSystems: React.FC = () => (
     <dd>
       <ul>
         <li>
-          <FontAwesomeIcon icon={faWindows} /> Windows
+          <FontAwesomeIcon icon={faWindows} aria-hidden="true" /> Windows
         </li>
         <li>
-          <FontAwesomeIcon icon={faApple} /> Mac OS X
+          <FontAwesomeIcon icon={faApple} aria-hidden="true" /> Mac OS X
         </li>
         <li>
-          <FontAwesomeIcon icon={faRedhat} />/
-          <FontAwesomeIcon icon={faUbuntu} /> Linux (RHEL/Ubuntu)
+          <FontAwesomeIcon icon={faRedhat} aria-hidden="true" />/
+          <FontAwesomeIcon icon={faUbuntu} aria-hidden="true" /> Linux
+          (RHEL/Ubuntu)
         </li>
       </ul>
     </dd>

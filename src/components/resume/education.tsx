@@ -6,7 +6,7 @@ import College from "./education/college"
 const Education: React.FC = () => (
   <div id="education">
     <h2>
-      <FontAwesomeIcon icon={faUniversity} /> Education
+      <FontAwesomeIcon icon={faUniversity} aria-hidden="true" /> Education
     </h2>
     <dl>
       <College />

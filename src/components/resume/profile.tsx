@@ -5,7 +5,7 @@ import React from "react"
 const Profile: React.FC = () => (
   <div id="profile">
     <h2>
-      <FontAwesomeIcon icon={faUser} /> Profile
+      <FontAwesomeIcon icon={faUser} aria-hidden="true" /> Profile
     </h2>
     <dl>
       Innovative problem solver. Life long learner, who is constantly on the

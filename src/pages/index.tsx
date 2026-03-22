@@ -34,7 +34,7 @@ const IndexPage: React.FC = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={faGithub} /> this site
+          <FontAwesomeIcon icon={faGithub} aria-hidden="true" /> this site
         </a>{" "}
         is written using Gatsby.js, TypeScript, and React and running on{" "}
         <a

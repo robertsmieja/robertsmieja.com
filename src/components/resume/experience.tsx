@@ -6,7 +6,7 @@ import ExperienceEntry from "./experience/experienceEntry"
 const Experience: React.FC = () => (
   <div id="experience">
     <h2>
-      <FontAwesomeIcon icon={faBriefcase} /> Experience
+      <FontAwesomeIcon icon={faBriefcase} aria-hidden="true" /> Experience
     </h2>
     <ExperienceEntry
       company="Quattr"
