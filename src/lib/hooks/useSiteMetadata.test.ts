@@ -6,8 +6,8 @@ import gatsby from "gatsby"
 // eslint-disable-next-line import/extensions
 import useSiteMetadata from "./useSiteMetadata.ts"
 
-// eslint-disable-next-line no-void
-void test("useSiteMetadata hook", async (t) => {
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+test("useSiteMetadata hook", async (t) => {
   await t.test(
     "it returns the correct site metadata from useStaticQuery",
     () => {
