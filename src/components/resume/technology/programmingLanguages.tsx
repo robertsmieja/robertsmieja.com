@@ -1,18 +1,19 @@
 import React from "react"
 
+// Extract inline Emotion CSS to prevent re-serialization on every render
+const listStyles = {
+  li: {
+    marginLeft: "2rem",
+    float: "left" as const,
+  },
+}
+
 const ProgramingLanguages: React.FC = () => (
   <dl>
     <dt>Programming Languages</dt>
     <dd>
       In order of experience/proficiency:
-      <ul
-        css={{
-          li: {
-            marginLeft: "2rem",
-            float: "left",
-          },
-        }}
-      >
+      <ul css={listStyles}>
         <li>TypeScript/JavaScript</li>
         <li>Java</li>
         <li>Groovy</li>

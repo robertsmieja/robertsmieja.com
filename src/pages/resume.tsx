@@ -9,6 +9,26 @@ import Profile from "../components/resume/profile"
 import Technology from "../components/resume/technology"
 import SEO from "../components/seo"
 
+// Extract inline Emotion CSS to prevent re-serialization on every render
+const headerContainerStyles = css`
+  text-align: center;
+`
+
+const gridContainerStyles = css`
+  display: grid;
+  align-content: start;
+  flex-direction: column;
+
+  @media (min-width: 800px) {
+    flex-wrap: wrap;
+  }
+
+  height: 100%;
+  width: 100%;
+
+  text-align: left;
+`
+
 const ResumePage: React.FC = () => (
   <Layout>
     <SEO
@@ -34,30 +54,11 @@ const ResumePage: React.FC = () => (
         `institute`,
       ]}
     />
-    <div
-      css={css`
-        text-align: center;
-      `}
-    >
+    <div css={headerContainerStyles}>
       <h1>Robert Smieja</h1>
       <h4>Polyglot Full-stack Software Engineer</h4>
     </div>
-    <div
-      css={css`
-        display: grid;
-        align-content: start;
-        flex-direction: column;
-
-        @media (min-width: 800px) {
-          flex-wrap: wrap;
-        }
-
-        height: 100%;
-        width: 100%;
-
-        text-align: left;
-      `}
-    >
+    <div css={gridContainerStyles}>
       <Technology />
       <DevOps />
       <Experience />
