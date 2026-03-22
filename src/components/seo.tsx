@@ -74,6 +74,10 @@ const SEO: React.FC<SEOProperties> = ({
         name: `twitter:description`,
         content: description,
       },
+      {
+        httpEquiv: `Content-Security-Policy`,
+        content: `upgrade-insecure-requests`,
+      },
       ...((keywords?.length ?? 0) > 0
         ? [
             {
