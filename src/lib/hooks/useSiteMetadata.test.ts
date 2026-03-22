@@ -1,8 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert"
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { ___setMockData } from "gatsby"
+import gatsby from "gatsby"
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // eslint-disable-next-line import/extensions
@@ -19,13 +17,11 @@ test("useSiteMetadata hook", async (t) => {
         title: "Test Title",
       }
 
-      // Set the mock data directly using our internal helper
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      ___setMockData({
+      t.mock.method(gatsby, "useStaticQuery", () => ({
         site: {
           siteMetadata: mockMetadata,
         },
-      })
+      }))
 
       const result = useSiteMetadata()
 

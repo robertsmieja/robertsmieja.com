@@ -41,6 +41,11 @@ const globalCss = css`
     outline: 2px solid #000;
     outline-offset: 2px;
   }
+
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 `
 
 interface LayoutProperties {
