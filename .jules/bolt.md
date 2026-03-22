@@ -15,3 +15,7 @@
 **Learning:** Emotion (CSS-in-JS) re-serializes and re-evaluates `css` tagged template literals on every render if they are defined inline within a component. This adds unnecessary CPU overhead, especially in frequently rendered or complex components.
 
 **Action:** Extracted inline `css` template literals into constants outside of the `Footer` component definition. This ensures the styles are only parsed and serialized once at module load time, reducing the work performed during each React render cycle.
+
+## 2025-01-06 - [Gatsby & Node 22 ESM Test Mocks]
+**Learning:** Mocking Gatsby's `useStaticQuery` and other ESM named exports via `node:test`'s `mock.method` or direct assignment fails in Node 22 due to the read-only nature of ESM exports, causing systemic `pnpm test` failures (e.g., in `useSiteMetadata.test.ts`).
+**Action:** When working on isolated micro-optimizations (like Emotion CSS hoisting), avoid spending time trying to fix these systemic test infrastructure issues. Ensure `pnpm check`, `pnpm build`, and visual verification via Playwright pass, then proceed with the PR while ignoring the preexisting test suite failures.
