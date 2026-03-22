@@ -5,7 +5,7 @@ import React from "react"
 const Objective: React.FC = () => (
   <div id="objective">
     <h2>
-      <FontAwesomeIcon icon={faBullseye} /> Objective
+      <FontAwesomeIcon icon={faBullseye} aria-hidden="true" /> Objective
     </h2>
     <dl>
       To apply technology to solve business problems and deliver products, as

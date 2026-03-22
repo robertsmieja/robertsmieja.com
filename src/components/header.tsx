@@ -114,7 +114,7 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
             rel="noopener noreferrer"
             aria-label="Robert Smieja's GitHub Profile"
           >
-            <FontAwesomeIcon icon={faGithub} /> GitHub
+            <FontAwesomeIcon icon={faGithub} aria-hidden="true" /> GitHub
           </a>
         </li>
         <li>
@@ -124,7 +124,7 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
             rel="noopener noreferrer"
             aria-label="Robert Smieja's LinkedIn Profile"
           >
-            <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+            <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" /> LinkedIn
           </a>
         </li>
       </ul>

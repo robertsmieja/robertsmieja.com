@@ -10,7 +10,7 @@ import ProgramingLanguages from "./technology/programmingLanguages"
 const Technology: React.FC = () => (
   <div id="technology">
     <h2>
-      <FontAwesomeIcon icon={faCode} /> Technologies
+      <FontAwesomeIcon icon={faCode} aria-hidden="true" /> Technologies
     </h2>
     <ProgramingLanguages />
     <Clouds />
