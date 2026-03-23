@@ -8,6 +8,8 @@ interface ExternalLinkProperties {
   children: ReactNode
 }
 
+const iconStyle = { marginLeft: "0.25rem", opacity: 0.7 }
+
 const ExternalLink: React.FC<ExternalLinkProperties> = ({
   href,
   ariaLabel,
@@ -24,7 +26,7 @@ const ExternalLink: React.FC<ExternalLinkProperties> = ({
       icon={faExternalLinkAlt}
       size="sm"
       aria-hidden="true"
-      style={{ marginLeft: "0.25rem", opacity: 0.7 }}
+      style={iconStyle}
     />
   </a>
 )
