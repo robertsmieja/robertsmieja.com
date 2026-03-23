@@ -1,6 +1,5 @@
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { FunctionComponent, ReactNode } from "react"
+import ExternalLink from "../externalLink"
 
 interface ProjectEntryProperties {
   year: string
@@ -17,20 +16,12 @@ const ProjectEntry: FunctionComponent<ProjectEntryProperties> = ({
 }: ProjectEntryProperties) => (
   <li>
     {year} -{" "}
-    <a
+    <ExternalLink
       href={`${link}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`External link to ${title}`}
+      ariaLabel={`External link to ${title} (opens in a new tab)`}
     >
-      {title}{" "}
-      <FontAwesomeIcon
-        icon={faExternalLinkAlt}
-        size="sm"
-        aria-hidden="true"
-        style={{ marginLeft: "0.25rem", opacity: 0.7 }}
-      />
-    </a>{" "}
+      {title}
+    </ExternalLink>{" "}
     - {children}
   </li>
 )

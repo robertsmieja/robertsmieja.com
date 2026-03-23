@@ -5,3 +5,7 @@
 ## 2024-03-22 - Hide decorative FontAwesome icons from screen readers
 **Learning:** FontAwesome icons that are used decoratively next to text (like a briefcase next to "Experience") or inside links that already have an `aria-label` should be explicitly hidden from screen readers using `aria-hidden="true"`. This prevents redundant or confusing announcements.
 **Action:** Always add `aria-hidden="true"` to `<FontAwesomeIcon>` components unless they are the sole content of an interactive element that lacks an accessible name.
+
+## 2024-05-18 - Standardize External Links with Reusable Component
+**Learning:** This app previously contained multiple plain `<a>` tags with `target="_blank"` scattered across pages (e.g., `index.tsx`, `projectEntry.tsx`). These links lacked visual indicators showing they open in new tabs, and many lacked descriptive `aria-label`s, which is bad for accessibility (screen readers need to warn users about context changes).
+**Action:** Created a reusable `<ExternalLink>` component that standardizes external links. It forces `target="_blank"` and `rel="noopener noreferrer"`, visually appends a decorative FontAwesome external link icon (`faExternalLinkAlt` with `aria-hidden="true"`), and requires an `ariaLabel` prop (e.g., "GitHub (opens in a new tab)"). Always use this component for external links to ensure consistent UX and accessibility.
