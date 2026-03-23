@@ -9,6 +9,10 @@ interface ProjectEntryProperties {
   children: ReactNode
 }
 
+// Performance Optimization: Extract inline style object outside the component
+// to prevent unnecessary object allocations and re-renders when the component renders.
+const iconStyles = { marginLeft: "0.25rem", opacity: 0.7 }
+
 const ProjectEntry: FunctionComponent<ProjectEntryProperties> = ({
   children,
   link,
@@ -28,7 +32,7 @@ const ProjectEntry: FunctionComponent<ProjectEntryProperties> = ({
         icon={faExternalLinkAlt}
         size="sm"
         aria-hidden="true"
-        style={{ marginLeft: "0.25rem", opacity: 0.7 }}
+        style={iconStyles}
       />
     </a>{" "}
     - {children}

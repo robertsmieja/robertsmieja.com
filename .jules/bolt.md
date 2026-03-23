@@ -19,3 +19,8 @@
 ## 2025-01-06 - [Gatsby & Node 22 ESM Test Mocks]
 **Learning:** Mocking Gatsby's `useStaticQuery` and other ESM named exports via `node:test`'s `mock.method` or direct assignment fails in Node 22 due to the read-only nature of ESM exports, causing systemic `pnpm test` failures (e.g., in `useSiteMetadata.test.ts`).
 **Action:** When working on isolated micro-optimizations (like Emotion CSS hoisting), avoid spending time trying to fix these systemic test infrastructure issues. Ensure `pnpm check`, `pnpm build`, and visual verification via Playwright pass, then proceed with the PR while ignoring the preexisting test suite failures.
+
+## 2025-03-23 - Extracted Inline Style Objects from Memoized Child Components
+
+**Learning:** Defining inline objects like `style={{ marginLeft: "0.25rem" }}` inside a React functional component forces a new object reference to be created on every render. If passed to a memoized child component (like `FontAwesomeIcon` in `react-fontawesome`), it breaks memoization and forces the child to re-render unnecessarily, degrading performance in long lists.
+**Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.
