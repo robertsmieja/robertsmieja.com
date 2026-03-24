@@ -4,24 +4,23 @@ import React from "react"
 
 const listStyles = css`
   @media print {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
+    display: inline;
+    padding: 0;
     margin: 0;
-    list-style: none;
 
-    li {
-      margin-right: 1.5rem;
-      position: relative;
+    & > li {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
     }
 
-    li:not(:last-child)::after {
+    & > li:not(:last-child)::after {
+      content: "•";
       display: inline;
       clear: none;
-      content: "•";
-      position: absolute;
-      right: -1rem;
-      color: #666;
+      margin: 0 0.5ch;
+      color: var(--theme-ui-colors-textMuted);
     }
   }
 `
