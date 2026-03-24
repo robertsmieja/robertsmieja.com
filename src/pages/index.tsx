@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React from "react"
 import { css, jsx } from "@emotion/react"
+import ExternalLink from "../components/externalLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -29,29 +30,26 @@ const IndexPage: React.FC = () => (
       <p>Recently I have begun exploring the JavaScript/Node.js ecosystem.</p>
       <p>
         For example,{" "}
-        <a
+        <ExternalLink
           href="https://github.com/robertsmieja/robertsmieja.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          ariaLabel="GitHub repository for this site (opens in a new tab)"
         >
           <FontAwesomeIcon icon={faGithub} aria-hidden="true" /> this site
-        </a>{" "}
+        </ExternalLink>{" "}
         is written using Gatsby.js, TypeScript, and React and running on{" "}
-        <a
+        <ExternalLink
           href="https://aws.amazon.com/cloudfront/"
-          target="_blank"
-          rel="noopener noreferrer"
+          ariaLabel="AWS CloudFront (opens in a new tab)"
         >
           AWS CloudFront
-        </a>{" "}
+        </ExternalLink>{" "}
         and{" "}
-        <a
+        <ExternalLink
           href="https://aws.amazon.com/s3/"
-          target="_blank"
-          rel="noopener noreferrer"
+          ariaLabel="AWS S3 (opens in a new tab)"
         >
           AWS S3
-        </a>
+        </ExternalLink>
       </p>
       <p>
         I&apos;m interested in being a lifelong learner, and in applying
