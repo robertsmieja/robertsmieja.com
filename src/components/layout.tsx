@@ -26,7 +26,7 @@ const globalCss = css`
 
   @media print {
     @page {
-      margin: 0.5cm;
+      margin: 1.5cm;
     }
     body {
       margin: 0;
