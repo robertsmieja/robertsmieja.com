@@ -1,10 +1,36 @@
+/** @jsx jsx */
+import { css, jsx } from "@emotion/react"
 import React from "react"
+
+const listStyles = css`
+  @media print {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      margin-right: 1.5rem;
+      position: relative;
+    }
+
+    li:not(:last-child)::after {
+      display: inline;
+      clear: none;
+      content: "•";
+      position: absolute;
+      right: -1rem;
+      color: #666;
+    }
+  }
+`
 
 const Frameworks: React.FC = () => (
   <dl>
     <dt>Frameworks/Libraries/Software</dt>
     <dd>
-      <ul>
+      <ul css={listStyles}>
         <li>Docker</li>
         <li>Kubernetes</li>
         <li>React</li>
