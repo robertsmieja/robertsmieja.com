@@ -9,6 +9,32 @@ import Profile from "../components/resume/profile"
 import Technology from "../components/resume/technology"
 import SEO from "../components/seo"
 
+export const Head: React.FC = () => (
+  <SEO
+    title="Résumé"
+    keywords={[
+      `back`,
+      `backend`,
+      `developer`,
+      `devops`,
+      `engineer`,
+      `full`,
+      `fullstack`,
+      `robertsmieja`,
+      `robert`,
+      `smieja`,
+      `stack`,
+      `resume`,
+      `résumé`,
+      `software`,
+      `wpi`,
+      `worcester`,
+      `polytechnic`,
+      `institute`,
+    ]}
+  />
+)
+
 // Extract inline Emotion CSS to prevent re-serialization on every render
 const headerContainerStyles = css`
   text-align: center;
@@ -31,29 +57,6 @@ const gridContainerStyles = css`
 
 const ResumePage: React.FC = () => (
   <Layout>
-    <SEO
-      title="Résumé"
-      keywords={[
-        `back`,
-        `backend`,
-        `developer`,
-        `devops`,
-        `engineer`,
-        `full`,
-        `fullstack`,
-        `robertsmieja`,
-        `robert`,
-        `smieja`,
-        `stack`,
-        `resume`,
-        `résumé`,
-        `software`,
-        `wpi`,
-        `worcester`,
-        `polytechnic`,
-        `institute`,
-      ]}
-    />
     <div css={headerContainerStyles}>
       <h1>Robert Smieja</h1>
       <h4>Polyglot Full-stack Software Engineer</h4>
