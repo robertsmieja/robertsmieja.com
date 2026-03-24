@@ -24,6 +24,38 @@ const globalCss = css`
     text-size-adjust: 100%;
   }
 
+  @media print {
+    @page {
+      margin: 0.5cm;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 10pt; /* slightly smaller font for printing */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      page-break-after: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    ul,
+    li {
+      page-break-inside: avoid;
+    }
+  }
+
   /* clearfix */
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
   *::after {
@@ -58,21 +90,41 @@ const layoutCss = css`
   grid-template: auto 1fr auto / auto 1fr auto;
 
   height: 100%;
+
+  @media print {
+    display: block;
+    height: auto;
+  }
 `
 
 const leftAsideCss = css`
   padding: 2rem;
   grid-column: 1 / 2;
+
+  @media print {
+    display: none;
+  }
 `
 
 const mainCss = css`
   grid-column: 2 / 3;
   margin: 0 auto;
+
+  @media print {
+    grid-column: 1 / -1;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 `
 
 const rightAsideCss = css`
   padding: 2rem;
   grid-column: 3 / 4;
+
+  @media print {
+    display: none;
+  }
 `
 
 const Layout: React.FC<LayoutProperties> = ({ children }) => {
