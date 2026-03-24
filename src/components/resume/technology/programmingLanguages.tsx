@@ -36,13 +36,13 @@ const ProgramingLanguages: React.FC = () => (
     <dd>
       In order of experience/proficiency:
       <ul css={listStyles}>
-        <li>TypeScript/JavaScript</li>
         <li>Java</li>
         <li>Groovy</li>
+        <li>TypeScript/JavaScript</li>
         <li>Kotlin</li>
+        <li>SQL</li>
         <li>Python</li>
         <li>Golang</li>
-        <li>SQL</li>
         <li>Powershell</li>
         <li>POSIX Shell/Bash</li>
         <li>C#</li>
