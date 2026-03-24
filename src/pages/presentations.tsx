@@ -2,12 +2,15 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+export const Head: React.FC = () => (
+  <SEO
+    title="Presentations"
+    keywords={[`presentations`, `robertsmieja`, `robert`, `smieja`]}
+  />
+)
+
 const PresentationsPage: React.FC = () => (
   <Layout>
-    <SEO
-      title="Presentations"
-      keywords={[`presentations`, `robertsmieja`, `robert`, `smieja`]}
-    />
     <div>
       <h4>Presentations</h4>
       <p>

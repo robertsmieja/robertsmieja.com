@@ -6,31 +6,26 @@
  */
 
 import React, { useMemo } from "react"
-import { Helmet } from "react-helmet"
-import PropTypes, { InferProps } from "prop-types"
 import useSiteMetadata from "../lib/hooks/useSiteMetadata"
 
-const propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      content: PropTypes.string,
-      property: PropTypes.string,
-    })
-  ),
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+export interface SEOProperties {
+  description?: string
+  lang?: string
+  meta?: Array<{
+    name?: string
+    property?: string
+    content: string
+    httpEquiv?: string
+  }>
+  keywords?: string[]
+  title: string
 }
 
-type SEOProperties = NonNullable<InferProps<typeof propTypes>>
-
 const SEO: React.FC<SEOProperties> = ({
-  description: propsDescription,
-  lang,
-  meta,
-  keywords,
+  description: propsDescription = ``,
+  lang = `en`,
+  meta = [],
+  keywords = [],
   title,
 }) => {
   const siteMetadata = useSiteMetadata()
@@ -95,17 +90,41 @@ const SEO: React.FC<SEOProperties> = ({
     [description, keywords, meta, siteMetadata.author, title]
   )
 
+  const fullTitle = `${title} | ${siteMetadata.title}`
+
   return (
-    <Helmet
-      htmlAttributes={{
-        lang: lang ?? undefined,
-      }}
-      title={title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
-      // @ts-expect-error legacy code from pre-Gatsby 5.0 starter
-      // needs to be revisited
-      meta={metaTags}
-    />
+    <>
+      <html lang={lang ?? "en"} />
+      <title>{fullTitle}</title>
+      {metaTags.map((metaItem, i) => {
+        // eslint-disable-next-line react/no-array-index-key
+        const key = `meta-${i}`
+        if ("name" in metaItem && metaItem.name) {
+          return (
+            <meta key={key} name={metaItem.name} content={metaItem.content} />
+          )
+        }
+        if ("property" in metaItem && metaItem.property) {
+          return (
+            <meta
+              key={key}
+              property={metaItem.property}
+              content={metaItem.content}
+            />
+          )
+        }
+        if ("httpEquiv" in metaItem && metaItem.httpEquiv) {
+          return (
+            <meta
+              key={key}
+              httpEquiv={metaItem.httpEquiv}
+              content={metaItem.content}
+            />
+          )
+        }
+        return null
+      })}
+    </>
   )
 }
 
@@ -115,7 +134,5 @@ SEO.defaultProps = {
   meta: [],
   keywords: [],
 }
-
-SEO.propTypes = propTypes
 
 export default SEO

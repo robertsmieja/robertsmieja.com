@@ -3,12 +3,15 @@ import Layout from "../components/layout"
 import ProjectEntry from "../components/projects/projectEntry"
 import SEO from "../components/seo"
 
+export const Head: React.FC = () => (
+  <SEO
+    title="Projects"
+    keywords={[`projects`, `robertsmieja`, `robert`, `smieja`]}
+  />
+)
+
 const ProjectsPage: React.FC = () => (
   <Layout>
-    <SEO
-      title="Projects"
-      keywords={[`projects`, `robertsmieja`, `robert`, `smieja`]}
-    />
     <div>
       <h4>Projects</h4>
       <p>

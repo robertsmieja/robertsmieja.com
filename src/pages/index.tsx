@@ -8,6 +8,10 @@ import ExternalLink from "../components/externalLink"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+export const Head: React.FC = () => (
+  <SEO title="Home" keywords={[`robertsmieja`, `robert`, `smieja`]} />
+)
+
 // Extract inline Emotion CSS to prevent re-serialization on every render
 const containerStyles = css`
   li,
@@ -18,7 +22,6 @@ const containerStyles = css`
 
 const IndexPage: React.FC = () => (
   <Layout>
-    <SEO title="Home" keywords={[`robertsmieja`, `robert`, `smieja`]} />
     <div css={containerStyles}>
       <h1>Robert Smieja</h1>
       <h4>Polyglot Full-stack Software/DevOps Engineer</h4>
