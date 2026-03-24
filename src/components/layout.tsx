@@ -26,12 +26,15 @@ const globalCss = css`
 
   @media print {
     @page {
-      margin: 1.5cm;
+      /* Setting margin to 0 removes default browser headers and footers */
+      margin: 0;
     }
     body {
-      margin: 0;
+      /* Manually add margins back to the body so content isn't flush with edge */
+      margin: 1cm;
       padding: 0;
-      font-size: 10pt; /* slightly smaller font for printing */
+      font-size: 9pt; /* tighter font for printing */
+      line-height: 1.2;
     }
 
     h1,
@@ -41,6 +44,8 @@ const globalCss = css`
     h5,
     h6 {
       page-break-after: avoid;
+      margin-top: 0.5rem;
+      margin-bottom: 0.2rem;
     }
 
     p,
