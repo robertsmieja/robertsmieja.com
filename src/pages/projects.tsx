@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import ProjectEntry from "../components/projects/projectEntry"
+import ExternalLink from "../components/externalLink"
 import SEO from "../components/seo"
 
 export const Head: React.FC = () => (
@@ -41,13 +42,12 @@ const ProjectsPage: React.FC = () => (
           8 interface features and reflection to automatic test Getters and
           Setters, hashCode(), equals(), etc. I would recommend using a tool
           such as{" "}
-          <a
+          <ExternalLink
             href="https://projectlombok.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+            ariaLabel="Lombok project website (opens in a new tab)"
           >
             Lombok
-          </a>{" "}
+          </ExternalLink>{" "}
           to generate &rdquo;data&ldquo; methods instead.
         </ProjectEntry>
         <ProjectEntry

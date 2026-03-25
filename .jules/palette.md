@@ -1,0 +1,3 @@
+## 2024-03-25 - Extracted ExternalLink for Presentation Links
+**Learning:** Found that numerous plain `<a>` tags with `target="_blank"` were used in the presentations and projects lists without any screen reader indication that they opened in new tabs or visual cues that they pointed to external domains. Replacing them with the site's existing `<ExternalLink>` component solved this across 13 locations while enforcing the standard site style.
+**Action:** Next time looking for micro-UX opportunities, search specifically for raw `target="_blank"` tags (`grep -r 'target="_blank"'`) and evaluate if they should use `<ExternalLink>` to automatically inherit the `faExternalLinkAlt` icon and accessible props.

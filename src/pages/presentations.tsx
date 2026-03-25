@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import ExternalLink from "../components/externalLink"
 import SEO from "../components/seo"
 
 export const Head: React.FC = () => (
@@ -23,13 +24,12 @@ const PresentationsPage: React.FC = () => (
           2019
           <ul>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1UtHVimNzWgHmKRO9C2p_tGpXTb1IZIvhbr6KdOPHSPE"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="JHipster presentation (opens in a new tab)"
               >
                 JHipster
-              </a>
+              </ExternalLink>
             </li>
           </ul>
         </li>
@@ -37,22 +37,20 @@ const PresentationsPage: React.FC = () => (
           2018
           <ul>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1F858H6PNqXatZ0TgAZJi0u7udhE77jYj_SGOb1ZbrNQ"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Hystrix presentation (opens in a new tab)"
               >
                 Hystrix
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1z_0CFzrrYdD4OGiWn_ue3ev2Tb7Hmklnk76mp7mC-Zo"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Spring Cloud presentation (opens in a new tab)"
               >
                 Spring Cloud
-              </a>
+              </ExternalLink>
             </li>
           </ul>
         </li>
@@ -60,20 +58,18 @@ const PresentationsPage: React.FC = () => (
           2017
           <ul>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=16jnaqvufQd43odXG8TmrdweUpRGJxjBwpEywuZI9KOU"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="ANTLR4 - NEJUG Edition presentation (opens in a new tab)"
               >
                 ANTLR4 - NEJUG Edition
-              </a>{" "}
-              <a
+              </ExternalLink>{" "}
+              <ExternalLink
                 href="https://vimeo.com/199478127"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Video Recording (opens in a new tab)"
               >
                 (Video Recording)
-              </a>
+              </ExternalLink>
             </li>
           </ul>
         </li>
@@ -81,67 +77,60 @@ const PresentationsPage: React.FC = () => (
           2016
           <ul>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1jif18rAMUMmpZa5JuWM4BOxgNdV9g2H5jU3CZHOzWXM"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="ANTLR4 presentation (opens in a new tab)"
               >
                 ANTLR4
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1nqVxyn2qz9HJB9PyvFbJNJ0BvplgB5skptgC7niGz40"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Java Classloader presentation (opens in a new tab)"
               >
                 Java Classloader
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1_sZ-URrqY7B90I_ImvmIsLDA0t4k-NuJfSqHsJS4724"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Java Persistance API Overview presentation (opens in a new tab)"
               >
                 Java Persistance API Overview
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1fWIGVNfDkyNYgz1ExBUulds_OnUCaMk2dshzPD972gM"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Git Overview presentation (opens in a new tab)"
               >
                 Git Overview
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=10-LJWRSkSUh3GzioqF2MEUQHjm4zKx4yYDlX5rhMI-Q"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Grails 2.1 Unit Testing presentation (opens in a new tab)"
               >
                 Grails 2.1 Unit Testing
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=13hhP4uQXJu2HktC_PX_TXwmzy2WsjRoYNdix4UYdp70"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Grails 2.5 Unit Testing presentation (opens in a new tab)"
               >
                 Grails 2.5 Unit Testing
-              </a>
+              </ExternalLink>
             </li>
             <li>
-              <a
+              <ExternalLink
                 href="https://drive.google.com/open?id=1d4KLTHiFEZlRN0YmDUs7aT2bHVATpxGKQb0OOgk2jrA"
-                target="_blank"
-                rel="noopener noreferrer"
+                ariaLabel="Spring Boot Intro presentation (opens in a new tab)"
               >
                 Spring Boot Intro
-              </a>
+              </ExternalLink>
             </li>
           </ul>
         </li>
