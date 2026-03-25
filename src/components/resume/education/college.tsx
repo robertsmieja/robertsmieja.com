@@ -13,27 +13,26 @@ const flexHeaderStyles = css`
   }
 `
 
+const collegeContainerStyles = css`
+  @media print {
+    page-break-inside: avoid;
+  }
+`
+
+const degreeStyles = css`
+  @media print {
+    margin-bottom: 0.2rem;
+    margin-left: 0;
+  }
+`
+
 const College: React.FC = () => (
-  <div
-    id="college"
-    css={css`
-      @media print {
-        page-break-inside: avoid;
-      }
-    `}
-  >
+  <div id="college" css={collegeContainerStyles}>
     <dt css={flexHeaderStyles}>
       <span>Worcester Polytechnic Institute, Worcester, MA</span>
       <span>May 2015</span>
     </dt>
-    <dd
-      css={css`
-        @media print {
-          margin-bottom: 0.2rem;
-          margin-left: 0;
-        }
-      `}
-    >
+    <dd css={degreeStyles}>
       Bachelor of Science, Double Major in Computer Science & Interactive Media
       and Game Development
     </dd>
