@@ -24,3 +24,8 @@
 
 **Learning:** Defining inline objects like `style={{ marginLeft: "0.25rem" }}` inside a React functional component forces a new object reference to be created on every render. If passed to a memoized child component (like `FontAwesomeIcon` in `react-fontawesome`), it breaks memoization and forces the child to re-render unnecessarily, degrading performance in long lists.
 **Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.
+## 2025-05-18 - Avoided Extracting Inline Emotion CSS Template Literals
+
+**Learning:** Extracting inline Emotion `css` prop template literals (e.g., `css={css\`...\`}`) into constant variables outside of React component definitions in static components is considered a micro-optimization with NO measurable impact and must be avoided under strict performance-only constraints. The codebase has static elements (e.g., `college.tsx`, `experienceEntry.tsx`) that contain these, but fixing them violates Bolt's mission of measurable performance gains.
+
+**Action:** Did not refactor inline Emotion css properties. Since no other meaningful performance bottlenecks were found, decided not to submit a PR today.
