@@ -17,7 +17,6 @@ overrides:
   socket.io-parser: '>=4.2.6'
   flatted: '>=3.4.2'
   '@parcel/reporter-dev-server': '>=2.16.4'
-  path-to-regexp@<0.1.13: 0.1.13
 
 importers:
 
