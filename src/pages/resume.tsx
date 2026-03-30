@@ -86,15 +86,16 @@ const headerContainerStyles = css`
 `
 
 const printButtonStyles = css`
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
   padding: 0.5rem;
-  color: #333;
+  color: inherit;
+  z-index: 100;
 
   @media print {
     display: none;
@@ -102,7 +103,7 @@ const printButtonStyles = css`
 
   &:hover,
   &:focus-visible {
-    color: #000;
+    opacity: 0.7;
   }
 `
 
