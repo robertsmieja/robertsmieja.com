@@ -44,6 +44,12 @@ const headerStyles = css`
   }
 `
 
+const jobTitleStyles = css`
+  @media print {
+    font-style: italic;
+  }
+`
+
 const ExperienceEntry: React.FC<ExperienceEntryProperties> = ({
   children,
   company,
@@ -58,15 +64,7 @@ const ExperienceEntry: React.FC<ExperienceEntryProperties> = ({
       </p>
       <p>{dateRange}</p>
     </div>
-    <p
-      css={css`
-        @media print {
-          font-style: italic;
-        }
-      `}
-    >
-      {jobTitle}
-    </p>
+    <p css={jobTitleStyles}>{jobTitle}</p>
     <div>{children}</div>
   </div>
 )
