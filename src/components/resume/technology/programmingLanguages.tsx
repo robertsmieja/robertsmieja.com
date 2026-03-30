@@ -4,10 +4,13 @@ import React from "react"
 
 // Extract inline Emotion CSS to prevent re-serialization on every render
 const listStyles = css`
-  li {
-    margin-left: 2rem;
-    float: left;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.25rem;
+  padding-left: 0;
+  list-style: none;
+  margin: 0.25rem 0 0.5rem 0;
+
   @media print {
     display: block;
     padding-left: 0;
@@ -17,7 +20,6 @@ const listStyles = css`
     li {
       display: inline;
       margin: 0;
-      float: none;
     }
 
     li:not(:last-child)::after {

@@ -10,24 +10,30 @@ import { css, jsx } from "@emotion/react"
 import React from "react"
 
 const listStyles = css`
-  @media print {
-    display: inline;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.25rem;
+  padding-left: 0;
+  list-style: none;
+  margin: 0.25rem 0 0.5rem 0;
 
-    & > li {
+  @media print {
+    display: block;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
       display: inline;
-      padding: 0;
       margin: 0;
-      white-space: nowrap;
     }
 
-    & > li:not(:last-child)::after {
-      content: "•";
+    li:not(:last-child)::after {
       display: inline;
       clear: none;
+      content: " \\2022 ";
       margin: 0 0.5ch;
-      color: var(--theme-ui-colors-textMuted);
+      color: #666;
     }
   }
 `

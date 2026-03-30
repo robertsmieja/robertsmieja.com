@@ -7,10 +7,10 @@ const Profile: React.FC = () => (
     <h2>
       <FontAwesomeIcon icon={faUser} aria-hidden="true" /> Profile
     </h2>
-    <dl>
+    <p>
       Innovative problem solver. Life long learner, who is constantly on the
       lookout for new technology, to find new solutions to problems.
-    </dl>
+    </p>
   </div>
 )
 

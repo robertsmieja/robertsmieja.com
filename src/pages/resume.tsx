@@ -38,12 +38,42 @@ export const Head: React.FC = () => (
 )
 
 // Extract inline Emotion CSS to prevent re-serialization on every render
+const resumeContainerStyles = css`
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media print {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+`
+
 const headerContainerStyles = css`
   text-align: center;
   position: relative;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #222;
+  margin-bottom: 0.25rem;
+
+  h1 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 2.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  h4 {
+    margin: 0 0 0.25rem;
+    font-weight: 400;
+    color: #444;
+    font-size: 1.1rem;
+  }
 
   @media print {
-    margin-bottom: 0.5rem;
+    border-bottom: 1.5px solid #222;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.3rem;
     h1 {
       margin: 0.2rem 0;
       font-size: 1.8rem;
@@ -77,30 +107,49 @@ const printButtonStyles = css`
 `
 
 const gridContainerStyles = css`
-  display: grid;
-  align-content: start;
-  flex-direction: column;
-
-  @media (min-width: 800px) {
-    flex-wrap: wrap;
-  }
-
-  height: 100%;
-  width: 100%;
-
   text-align: left;
 
-  @media print {
-    display: block; /* Remove grid to allow better page breaking */
+  h2 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid #444;
+    padding-bottom: 0.2rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-    /* Make h2s smaller and tighter for print */
-    h2 {
-      margin: 0.2rem 0 0.1rem 0;
-      font-size: 1.2rem;
-      border-bottom: 1px solid #ccc;
+  dl {
+    margin: 0 0 0.5rem 0;
+
+    dt {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.1rem;
     }
 
-    /* Tighter spacing for definitions/lists */
+    dd {
+      margin-left: 0;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  @media print {
+    display: block;
+
+    h2 {
+      margin: 0.3rem 0 0.15rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.1rem;
+      letter-spacing: 0.05em;
+    }
+
     dl,
     ul {
       margin-top: 0;
@@ -115,29 +164,31 @@ const gridContainerStyles = css`
 
 const ResumePage: React.FC = () => (
   <Layout>
-    <div css={headerContainerStyles}>
-      <h1>Robert Smieja</h1>
-      <h4>Polyglot Full-stack Software Engineer</h4>
-      <button
-        type="button"
-        css={printButtonStyles}
-        onClick={() => {
-          if (typeof window !== "undefined") {
-            window.print()
-          }
-        }}
-        aria-label="Print Resume"
-        title="Print Resume"
-      >
-        <FontAwesomeIcon icon={faPrint} aria-hidden="true" />
-      </button>
-    </div>
-    <div css={gridContainerStyles}>
-      <Technology />
-      <DevOps />
-      <Experience />
-      <Profile />
-      <Education />
+    <div css={resumeContainerStyles}>
+      <div css={headerContainerStyles}>
+        <h1>Robert Smieja</h1>
+        <h4>Polyglot Full-stack Software Engineer</h4>
+        <button
+          type="button"
+          css={printButtonStyles}
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.print()
+            }
+          }}
+          aria-label="Print Resume"
+          title="Print Resume"
+        >
+          <FontAwesomeIcon icon={faPrint} aria-hidden="true" />
+        </button>
+      </div>
+      <div css={gridContainerStyles}>
+        <Experience />
+        <Profile />
+        <Technology />
+        <DevOps />
+        <Education />
+      </div>
     </div>
   </Layout>
 )

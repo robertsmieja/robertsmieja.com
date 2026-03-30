@@ -57,7 +57,7 @@ const ExperienceEntry: React.FC<ExperienceEntryProperties> = ({
   jobTitle,
   location,
 }: ExperienceEntryProperties) => (
-  <div id={`experience-${company.replace(" ", "_")}`} css={entryStyles}>
+  <div id={`experience-${company.replace(/\s+/g, "_")}`} css={entryStyles}>
     <div css={headerStyles}>
       <p>
         {company}, {location}
