@@ -9,7 +9,7 @@ const flexHeaderStyles = css`
   flex-wrap: wrap;
 
   @media print {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0;
   }
 `
 

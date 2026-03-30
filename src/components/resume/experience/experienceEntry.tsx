@@ -13,15 +13,15 @@ interface ExperienceEntryProperties {
 const entryStyles = css`
   @media print {
     page-break-inside: avoid;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 
     p {
-      margin: 0.1rem 0;
+      margin: 0;
     }
 
     ul {
       margin-top: 0;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.1rem;
     }
   }
 `

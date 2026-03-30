@@ -95,20 +95,20 @@ const gridContainerStyles = css`
 
     /* Make h2s smaller and tighter for print */
     h2 {
-      margin: 0.5rem 0 0.2rem 0;
-      font-size: 1.3rem;
+      margin: 0.2rem 0 0.1rem 0;
+      font-size: 1.2rem;
       border-bottom: 1px solid #ccc;
     }
 
     /* Tighter spacing for definitions/lists */
     dl,
     ul {
-      margin-top: 0.2rem;
-      margin-bottom: 0.2rem;
+      margin-top: 0;
+      margin-bottom: 0.1rem;
     }
 
     li {
-      margin-bottom: 0.1rem;
+      margin-bottom: 0;
     }
   }
 `
