@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import ProjectEntry from "../components/projects/projectEntry"
 import SEO from "../components/seo"
+import ExternalLink from "../components/externalLink"
 
 export const Head: React.FC = () => (
   <SEO
@@ -41,13 +42,12 @@ const ProjectsPage: React.FC = () => (
           8 interface features and reflection to automatic test Getters and
           Setters, hashCode(), equals(), etc. I would recommend using a tool
           such as{" "}
-          <a
+          <ExternalLink
             href="https://projectlombok.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+            ariaLabel="Lombok website (opens in a new tab)"
           >
             Lombok
-          </a>{" "}
+          </ExternalLink>{" "}
           to generate &rdquo;data&ldquo; methods instead.
         </ProjectEntry>
         <ProjectEntry
