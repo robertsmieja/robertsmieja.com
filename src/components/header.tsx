@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import React from "react"
 import { css, jsx } from "@emotion/react"
 import { mq } from "../breakpoints"
+import ExternalLink from "./externalLink"
 
 interface HeaderProperties {
   siteTitle?: string
@@ -108,24 +109,20 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
           </Link>
         </li>
         <li css={githubLiStyles}>
-          <a
+          <ExternalLink
             href="https://github.com/robertsmieja/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Robert Smieja's GitHub Profile"
+            ariaLabel="Robert Smieja's GitHub Profile (opens in a new tab)"
           >
             <FontAwesomeIcon icon={faGithub} aria-hidden="true" /> GitHub
-          </a>
+          </ExternalLink>
         </li>
         <li>
-          <a
+          <ExternalLink
             href="https://www.linkedin.com/in/robertsmieja/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Robert Smieja's LinkedIn Profile"
+            ariaLabel="Robert Smieja's LinkedIn Profile (opens in a new tab)"
           >
             <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" /> LinkedIn
-          </a>
+          </ExternalLink>
         </li>
       </ul>
     </nav>
