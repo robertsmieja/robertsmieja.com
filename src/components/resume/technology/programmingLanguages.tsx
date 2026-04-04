@@ -38,9 +38,9 @@ const ProgramingLanguages: React.FC = () => (
     <dd>
       In order of experience/proficiency:
       <ul css={listStyles}>
+        <li>Java</li>
         <li>TypeScript</li>
         <li>JavaScript</li>
-        <li>Java</li>
         <li>Groovy</li>
         <li>Kotlin</li>
         <li>Python</li>
