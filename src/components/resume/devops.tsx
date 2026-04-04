@@ -43,6 +43,7 @@ const DevOps: React.FC = () => (
         <li>Ansible</li>
         <li>Docker</li>
         <li>Puppet</li>
+        <li>Kubernetes</li>
       </ul>
     </dl>
   </div>

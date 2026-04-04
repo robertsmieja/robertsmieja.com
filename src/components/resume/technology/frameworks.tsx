@@ -36,14 +36,10 @@ const Frameworks: React.FC = () => (
     <dt>Frameworks/Libraries/Software</dt>
     <dd>
       <ul css={listStyles}>
-        <li>Docker</li>
-        <li>Kubernetes</li>
         <li>React</li>
         <li>NextJS</li>
         <li>Gatsby.js</li>
         <li>Kafka</li>
-        <li>Ansible</li>
-        <li>Puppet</li>
         <li>Gradle</li>
         <li>Grails</li>
         <li>JavaEE</li>
