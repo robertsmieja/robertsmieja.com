@@ -134,13 +134,13 @@ const Experience: React.FC = () => (
           v2); delivered by converting 100k+ lines and 1k+ tests within 1 year.
         </li>
         <li>
-          Led teams in 2 company-wide and office-wide hackathons as Team
-          Captain with 1 victory.
+          Led teams in 2 company-wide and office-wide hackathons as Team Captain
+          with 1 victory.
         </li>
         <li>
-          Made key contributions on a team of 8 in the company&apos;s #1
-          project in 2018: an upgrade of a credit card dispute system to comply
-          with new Visa regulations.
+          Made key contributions on a team of 8 in the company&apos;s #1 project
+          in 2018: an upgrade of a credit card dispute system to comply with new
+          Visa regulations.
         </li>
         <li>
           Reduced technical debt and improved developer efficiency by converting
