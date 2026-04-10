@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: `https://robertsmieja.com`,
   },
   plugins: [
-    `gatsby-plugin-pnpm`,
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-feed`,
