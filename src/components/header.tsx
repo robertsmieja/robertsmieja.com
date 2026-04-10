@@ -93,6 +93,11 @@ const Header = React.memo<HeaderProperties>(({ siteTitle = `` }) => (
           </Link>
         </li>
         <li>
+          <Link to="/blog/" activeClassName="active" partiallyActive>
+            Blog
+          </Link>
+        </li>
+        <li>
           <Link to="/presentations/" activeClassName="active">
             Presentations
           </Link>
