@@ -77,6 +77,10 @@ const globalCss = css`
     text-decoration: underline;
     text-underline-offset: 4px;
   }
+
+  main:focus {
+    outline: none;
+  }
 `
 
 interface LayoutProperties {
@@ -117,6 +121,27 @@ const mainCss = css`
   }
 `
 
+const skipLinkCss = css`
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus-visible {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+    z-index: 1000;
+  }
+`
+
 const rightAsideCss = css`
   padding: 2rem;
   grid-column: 3 / 4;
@@ -132,9 +157,14 @@ const Layout: React.FC<LayoutProperties> = ({ children }) => {
   return (
     <div css={layoutCss}>
       <Global styles={globalCss} />
+      <a href="#main-content" css={skipLinkCss}>
+        Skip to main content
+      </a>
       <Header siteTitle={title} />
       <aside id="left" css={leftAsideCss} />
-      <main css={mainCss}>{children}</main>
+      <main id="main-content" css={mainCss} tabIndex={-1}>
+        {children}
+      </main>
       <aside id="right" css={rightAsideCss} />
       <Footer siteAuthor={author} />
     </div>
