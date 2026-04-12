@@ -28,6 +28,4 @@ jobs:
         cache: 'pnpm'
     - run: pnpm config set ignore-scripts false
     - run: pnpm install
-    - run: npm rebuild sharp
-    - run: pnpm run --if-present build 
-#     - run: npm test
+    - run: pnpm run --if-present build

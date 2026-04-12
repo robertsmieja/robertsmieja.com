@@ -1,0 +1,53 @@
+---
+
+---
+
+<dl>
+  <dt>Frameworks/Libraries/Software</dt>
+  <dd>
+    <ul class="tech-list">
+      <li>React</li>
+      <li>NextJS</li>
+      <li>Gatsby.js</li>
+      <li>Kafka</li>
+      <li>Gradle</li>
+      <li>Grails</li>
+      <li>JavaEE</li>
+      <li>Spring MVC 5</li>
+      <li>Spring Data 5</li>
+    </ul>
+  </dd>
+</dl>
+
+<style>
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 1.25rem;
+    padding-left: 0;
+    list-style: none;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+
+  @media print {
+    .tech-list {
+      display: block;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .tech-list li {
+      display: inline;
+      margin: 0;
+    }
+
+    .tech-list li:not(:last-child)::after {
+      display: inline;
+      clear: none;
+      content: " \2022 ";
+      margin: 0 0.5ch;
+      color: #666;
+    }
+  }
+</style>

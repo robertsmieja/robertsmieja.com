@@ -1,0 +1,40 @@
+---
+
+---
+
+<div id="college" class="college-container">
+  <dt class="flex-header">
+    <span>Worcester Polytechnic Institute, Worcester, MA</span>
+    <span>May 2015</span>
+  </dt>
+  <dd class="degree">
+    Bachelor of Science, Double Major in Computer Science & Interactive Media and
+    Game Development
+  </dd>
+  <dt>Received</dt>
+  <dd>WPI Presidential Merit Scholarship, 2011 &ndash; 2015</dd>
+</div>
+
+<style>
+  .flex-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    flex-wrap: wrap;
+  }
+
+  @media print {
+    .college-container {
+      page-break-inside: avoid;
+    }
+
+    .flex-header {
+      margin-bottom: 0;
+    }
+
+    .degree {
+      margin-bottom: 0.2rem;
+      margin-left: 0;
+    }
+  }
+</style>

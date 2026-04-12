@@ -1,0 +1,51 @@
+---
+import { faCogs } from "@fortawesome/free-solid-svg-icons"
+import Icon from "../Icon.astro"
+---
+
+<div id="devops">
+  <h2>
+    <Icon icon={faCogs} /> DevOps
+  </h2>
+  <dl>
+    <ul class="tech-list">
+      <li>Ansible</li>
+      <li>Docker</li>
+      <li>Puppet</li>
+      <li>Kubernetes</li>
+    </ul>
+  </dl>
+</div>
+
+<style>
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 1.25rem;
+    padding-left: 0;
+    list-style: none;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+
+  @media print {
+    .tech-list {
+      display: block;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .tech-list li {
+      display: inline;
+      margin: 0;
+    }
+
+    .tech-list li:not(:last-child)::after {
+      display: inline;
+      clear: none;
+      content: " \2022 ";
+      margin: 0 0.5ch;
+      color: #666;
+    }
+  }
+</style>

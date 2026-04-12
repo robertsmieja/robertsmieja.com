@@ -1,0 +1,31 @@
+---
+interface Props {
+  siteAuthor: string
+}
+
+const { siteAuthor } = Astro.props
+const year = new Date().getFullYear()
+---
+
+<footer>
+  <div class="copyright">
+    &copy; {year}, {siteAuthor}
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 2rem;
+    grid-column: 1 / 4;
+  }
+
+  @media print {
+    footer {
+      display: none;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+  }
+</style>

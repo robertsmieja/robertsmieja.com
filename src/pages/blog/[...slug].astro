@@ -1,0 +1,136 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+  )
+  return posts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      previous: index < posts.length - 1 ? posts[index + 1] : null,
+      next: index > 0 ? posts[index - 1] : null,
+    },
+  }))
+}
+
+const { post, previous, next } = Astro.props
+const { Content } = await post.render()
+
+const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+})
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  keywords={post.data.tags}
+>
+  <article class="article">
+    <header>
+      <h1>{post.data.title}</h1>
+      <time class="date" datetime={post.data.date}>
+        {formattedDate}
+      </time>
+      {
+        post.data.tags && post.data.tags.length > 0 && (
+          <ul class="tag-list">
+            {post.data.tags.map((tag) => (
+              <li class="tag">{tag}</li>
+            ))}
+          </ul>
+        )
+      }
+    </header>
+    <section>
+      <Content />
+    </section>
+  </article>
+  <nav>
+    <ul class="nav-list">
+      <li>
+        {
+          previous && (
+            <a href={`/blog/${previous.slug}/`} rel="prev">
+              &larr; {previous.data.title}
+            </a>
+          )
+        }
+      </li>
+      <li>
+        {
+          next && (
+            <a href={`/blog/${next.slug}/`} rel="next">
+              {next.data.title} &rarr;
+            </a>
+          )
+        }
+      </li>
+    </ul>
+  </nav>
+</Layout>
+
+<style>
+  .article {
+    max-width: 48rem;
+    line-height: 1.7;
+  }
+
+  .article h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .article :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .article :global(pre) {
+    overflow-x: auto;
+  }
+
+  .article :global(blockquote) {
+    border-left: 3px solid #ccc;
+    margin-left: 0;
+    padding-left: 1rem;
+    color: #555;
+  }
+
+  .date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: #f0f0f0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 2rem 0 0;
+    margin: 2rem 0 0;
+    border-top: 1px solid #eee;
+  }
+</style>

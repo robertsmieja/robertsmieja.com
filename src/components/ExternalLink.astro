@@ -1,0 +1,38 @@
+---
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
+import Icon from "./Icon.astro"
+
+interface Props {
+  href: string
+  ariaLabel?: string
+}
+
+const { href, ariaLabel } = Astro.props
+
+// Security enhancement: Prevent XSS via javascript: URIs
+const unsafeProtocols = ["javascript:", "vbscript:", "data:"]
+const isSafeUrl = (url: string): boolean => {
+  if (!url) return true
+  const lowerUrl = url.trim().toLowerCase()
+  return !unsafeProtocols.some((protocol) => lowerUrl.startsWith(protocol))
+}
+
+const safeHref = isSafeUrl(href) ? href : "about:blank"
+---
+
+<a
+  href={safeHref}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={ariaLabel}
+>
+  <slot />
+  <Icon icon={faExternalLinkAlt} class="external-link-icon" />
+</a>
+
+<style>
+  .external-link-icon {
+    margin-left: 0.25rem;
+    opacity: 0.7;
+  }
+</style>

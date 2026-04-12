@@ -1,0 +1,67 @@
+@import "@csstools/normalize.css";
+
+:root {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  text-size-adjust: 100%;
+}
+
+@media print {
+  @page {
+    /* Setting margin to 0 removes default browser headers and footers */
+    margin: 0;
+  }
+  body {
+    /* Manually add margins back to the body so content isn't flush with edge */
+    margin: 1cm;
+    padding: 0;
+    font-size: 9pt; /* tighter font for printing */
+    line-height: 1.2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  ul,
+  li {
+    page-break-inside: avoid;
+  }
+}
+
+/* clearfix */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+*::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

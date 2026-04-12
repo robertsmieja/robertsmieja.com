@@ -1,0 +1,59 @@
+---
+import {
+  faApple,
+  faRedhat,
+  faUbuntu,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons"
+import Icon from "../../Icon.astro"
+---
+
+<dl>
+  <dt>Operating Systems</dt>
+  <dd>
+    <ul class="tech-list">
+      <li>
+        <Icon icon={faWindows} /> Windows
+      </li>
+      <li>
+        <Icon icon={faApple} /> Mac OS X
+      </li>
+      <li>
+        <Icon icon={faRedhat} />/<Icon icon={faUbuntu} /> Linux (RHEL/Ubuntu)
+      </li>
+    </ul>
+  </dd>
+</dl>
+
+<style>
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 1.25rem;
+    padding-left: 0;
+    list-style: none;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+
+  @media print {
+    .tech-list {
+      display: block;
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .tech-list li {
+      display: inline;
+      margin: 0;
+    }
+
+    .tech-list li:not(:last-child)::after {
+      display: inline;
+      clear: none;
+      content: " \2022 ";
+      margin: 0 0.5ch;
+      color: #666;
+    }
+  }
+</style>
