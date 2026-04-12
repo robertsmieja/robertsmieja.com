@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.117.1/containers/javascript-node-14
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.0/containers/javascript-node-22
 {
   "name": "Node.js - Alpine",
   "dockerFile": "Dockerfile",
@@ -10,11 +10,10 @@
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "dbaeumer.vscode-eslint",
-    "orta.vscode-jest",
     "eamodio.gitlens",
     "streetsidesoftware.code-spell-checker",
     "esbenp.prettier-vscode",
-    "richie5um2.vscode-sort-json"
+    "astro-build.astro-vscode"
   ]
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
