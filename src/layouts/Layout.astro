@@ -1,0 +1,82 @@
+---
+import { SITE_TITLE, SITE_AUTHOR } from "../consts"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import SEO from "../components/SEO.astro"
+import "../styles/global.css"
+
+interface Props {
+  title: string
+  description?: string
+  keywords?: string[]
+}
+
+const { title, description, keywords } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SEO title={title} description={description} keywords={keywords} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <div class="layout">
+      <Header siteTitle={SITE_TITLE} />
+      <aside id="left"></aside>
+      <main><slot /></main>
+      <aside id="right"></aside>
+      <Footer siteAuthor={SITE_AUTHOR} />
+    </div>
+  </body>
+</html>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+    height: 100%;
+  }
+
+  @media print {
+    .layout {
+      display: block;
+      height: auto;
+    }
+  }
+
+  #left {
+    padding: 2rem;
+    grid-column: 1 / 2;
+  }
+
+  main {
+    grid-column: 2 / 3;
+    margin: 0 auto;
+  }
+
+  #right {
+    padding: 2rem;
+    grid-column: 3 / 4;
+  }
+
+  @media print {
+    #left,
+    #right {
+      display: none;
+    }
+
+    main {
+      grid-column: 1 / -1;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>

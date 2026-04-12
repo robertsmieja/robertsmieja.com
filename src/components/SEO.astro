@@ -1,0 +1,27 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_AUTHOR } from "../consts"
+
+interface Props {
+  title: string
+  description?: string
+  keywords?: string[]
+}
+
+const { title, description: propsDescription, keywords = [] } = Astro.props
+
+const description = propsDescription || SITE_DESCRIPTION
+const fullTitle = `${title} | ${SITE_TITLE}`
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content={SITE_AUTHOR} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}

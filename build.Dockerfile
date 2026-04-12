@@ -1,6 +1,4 @@
 FROM node:22-alpine AS build
-# For mozjpeg
-RUN apk add --no-cache autoconf automake build-base libtool nasm pkgconf
 RUN npm install -g pnpm@10
 
 WORKDIR /home/node
@@ -8,13 +6,12 @@ WORKDIR /home/node
 COPY . .
 RUN pnpm config set ignore-scripts false
 RUN pnpm install
-RUN npm rebuild sharp
 RUN pnpm run build
 
 FROM amazon/aws-cli:latest AS publish
 WORKDIR /usr/src
 
-COPY --from=build /home/node/public/ .
+COPY --from=build /home/node/dist/ .
 
 ARG targetS3Bucket
 RUN --mount=type=secret,id=AWS_ACCESS_KEY_ID,env=AWS_ACCESS_KEY_ID \

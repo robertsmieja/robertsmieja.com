@@ -1,0 +1,70 @@
+---
+interface Props {
+  company: string
+  location: string
+  dateRange: string
+  jobTitle: string
+}
+
+const { company, location, dateRange, jobTitle } = Astro.props
+const id = `experience-${company.replace(/\s+/g, "_")}`
+---
+
+<div id={id} class="entry">
+  <div class="header">
+    <p>
+      {company}, {location}
+    </p>
+    <p>{dateRange}</p>
+  </div>
+  <p class="job-title">{jobTitle}</p>
+  <div><slot /></div>
+</div>
+
+<style>
+  .entry {
+    @media print {
+      page-break-inside: avoid;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  .entry :global(p) {
+    @media print {
+      margin: 0;
+    }
+  }
+
+  .entry :global(ul) {
+    @media print {
+      margin-top: 0;
+      margin-bottom: 0.1rem;
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .header p {
+    margin: 0 0 1rem 0;
+  }
+
+  @media print {
+    .header {
+      font-weight: bold;
+    }
+
+    .header p {
+      margin: 0;
+    }
+  }
+
+  .job-title {
+    @media print {
+      font-style: italic;
+    }
+  }
+</style>

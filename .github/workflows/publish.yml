@@ -3,9 +3,9 @@ name: Publish
 on:
   workflow_run:
     workflows: ["Node.js CI"]
-    branches: 
+    branches:
       - master
-    types: 
+    types:
       - completed
 
 jobs:
@@ -30,9 +30,8 @@ jobs:
         cache: 'pnpm'
     - run: pnpm config set ignore-scripts false
     - run: pnpm install
-    - run: npm rebuild sharp
-    - run: pnpm run --if-present build 
+    - run: pnpm run --if-present build
     - name: Publish to S3 Bucket
       run: |
-        cd public/
+        cd dist/
         aws s3 sync . s3://www.robertsmieja.com --acl public-read --delete

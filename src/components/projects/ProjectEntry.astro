@@ -1,0 +1,22 @@
+---
+import ExternalLink from "../ExternalLink.astro"
+
+interface Props {
+  year: string
+  title: string
+  link: string
+}
+
+const { year, title, link } = Astro.props
+---
+
+<li>
+  {year} -{" "}
+  <ExternalLink
+    href={link}
+    ariaLabel={`External link to ${title} (opens in a new tab)`}
+  >
+    {title}
+  </ExternalLink>{" "}
+  - <slot />
+</li>
