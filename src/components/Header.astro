@@ -19,12 +19,17 @@ const pathname = Astro.url.pathname
         </a>
       </li>
       <li>
-        <a href="/" class:list={[{ active: pathname === "/" }]}>Home</a>
+        <a
+          href="/"
+          class:list={[{ active: pathname === "/" }]}
+          aria-current={pathname === "/" ? "page" : undefined}>Home</a
+        >
       </li>
       <li>
         <a
           href="/blog/"
           class:list={[{ active: pathname.startsWith("/blog/") }]}
+          aria-current={pathname.startsWith("/blog/") ? "page" : undefined}
         >
           Blog
         </a>
@@ -33,6 +38,7 @@ const pathname = Astro.url.pathname
         <a
           href="/presentations/"
           class:list={[{ active: pathname === "/presentations/" }]}
+          aria-current={pathname === "/presentations/" ? "page" : undefined}
         >
           Presentations
         </a>
@@ -41,12 +47,17 @@ const pathname = Astro.url.pathname
         <a
           href="/projects/"
           class:list={[{ active: pathname === "/projects/" }]}
+          aria-current={pathname === "/projects/" ? "page" : undefined}
         >
           Projects
         </a>
       </li>
       <li>
-        <a href="/resume/" class:list={[{ active: pathname === "/resume/" }]}>
+        <a
+          href="/resume/"
+          class:list={[{ active: pathname === "/resume/" }]}
+          aria-current={pathname === "/resume/" ? "page" : undefined}
+        >
           R&eacute;sum&eacute;
         </a>
       </li>
