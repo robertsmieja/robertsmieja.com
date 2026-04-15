@@ -1,3 +1,3 @@
-## 2024-04-09 - Added actionable link to empty 404 state
-**Learning:** Empty states in routing (like 404 pages) should always provide a clear path forward to prevent user frustration. Users who encounter a dead end without a recovery path are more likely to bounce.
-**Action:** Always include a "Return to Homepage" or similar functional link on error/not found pages to maintain user flow.
+## 2024-04-15 - [Astro Navigation Links Active State Accessibility]
+**Learning:** In Astro, navigation links tracking active routes using custom classes (e.g., `class:list={[{ active: ... }]}`) do not automatically manage accessibility state. They lack `aria-current="page"`.
+**Action:** When creating navigation menus in Astro that highlight the active page visually via CSS classes, explicitly bind `aria-current={isActive ? "page" : undefined}` to inform screen readers of the active navigation item. Passing `undefined` correctly omits the attribute when false.
