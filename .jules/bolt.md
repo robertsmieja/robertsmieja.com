@@ -26,3 +26,7 @@
 **Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.## 2024-05-24 - Do not extract template literals in static components
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
+
+## 2024-04-18 - Schwartzian Transform for Date Sorting
+**Learning:** In Astro, sorting collections returned by `getCollection("blog")` inline with `new Date(post.data.date).valueOf()` re-evaluates the date parsing repeatedly during the native sorting comparator, operating in $O(N \log N)$ time. Applying a Schwartzian transform (map-sort-map) caches the parsed values, bringing the sorting parsing overhead down to $O(N)$. Furthermore, mapping via object spreading (`{ ...post }`) breaks Astro's prototype chain, losing methods like `render()`. We must wrap the object (`{ post, dateValue }`).
+**Action:** Always extract sorting logic that requires expensive transformations (like Date parsing) into a separate utility using map-sort-map, and use object wrapping rather than spreading when dealing with Astro collection items.
