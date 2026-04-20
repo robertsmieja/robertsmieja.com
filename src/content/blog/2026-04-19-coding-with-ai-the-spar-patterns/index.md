@@ -108,6 +108,10 @@ You won't always need all four. A small task in familiar code might go straight 
 
 The underlying principle is the same in both cases: **two perspectives on the same problem produce better results than one.** SPAR is what that looks like when one of the two people doesn't have persistent memory, can't sense when it's going off the rails, and needs the human to hold the context that the session can't.
 
+---
+
+> **Note:** SPAR is a tactical workflow for human-AI pair programming. If you want to see how these session-level habits translate into the design of fully autonomous systems, read the companion post: [Designing with AI: The Anthropic Five](/blog/2026-04-19-designing-with-ai-the-anthropic-five/).
+
 [^1]: Ayende Rahien, [Agents, Code Reviews, and the Bottleneck Shift, Oh My](https://ayende.com/blog/203939-C/agents-code-reviews-and-the-bottleneck-shift-oh-my)
 [^2]: Wikipedia, [Pair programming](https://en.wikipedia.org/wiki/Pair_programming)
 [^3]: Martin Fowler, [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html)

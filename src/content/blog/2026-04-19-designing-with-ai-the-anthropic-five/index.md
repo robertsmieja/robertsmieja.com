@@ -77,5 +77,9 @@ These patterns aren't mutually exclusive. You'll often combine them: an Orchestr
 
 The design principle Anthropic emphasizes is: **start simple.** Complexity introduces latency, increases token costs, and makes debugging harder. Reach for sophisticated patterns when simpler ones hit a measurable ceiling in performance or quality.
 
+---
+
+> **Note:** These five patterns are architectural structures for autonomous systems. To see how you can manually apply these same principles as tactical habits during a "piloted session," read the companion post: [Coding with AI: The SPAR Patterns](/blog/2026-04-19-coding-with-ai-the-spar-patterns/).
+
 [^1]: Anthropic, [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)
 [^2]: Gamma, Helm, Johnson, Vlissides, [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
