@@ -45,7 +45,7 @@
 
 /* clearfix */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
-*::after {
+.clearfix::after {
   content: "";
   display: block;
   clear: both;
