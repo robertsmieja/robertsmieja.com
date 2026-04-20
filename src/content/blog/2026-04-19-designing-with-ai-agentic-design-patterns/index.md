@@ -1,5 +1,5 @@
 ---
-title: "Designing with AI: Five Agentic Patterns"
+title: "Designing with AI: Agentic Design Patterns"
 date: "2026-04-19"
 description: "Five design patterns from Anthropic's Building Effective Agents: Prompt Chaining, Routing, Parallelization, Orchestrator-Workers, and Evaluator-Optimizer."
 tags: ["ai", "agents", "design-patterns", "architecture", "anthropic"]
