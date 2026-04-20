@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
+import Giscus from "../../components/Giscus.astro"
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).sort(
@@ -19,11 +20,18 @@ export async function getStaticPaths() {
 const { post, previous, next } = Astro.props
 const { Content } = await post.render()
 
-const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-})
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
+
+const formattedDate = formatDate(post.data.date)
+const formattedUpdated =
+  post.data.updated && post.data.updated !== post.data.date
+    ? formatDate(post.data.updated)
+    : null
 ---
 
 <Layout
@@ -38,6 +46,13 @@ const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
         {formattedDate}
       </time>
       {
+        formattedUpdated && (
+          <time class="updated" datetime={post.data.updated}>
+            Updated {formattedUpdated}
+          </time>
+        )
+      }
+      {
         post.data.tags && post.data.tags.length > 0 && (
           <ul class="tag-list">
             {post.data.tags.map((tag) => (
@@ -51,6 +66,7 @@ const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
       <Content />
     </section>
   </article>
+  <Giscus />
   <nav>
     <ul class="nav-list">
       <li>
@@ -104,6 +120,18 @@ const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
   .date {
     color: #666;
     font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  header:has(.updated) .date {
+    margin-bottom: 0.25rem;
+  }
+
+  .updated {
+    color: #888;
+    font-size: 0.85rem;
+    font-style: italic;
     margin-bottom: 2rem;
     display: block;
   }
