@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
+import Giscus from "../../components/Giscus.astro"
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).sort(
@@ -51,6 +52,7 @@ const formattedDate = new Date(post.data.date).toLocaleDateString("en-US", {
       <Content />
     </section>
   </article>
+  <Giscus />
   <nav>
     <ul class="nav-list">
       <li>

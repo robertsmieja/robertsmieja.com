@@ -5,7 +5,7 @@ description: "The five design patterns from Anthropic's Building Effective Agent
 tags: ["ai", "agents", "design-patterns", "architecture", "anthropic"]
 ---
 
-If you've done pair programming before, you know there's a difference between *what you're building* and *how you're building it*. The Anthropic Five live at the "what" level — they're design patterns for agentic systems, in the same tradition as the Gang of Four patterns for object-oriented software. They answer the question: **how should this system be structured?**
+If you've done pair programming before, you know there's a difference between _what you're building_ and _how you're building it_. The Anthropic Five live at the "what" level — they're design patterns for agentic systems, in the same tradition as the Gang of Four patterns for object-oriented software. They answer the question: **how should this system be structured?**
 
 These patterns come from Anthropic's [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) and represent the most common architectures seen in production agentic systems.
 
@@ -13,7 +13,7 @@ These patterns come from Anthropic's [Building Effective Agents](https://www.ant
 
 ## Workflows vs. Agents
 
-Before the five patterns, one distinction worth internalizing: Anthropic separates *workflows* from *agents*.
+Before the five patterns, one distinction worth internalizing: Anthropic separates _workflows_ from _agents_.
 
 - **Workflows** — LLMs operate through predefined code paths. The structure is set by the engineer; the LLM makes decisions within it.
 - **Agents** — the LLM dynamically directs its own process, deciding what to do next based on what it observes.
@@ -25,7 +25,8 @@ Most of the five patterns below are workflow patterns. That's not a limitation �
 ## The Five Patterns
 
 ### 🔗 Prompt Chaining
-*Sequential steps, each building on the last.*
+
+_Sequential steps, each building on the last._
 
 The output of one LLM call becomes the input of the next, forming a pipeline. Each step is focused and independently optimizable. Because every handoff is inspectable, this is the easiest pattern to debug.
 
@@ -34,7 +35,8 @@ The output of one LLM call becomes the input of the next, forming a pipeline. Ea
 ---
 
 ### 🔀 Routing
-*Classify the input, then dispatch to a specialist.*
+
+_Classify the input, then dispatch to a specialist._
 
 An initial LLM call categorizes the input and routes it to a handler optimized for that category. Instead of one generalist prompt trying to handle everything, each route can be tuned independently.
 
@@ -43,7 +45,8 @@ An initial LLM call categorizes the input and routes it to a handler optimized f
 ---
 
 ### ⚡ Parallelization
-*Run independent subtasks concurrently.*
+
+_Run independent subtasks concurrently._
 
 Two variants: **sectioning** divides a task into parallel workstreams (different agents reviewing different files simultaneously); **voting** runs the same task multiple times across independent agents and aggregates results to increase confidence.
 
@@ -52,7 +55,8 @@ Two variants: **sectioning** divides a task into parallel workstreams (different
 ---
 
 ### 🎯 Orchestrator-Workers
-*A coordinator delegates to specialists at runtime.*
+
+_A coordinator delegates to specialists at runtime._
 
 A central LLM (the orchestrator) dynamically breaks down a task and assigns subtasks to worker LLMs. Unlike Prompt Chaining, the breakdown isn't predetermined — the orchestrator figures out the shape of the work as it goes.
 
@@ -61,7 +65,8 @@ A central LLM (the orchestrator) dynamically breaks down a task and assigns subt
 ---
 
 ### 🔄 Evaluator-Optimizer
-*Generate, critique, refine — repeat.*
+
+_Generate, critique, refine — repeat._
 
 One LLM generates output; a separate evaluator LLM critiques it against defined quality criteria; the generator revises. The loop continues until quality criteria are met or a maximum iteration count is reached.
 

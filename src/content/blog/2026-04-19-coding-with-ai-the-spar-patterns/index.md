@@ -18,7 +18,8 @@ SPAR stands for **Search, Plan, Account, Review.**
 ## The Four Patterns
 
 ### 🔭 Search
-*Read the codebase before touching it.*
+
+_Read the codebase before touching it._
 
 Before asking the agent to make any changes, have it search and map the relevant parts of the codebase first. A Search session produces **orientation, not output** — the agent reads key files, summarizes structure, identifies dependencies, and surfaces anything that might matter for the task ahead.
 
@@ -31,7 +32,8 @@ Skipping Search is the most common cause of confident-sounding but wrong agent o
 ---
 
 ### 📐 Plan
-*Agree on the approach before writing any code.*
+
+_Agree on the approach before writing any code._
 
 Have the agent produce an explicit written plan — which files to touch, what changes to make, in what order — and then **stop and wait for your review** before executing anything. You are the Navigator; the plan is the route you both agree on before the Driver starts moving.
 
@@ -44,20 +46,22 @@ This is also where you catch misunderstandings cheaply. A wrong assumption in th
 ---
 
 ### ✅ Account
-*Check off completed steps as you go.*
+
+_Check off completed steps as you go._
 
 For tasks spanning many steps, have the agent maintain a running checklist — a TODO file, a progress log, a structured list of what's been completed and what remains. As each step finishes, it gets checked off. This turns ephemeral session context into a durable record both you and the agent can refer back to.
 
 Without this, long agentic sessions drift. The agent loses track of earlier decisions, revisits already-solved problems, or contradicts work it did twenty minutes ago. A running account gives both parties a shared source of truth — the equivalent of the Navigator keeping notes during a long pairing session.
 
-The pattern is deliberately named *Account* rather than something like "save state" — the goal isn't a snapshot, it's an ongoing accounting of what's been done. The checklist grows and gets ticked off as work proceeds.
+The pattern is deliberately named _Account_ rather than something like "save state" — the goal isn't a snapshot, it's an ongoing accounting of what's been done. The checklist grows and gets ticked off as work proceeds.
 
 **When to use it:** Any task expected to span multiple sessions. Complex refactors. Multi-step debugging. Any time you might need to hand work off to a fresh session.
 
 ---
 
 ### 🔍 Review
-*Audit the diff before you ship it.*
+
+_Audit the diff before you ship it._
 
 After the agent produces changes, feed the diff to a fresh agent session — or step back and review it yourself — before committing. Ask for an audit: bugs, unintended side effects, deviation from the original plan, anything that smells wrong.
 
@@ -85,11 +89,11 @@ You won't always need all four. A small task in familiar code might go straight 
 
 ## The Pair Programming Parallel
 
-| Pair Programming | SPAR |
-|---|---|
-| Walkthrough before coding | Search |
-| Navigator agrees on approach | Plan |
-| Navigator tracks progress | Account |
-| Switching seats to review | Review |
+| Pair Programming             | SPAR    |
+| ---------------------------- | ------- |
+| Walkthrough before coding    | Search  |
+| Navigator agrees on approach | Plan    |
+| Navigator tracks progress    | Account |
+| Switching seats to review    | Review  |
 
 The underlying principle is the same in both cases: **two perspectives on the same problem produce better results than one.** SPAR is what that looks like when one of the two people doesn't have persistent memory, can't sense when it's going off the rails, and needs the human to hold the context that the session can't.

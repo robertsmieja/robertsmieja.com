@@ -1,0 +1,49 @@
+---
+// Giscus comments widget. Before comments render, complete GitHub-side setup:
+//   1. Enable Discussions on the repo.
+//   2. Install the giscus GitHub App: https://github.com/apps/giscus
+//   3. Visit https://giscus.app/ to get data-repo-id and data-category-id.
+//   4. Paste the IDs below and confirm CATEGORY matches a real Discussion category.
+const REPO = "robertsmieja/robertsmieja.com"
+const REPO_ID = "" // TODO: paste data-repo-id from giscus.app
+const CATEGORY = "Announcements" // TODO: confirm category name
+const CATEGORY_ID = "" // TODO: paste data-category-id from giscus.app
+---
+
+<section class="comments" aria-label="Comments">
+  <h2>Comments</h2>
+  <script
+    is:inline
+    src="https://giscus.app/client.js"
+    data-repo={REPO}
+    data-repo-id={REPO_ID}
+    data-category={CATEGORY}
+    data-category-id={CATEGORY_ID}
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async></script>
+  <noscript>
+    <p>Comments require JavaScript. They are hosted on GitHub Discussions.</p>
+  </noscript>
+</section>
+
+<style>
+  .comments {
+    max-width: 48rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .comments h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+</style>
