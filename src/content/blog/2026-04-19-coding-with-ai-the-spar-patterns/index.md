@@ -110,7 +110,7 @@ The underlying principle is the same in both cases: **two perspectives on the sa
 
 ---
 
-> **Note:** SPAR is a tactical workflow for human-AI pair programming. If you want to see how these session-level habits translate into the design of fully autonomous systems, read the companion post: [Designing with AI: The Anthropic Five](/blog/2026-04-19-designing-with-ai-the-anthropic-five/).
+> **Note:** SPAR is a tactical workflow for human-AI pair programming. If you want to see how these session-level habits translate into the design of fully autonomous systems, read the companion post: [Designing with AI: Agentic Design Patterns](/blog/2026-04-19-designing-with-ai-agentic-design-patterns/).
 
 [^1]: Ayende Rahien, [Agents, Code Reviews, and the Bottleneck Shift, Oh My](https://ayende.com/blog/203939-C/agents-code-reviews-and-the-bottleneck-shift-oh-my)
 [^2]: Wikipedia, [Pair programming](https://en.wikipedia.org/wiki/Pair_programming)
