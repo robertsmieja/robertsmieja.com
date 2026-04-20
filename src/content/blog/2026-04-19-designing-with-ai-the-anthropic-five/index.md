@@ -1,81 +1,81 @@
 ---
 title: "Designing with AI: The Anthropic Five"
 date: "2026-04-19"
-description: "The five design patterns from Anthropic's Building Effective Agents — Prompt Chaining, Routing, Parallelization, Orchestrator-Workers, and Evaluator-Optimizer."
+description: "The five design patterns from Anthropic's Building Effective Agents: Prompt Chaining, Routing, Parallelization, Orchestrator-Workers, and Evaluator-Optimizer."
 tags: ["ai", "agents", "design-patterns", "architecture", "anthropic"]
 ---
 
-If you've done pair programming before, you know there's a difference between _what you're building_ and _how you're building it_. The Anthropic Five live at the "what" level — they're design patterns for agentic systems, in the same tradition as the Gang of Four patterns for object-oriented software. They answer the question: **how should this system be structured?**
+There's a difference between _what you're building_ and _how you're building it_. Whether you are architecting a fully autonomous system or engaging in a "piloted session" (where you and an AI agent work together in real-time), certain recurring patterns emerge. 
 
-These patterns come from Anthropic's [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents) and represent the most common architectures seen in production agentic systems.
+Anthropic's [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)[^1] identifies five of these. They follow the tradition of the "Gang of Four" patterns for object-oriented software[^2]: a shared vocabulary for design decisions that help you avoid reinventing the wheel.
 
 ---
 
 ## Workflows vs. Agents
 
-Before the five patterns, one distinction worth internalizing: Anthropic separates _workflows_ from _agents_.
+Before diving into the patterns, it’s essential to distinguish between _workflows_ and _agents_.
 
-- **Workflows** — LLMs operate through predefined code paths. The structure is set by the engineer; the LLM makes decisions within it.
-- **Agents** — the LLM dynamically directs its own process, deciding what to do next based on what it observes.
+- **Workflows:** Systems where LLMs operate through predefined, hard-coded paths. The engineer sets the structure; the LLM handles the logic within it. This maximizes **predictability**. For example: a bash script that calls an LLM to summarize a git diff.
+- **Agents:** Systems where the LLM dynamically directs its own process, deciding which tools to use and what steps to take based on the environment. This maximizes **flexibility**. For example: a coding agent that decides whether to run a bash script, search the codebase, or delegate a sub-task to another agent.
 
-Most of the five patterns below are workflow patterns. That's not a limitation — for many problems, a well-designed workflow outperforms a fully autonomous agent, because it's more predictable, cheaper to run, and easier to debug. Choose autonomy when you need it, not by default.
+Most of the five patterns below are workflow patterns. For many problems, a well-defined workflow outperforms a fully autonomous agent. It is more reliable, cheaper to run, and easier to debug.
 
 ---
 
 ## The Five Patterns
 
-### 🔗 Prompt Chaining
-
+### 1. Prompt Chaining
 _Sequential steps, each building on the last._
 
-The output of one LLM call becomes the input of the next, forming a pipeline. Each step is focused and independently optimizable. Because every handoff is inspectable, this is the easiest pattern to debug.
+The output of one LLM call becomes the input for the next, forming a pipeline. Each step is focused and independently optimizable. Because every handoff is inspectable, this is the easiest pattern to debug. It works well for tasks with a clear sequence, such as document transformation or multi-step code generation.
 
-**Good for:** Tasks with a clear, predictable sequence of stages — document transformation, multi-step code generation, translation pipelines.
+**In a piloted session:** This looks like a deliberate sequence of focused prompts. Ask the agent to map the codebase, review that map, draft a plan, and then implement one file at a time. You carry the context forward manually, ensuring quality at every link in the chain.
 
 ---
 
-### 🔀 Routing
-
+### 2. Routing
 _Classify the input, then dispatch to a specialist._
 
-An initial LLM call categorizes the input and routes it to a handler optimized for that category. Instead of one generalist prompt trying to handle everything, each route can be tuned independently.
+An initial LLM call categorizes the input and routes it to a handler optimized for that specific task. This allows you to tune each route independently. Use this for systems handling diverse inputs, like support triage or intent classification.
 
-**Good for:** Systems handling diverse inputs — support triage, intent classification, any workflow where "what kind of thing is this?" determines "how we handle it."
+**In a piloted session:** Routing is often a conscious choice of model or tool. You might use a fast, "cheap" model for boilerplate code, a reasoning-heavy model for architectural decisions, and a specialized agent for writing tests. You act as the router, dispatching tasks to the "worker" best suited for the job.
 
 ---
 
-### ⚡ Parallelization
-
+### 3. Parallelization
 _Run independent subtasks concurrently._
 
-Two variants: **sectioning** divides a task into parallel workstreams (different agents reviewing different files simultaneously); **voting** runs the same task multiple times across independent agents and aggregates results to increase confidence.
+This pattern has two main variants:
+- **Sectioning:** Dividing a task into parallel workstreams (e.g., three agents reviewing three different files simultaneously).
+- **Voting:** Running the same task multiple times across independent agents and aggregating the results to reach a consensus.
 
-**Good for:** Speed-critical tasks, or situations where independent verification improves reliability — security reviews, test generation, research synthesis.
+**In a piloted session:** Sectioning looks like opening multiple agent sessions to tackle independent parts of a feature at once. Voting looks like posing the same difficult architectural question to two separate sessions to compare their reasoning before you commit to a path.
 
 ---
 
-### 🎯 Orchestrator-Workers
-
+### 4. Orchestrator-Workers
 _A coordinator delegates to specialists at runtime._
 
-A central LLM (the orchestrator) dynamically breaks down a task and assigns subtasks to worker LLMs. Unlike Prompt Chaining, the breakdown isn't predetermined — the orchestrator figures out the shape of the work as it goes.
+A central LLM (the orchestrator) dynamically breaks down a complex task and assigns subtasks to worker LLMs. The orchestrator determines the shape of the work as it goes. This works for problems where planning and "doing" must be interleaved, such as complex refactoring.
 
-**Good for:** Complex tasks where the required subtasks aren't known in advance. Multi-file changes, open-ended research, any problem where planning and doing are interleaved.
+**In a piloted session:** You are the orchestrator. You break a large feature into discrete chunks, assign each to a fresh agent session, and integrate the results yourself. You maintain the high-level plan while the workers handle the implementation details.
 
 ---
 
-### 🔄 Evaluator-Optimizer
+### 5. Evaluator-Optimizer
+_Generate, critique, refine._
 
-_Generate, critique, refine — repeat._
+One LLM generates an output; a separate evaluator critiques it against defined quality criteria; the generator then revises the work. The loop continues until the "gate" is passed. This pattern pays off when quality is measurable and iterative refinement adds clear value.
 
-One LLM generates output; a separate evaluator LLM critiques it against defined quality criteria; the generator revises. The loop continues until quality criteria are met or a maximum iteration count is reached.
-
-**Good for:** Tasks where quality is measurable and iterative refinement has clear value — documentation, code meeting specific standards, outputs that need to pass a defined bar.
+**In a piloted session:** This is the habit of feeding a generated diff to a fresh agent session with instructions to find the bugs, then taking that critique back to the original session to fix them. You can also act as the evaluator yourself, using your professional judgment as the final quality gate.
 
 ---
 
 ## Choosing a Pattern
 
-These patterns aren't mutually exclusive. Production systems often combine them — an Orchestrator-Workers setup might use Parallelization for one of its worker steps, or wrap an Evaluator-Optimizer loop inside a broader Prompt Chain.
+These patterns aren't mutually exclusive. You'll often combine them: an Orchestrator-Workers setup might use Parallelization for a sub-step, or wrap an Evaluator-Optimizer loop inside a broader Prompt Chain.
 
-The design principle Anthropic emphasizes is worth repeating: **start simple, add complexity only when it demonstrably improves outcomes.** A well-tuned Prompt Chain will outperform a poorly-designed multi-agent system every time. Reach for more sophisticated patterns when simpler ones have a measurable ceiling, not before.
+The design principle Anthropic emphasizes is: **start simple.** Complexity introduces latency, increases token costs, and makes debugging harder. Reach for sophisticated patterns when simpler ones hit a measurable ceiling in performance or quality.
+
+[^1]: Anthropic, [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)
+[^2]: Gamma, Helm, Johnson, Vlissides, [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
