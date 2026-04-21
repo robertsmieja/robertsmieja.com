@@ -2,9 +2,9 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
-)
+import { sortPostsByDateDescending } from "../../lib/blogUtils"
+
+const posts = sortPostsByDateDescending(await getCollection("blog"))
 ---
 
 <Layout
