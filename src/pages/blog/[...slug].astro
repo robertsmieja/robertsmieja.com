@@ -2,11 +2,10 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import Giscus from "../../components/Giscus.astro"
+import { sortPosts } from "../../lib/blogUtils"
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
-  )
+  const posts = sortPosts(await getCollection("blog"))
   return posts.map((post, index) => ({
     params: { slug: post.slug },
     props: {
