@@ -18,22 +18,23 @@ Coding with an AI agent is pair programming with a particular kind of partner. T
 In a field moving faster than almost any other, this is the workflow I've settled on when approaching a software engineering task with an agent.
 
 SPAR: **Search, Plan, Act/Account, Review.**
+
 - **Search**: Ask your agent to map the relevant parts of the codebase before making any changes. Alternatively, ask it to interview you based on your prompt to gather whatever context it needs.
 - **Plan**: Have your agent write an explicit plan before executing anything, preferably saved to disk (e.g., `PLAN.md`) in case the session crashes or drifts.
 - **Act/Account**: Maintain a running log of what's been done and what remains (e.g., `PROGRESS.md`). This externalizes the session state, allowing you to "start fresh" with a new conversation when the current one gets sludgy.
 - **Review**: After implementation, ask the agent to review its own work against your repository's best practices, CI checks, and linting. If you can, use a different model for the review than the one that wrote the code.
 
-I like this acronym because it reinforces the idea that we should be actively *sparring* with our agents, asking them to explain code we don't understand, asking why they chose a particular approach. It's all too easy to blindly trust that your agent knows what it's doing.
+I like this acronym because it reinforces the idea that we should be actively _sparring_ with our agents, asking them to explain code we don't understand, asking why they chose a particular approach. It's all too easy to blindly trust that your agent knows what it's doing.
 
 (Complaints about the acronym and the pun can be directed to Claude.)
-
 
 ---
 
 ## The Four Patterns
 
 ### Search
-*Read the codebase before touching it.*
+
+_Read the codebase before touching it._
 
 Before asking the agent to make any changes, have it search and map the relevant parts of the codebase first. The agent reads key files, summarizes structure, identifies dependencies, and surfaces anything that might matter for the task ahead.
 
@@ -44,11 +45,13 @@ Skipping Search is the most common cause of confident-sounding but wrong agent o
 ---
 
 ### Plan
-*Agree on the approach before writing any code.*
+
+_Agree on the approach before writing any code._
 
 Have the agent produce an explicit written plan (which files to touch, what changes to make, in what order) and then **stop and wait for your review** before executing anything. You're the Navigator; the plan is the route you both agree on before the Driver starts moving.
 
 The critical ingredient is the **human gate** between plan and action. Use this gate to verify:
+
 - What commands will the agent run?
 - What files will it touch?
 - How will it validate its changes?
@@ -58,7 +61,8 @@ The written artifact (a `PLAN.md`, a checklist, an explicit "ready to proceed?")
 ---
 
 ### Act/Account
-*Keep a running record of where you are.*
+
+_Keep a running record of where you are._
 
 For tasks spanning many steps, have the agent maintain a running checklist: a TODO file, a progress log, or a `PROGRESS.md`. As each step finishes, it gets checked off. **This turns ephemeral session context into durable state.**
 
@@ -71,7 +75,8 @@ More importantly, **it allows you to start fresh often.** AI agents are at their
 ---
 
 ### Review
-*Audit the diff before you ship it.*
+
+_Audit the diff before you ship it._
 
 After the agent produces changes, feed the diff to a fresh agent session (or step back and review it yourself) before committing. Ask for an explicit audit: bugs, unintended side effects, deviation from the original plan, anything that smells wrong.
 
@@ -99,12 +104,12 @@ You won't always need all four. A small task in familiar code might go straight 
 
 ## The Pair Programming Parallel
 
-| Pair Programming | SPAR |
-|---|---|
-| Walkthrough before coding | Search |
-| Navigator agrees on approach | Plan |
-| Navigator tracks progress | Act/Account |
-| Switching seats to review | Review |
+| Pair Programming             | SPAR        |
+| ---------------------------- | ----------- |
+| Walkthrough before coding    | Search      |
+| Navigator agrees on approach | Plan        |
+| Navigator tracks progress    | Act/Account |
+| Switching seats to review    | Review      |
 
 The underlying principle is the same in both cases: **two perspectives on the same problem produce better results than one.** SPAR is what that looks like when one of the two people doesn't have persistent memory, can't sense when it's going off the rails, and needs the human to hold the context that the session can't.
 
@@ -113,6 +118,9 @@ The underlying principle is the same in both cases: **two perspectives on the sa
 > **Note:** SPAR is a tactical workflow for human-AI pair programming. If you want to see how these session-level habits translate into the design of fully autonomous systems, read the companion post: [Designing with AI: Agentic Design Patterns](/blog/2026-04-19-designing-with-ai-agentic-design-patterns/).
 
 [^1]: Ayende Rahien, [Agents, Code Reviews, and the Bottleneck Shift, Oh My](https://ayende.com/blog/203939-C/agents-code-reviews-and-the-bottleneck-shift-oh-my)
+
 [^2]: Wikipedia, [Pair programming](https://en.wikipedia.org/wiki/Pair_programming)
+
 [^3]: Martin Fowler, [On Pair Programming](https://martinfowler.com/articles/on-pair-programming.html)
+
 [^4]: Martin Fowler, [On Pair Programming: Styles](https://martinfowler.com/articles/on-pair-programming.html#Styles)
