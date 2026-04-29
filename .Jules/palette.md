@@ -9,3 +9,7 @@
 ## 2024-05-18 - Standardize External Links with Reusable Component
 **Learning:** This app previously contained multiple plain `<a>` tags with `target="_blank"` scattered across pages (e.g., `index.tsx`, `projectEntry.tsx`). These links lacked visual indicators showing they open in new tabs, and many lacked descriptive `aria-label`s, which is bad for accessibility (screen readers need to warn users about context changes).
 **Action:** Created a reusable `<ExternalLink>` component that standardizes external links. It forces `target="_blank"` and `rel="noopener noreferrer"`, visually appends a decorative FontAwesome external link icon (`faExternalLinkAlt` with `aria-hidden="true"`), and requires an `ariaLabel` prop (e.g., "GitHub (opens in a new tab)"). Always use this component for external links to ensure consistent UX and accessibility.
+
+## 2024-05-19 - Explicit aria-current for active navigation links
+**Learning:** This app uses custom `active` classes on navigation links to visually indicate the current page. However, screen readers don't understand visual CSS classes. Without `aria-current="page"`, screen reader users are unaware of their current location within the navigation menu.
+**Action:** Always add `aria-current="page"` (or conditionally `aria-current={isActive ? "page" : undefined}`) to navigation links alongside visual active classes to ensure the current route is properly announced by assistive technologies.
