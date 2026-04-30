@@ -26,3 +26,7 @@
 **Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.## 2024-05-24 - Do not extract template literals in static components
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
+
+## 2024-04-30 - Date parsing in sort bottleneck
+**Learning:** Parsing `Date` objects repeatedly during $O(N \log N)$ sort comparisons is a significant performance bottleneck.
+**Action:** Use a Schwartzian transform (map-sort-map) to extract date timestamps once in $O(N)$ time, sort the primitive numbers efficiently, and then extract the objects. This reduces date parsing overhead and is much faster for large arrays.
