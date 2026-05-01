@@ -26,3 +26,7 @@
 **Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.## 2024-05-24 - Do not extract template literals in static components
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
+
+## 2026-05-01 - O(N log N) Date Parsing Bottleneck in Blog Sorting
+**Learning:** Repeated `Date` instantiation within sort comparators for blog collections (e.g., `(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()`) is a performance bottleneck. The `sort` method calls the comparator multiple times for the same items, resulting in O(N log N) redundant date parsings which can slow down build times for large collections.
+**Action:** Use a map-sort-map pattern (Schwartzian transform) to parse and cache date values once per item before sorting. This reduces date parsing from O(N log N) to O(N), significantly improving sort performance for large collections.
