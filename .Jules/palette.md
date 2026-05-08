@@ -9,3 +9,7 @@
 ## 2024-05-18 - Standardize External Links with Reusable Component
 **Learning:** This app previously contained multiple plain `<a>` tags with `target="_blank"` scattered across pages (e.g., `index.tsx`, `projectEntry.tsx`). These links lacked visual indicators showing they open in new tabs, and many lacked descriptive `aria-label`s, which is bad for accessibility (screen readers need to warn users about context changes).
 **Action:** Created a reusable `<ExternalLink>` component that standardizes external links. It forces `target="_blank"` and `rel="noopener noreferrer"`, visually appends a decorative FontAwesome external link icon (`faExternalLinkAlt` with `aria-hidden="true"`), and requires an `ariaLabel` prop (e.g., "GitHub (opens in a new tab)"). Always use this component for external links to ensure consistent UX and accessibility.
+
+## 2024-05-18 - Header Navigation Accessibility: aria-current
+**Learning:** In Astro components, navigation links tracking active routes with custom classes (e.g., `class:list={[{ active: ... }]}`) do not automatically manage accessibility state for screen readers.
+**Action:** Always explicitly set `aria-current="page"` alongside the visual active class. Conditionally add it by setting the false condition to `undefined` (e.g., `aria-current={condition ? "page" : undefined}`) so Astro cleanly omits the attribute entirely when not active.
