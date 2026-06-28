@@ -19,12 +19,13 @@ const pathname = Astro.url.pathname
         </a>
       </li>
       <li>
-        <a href="/" class:list={[{ active: pathname === "/" }]}>Home</a>
+        <a href="/" aria-current={pathname === "/" ? "page" : undefined}>Home</a
+        >
       </li>
       <li>
         <a
           href="/blog/"
-          class:list={[{ active: pathname.startsWith("/blog/") }]}
+          aria-current={pathname.startsWith("/blog/") ? "page" : undefined}
         >
           Blog
         </a>
@@ -32,7 +33,7 @@ const pathname = Astro.url.pathname
       <li>
         <a
           href="/presentations/"
-          class:list={[{ active: pathname === "/presentations/" }]}
+          aria-current={pathname === "/presentations/" ? "page" : undefined}
         >
           Presentations
         </a>
@@ -40,13 +41,16 @@ const pathname = Astro.url.pathname
       <li>
         <a
           href="/projects/"
-          class:list={[{ active: pathname === "/projects/" }]}
+          aria-current={pathname === "/projects/" ? "page" : undefined}
         >
           Projects
         </a>
       </li>
       <li>
-        <a href="/resume/" class:list={[{ active: pathname === "/resume/" }]}>
+        <a
+          href="/resume/"
+          aria-current={pathname === "/resume/" ? "page" : undefined}
+        >
           R&eacute;sum&eacute;
         </a>
       </li>
@@ -124,7 +128,7 @@ const pathname = Astro.url.pathname
 
   a:hover,
   a:focus-visible,
-  a.active {
+  a[aria-current="page"] {
     text-decoration: underline;
     text-underline-offset: 4px;
   }
@@ -134,7 +138,7 @@ const pathname = Astro.url.pathname
     outline-offset: 2px;
   }
 
-  a.active {
+  a[aria-current="page"] {
     font-weight: bold;
   }
 </style>
