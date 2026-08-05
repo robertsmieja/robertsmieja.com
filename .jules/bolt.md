@@ -26,3 +26,6 @@
 **Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.## 2024-05-24 - Do not extract template literals in static components
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
+## 2024-03-24 - Replaced toLocaleDateString with Intl.DateTimeFormat
+**Learning:** Calling `toLocaleDateString` inside a `.map` loop over many items is significantly slower than creating a single `Intl.DateTimeFormat` instance and calling its `.format()` method, as `toLocaleDateString` recreates the locale options on every invocation.
+**Action:** Extract a single `Intl.DateTimeFormat` instance outside of the map block or as a reusable module-level constant when formatting dates for many items in static HTML generation.
