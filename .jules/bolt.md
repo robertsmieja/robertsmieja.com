@@ -26,3 +26,6 @@
 **Action:** Move static inline objects or styles into a constant declared outside the component function so its reference remains stable across renders.## 2024-05-24 - Do not extract template literals in static components
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
+## 2024-08-12 - Extracting Intl Object in SSG Build
+**Learning:** Instantiating Intl.DateTimeFormat is computationally expensive. Calling it repeatedly inside a loop or for every page generation in an Astro component creates unnecessary object allocations and slows down static site generation (SSG).
+**Action:** Extract Intl.DateTimeFormat instantiation out of the render loop and into the component frontmatter to cache the instance and optimize the build process.
