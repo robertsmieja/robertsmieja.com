@@ -4,6 +4,13 @@ import Layout from "../../layouts/Layout.astro"
 import { sortBlogPosts } from "../../lib/blogUtils"
 
 const posts = sortBlogPosts(await getCollection("blog"))
+
+// ⚡ Bolt: Cache Intl.DateTimeFormat to avoid re-instantiation overhead within the map loop
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+})
 ---
 
 <Layout
@@ -24,14 +31,7 @@ const posts = sortBlogPosts(await getCollection("blog"))
         <ul class="post-list">
           {posts.map((post) => {
             const title = post.data.title || post.slug
-            const formattedDate = new Date(post.data.date).toLocaleDateString(
-              "en-US",
-              {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              }
-            )
+            const formattedDate = dateFormatter.format(new Date(post.data.date))
             return (
               <li class="post-item">
                 <h3 class="post-title">
