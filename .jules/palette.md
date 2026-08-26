@@ -2,6 +2,6 @@
 **Learning:** Empty states in routing (like 404 pages) should always provide a clear path forward to prevent user frustration. Users who encounter a dead end without a recovery path are more likely to bounce.
 **Action:** Always include a "Return to Homepage" or similar functional link on error/not found pages to maintain user flow.
 
-## 2026-05-20 - Set aria-current="page" on active navigation links
-**Learning:** Visually distinguishing active navigation links using CSS classes is inaccessible; screen readers require `aria-current="page"` to identify the active route.
-**Action:** Always use `aria-current={isActive ? "page" : undefined}` alongside visual active classes on navigation links.
+## 2026-05-21 - Added aria-current to active navigation links
+**Learning:** Navigation links tracking active routes with custom CSS classes do not automatically manage accessibility state for screen readers.
+**Action:** Always explicitly set `aria-current="page"` (or undefined for inactive states) on navigation links to ensure screen readers announce the currently active page.
