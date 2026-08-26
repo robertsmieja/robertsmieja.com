@@ -19,6 +19,9 @@ export async function getStaticPaths() {
 const { post, previous, next } = Astro.props
 const { Content } = await post.render()
 
+// OPTIMIZATION: Extract Intl.DateTimeFormat instantiation to reuse formatter.
+// Using new Date().toLocaleDateString() creates a new formatter implicitly on each call,
+// which adds performance overhead during the static generation build.
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",

@@ -5,6 +5,10 @@ import { sortBlogPosts } from "../../lib/blogUtils"
 
 const posts = sortBlogPosts(await getCollection("blog"))
 
+// OPTIMIZATION: Extract Intl.DateTimeFormat instantiation into frontmatter.
+// Instantiating the formatter inside the JSX map loop or using new Date().toLocaleDateString()
+// adds significant performance overhead during the static generation build.
+// Reusing a single formatter instance is much faster.
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
