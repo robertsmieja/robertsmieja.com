@@ -1,10 +1,9 @@
 ---
 import { getCollection } from "astro:content"
+import { sortBlogPosts } from "../../lib/blogUtils.ts"
 import Layout from "../../layouts/Layout.astro"
 
-import { sortPostsByDateDescending } from "../../lib/blogUtils"
-
-const posts = sortPostsByDateDescending(await getCollection("blog"))
+const posts = sortBlogPosts(await getCollection("blog"))
 ---
 
 <Layout
