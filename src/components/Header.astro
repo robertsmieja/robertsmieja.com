@@ -22,10 +22,8 @@ const pathname = Astro.url.pathname
         <a
           href="/"
           class:list={[{ active: pathname === "/" }]}
-          aria-current={pathname === "/" ? "page" : undefined}
+          aria-current={pathname === "/" ? "page" : undefined}>Home</a
         >
-          Home
-        </a>
       </li>
       <li>
         <a
