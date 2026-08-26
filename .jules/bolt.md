@@ -27,6 +27,8 @@
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
 
-## 2024-04-19 - [Repeated Date Instantiation in Sort]
-**Learning:** Repeated `Date` instantiation within sort comparators for blog collections is a performance bottleneck. Using a map-sort-map pattern (Schwartzian transform) to cache parsed date values reduces date parsing from O(N log N) to O(N), improving sort performance by ~90% for large collections.
-**Action:** Extract repeated logic from sort comparators and apply a map-sort-map pattern.
+## 2024-04-21 - Blog Sorting Performance Optimization (Schwartzian Transform)
+
+**Learning:** Repeated `Date` instantiation within sort comparators for large blog collections is a performance bottleneck because the `new Date()` parsing is evaluated redundantly on every comparison during the sort (O(N log N)).
+
+**Action:** Use a map-sort-map pattern (Schwartzian transform) to cache parsed date values before sorting. This reduces date parsing from O(N log N) to O(N), improving sort performance by ~90% for large collections, while safely preventing implicit mutations from `.sort()`.

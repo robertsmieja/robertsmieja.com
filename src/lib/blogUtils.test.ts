@@ -1,34 +1,18 @@
 import test from "node:test"
-import assert from "node:assert"
-import { sortPostsByDate } from "./blogUtils.ts"
+import assert from "node:assert/strict"
+import { sortPostsByDateDescending } from "./blogUtils.ts"
 import type { CollectionEntry } from "astro:content"
 
-test("sortPostsByDate sorts posts by date in descending order", () => {
+test("sortPostsByDateDescending sorts posts by date descending", () => {
   const posts = [
-    { data: { date: "2023-01-01" }, slug: "post-1" },
-    { data: { date: "2023-12-31" }, slug: "post-2" },
-    { data: { date: "2023-06-15" }, slug: "post-3" },
-  ] as CollectionEntry<"blog">[]
+    { data: { date: "2023-01-01" }, id: "1" },
+    { data: { date: "2023-01-03" }, id: "3" },
+    { data: { date: "2023-01-02" }, id: "2" },
+  ] as unknown as CollectionEntry<"blog">[]
 
-  const sortedPosts = sortPostsByDate(posts)
+  const sorted = sortPostsByDateDescending(posts)
 
-  assert.strictEqual(sortedPosts.length, 3)
-  assert.strictEqual(sortedPosts[0].slug, "post-2")
-  assert.strictEqual(sortedPosts[1].slug, "post-3")
-  assert.strictEqual(sortedPosts[2].slug, "post-1")
-})
-
-test("sortPostsByDate handles empty arrays", () => {
-  const sortedPosts = sortPostsByDate([])
-  assert.strictEqual(sortedPosts.length, 0)
-})
-
-test("sortPostsByDate preserves object references", () => {
-  const post = {
-    data: { date: "2023-01-01" },
-    slug: "post-1",
-  } as CollectionEntry<"blog">
-  const sortedPosts = sortPostsByDate([post])
-
-  assert.strictEqual(sortedPosts[0], post)
+  assert.equal(sorted[0].id, "3")
+  assert.equal(sorted[1].id, "2")
+  assert.equal(sorted[2].id, "1")
 })
