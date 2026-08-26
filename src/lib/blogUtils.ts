@@ -1,8 +1,4 @@
-/**
- * Sorts blog posts by date in descending order using the Schwartzian transform
- * to avoid redundant Date parsing during comparison.
- */
-export function sortBlogPosts<T extends { data: { date: string | Date } }>(
+export function sortPostsByDate<T extends { data: { date: Date | string } }>(
   posts: T[]
 ): T[] {
   return posts
@@ -11,5 +7,8 @@ export function sortBlogPosts<T extends { data: { date: string | Date } }>(
       dateValue: new Date(post.data.date).valueOf(),
     }))
     .sort((a, b) => b.dateValue - a.dateValue)
-    .map((item) => item.post)
+    .map(({ post }) => post)
 }
+
+/** Backward-compatible alias used by blog pages (renamed function kept on disk). */
+export const sortBlogPosts = sortPostsByDate;

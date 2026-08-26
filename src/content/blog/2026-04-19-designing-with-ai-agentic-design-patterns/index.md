@@ -5,7 +5,7 @@ description: "Five design patterns from Anthropic's Building Effective Agents: P
 tags: ["ai", "agents", "design-patterns", "architecture", "anthropic"]
 ---
 
-There's a difference between _what you're building_ and _how you're building it_. Whether you are architecting a fully autonomous system or engaging in a "piloted session" (where you and an AI agent work together in real-time), certain recurring patterns emerge. 
+There's a difference between _what you're building_ and _how you're building it_. Whether you are architecting a fully autonomous system or engaging in a "piloted session" (where you and an AI agent work together in real-time), certain recurring patterns emerge.
 
 Anthropic's [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)[^1] identifies five of these. They follow the tradition of the "Gang of Four" patterns for object-oriented software[^2]: a shared vocabulary for design decisions that help you avoid reinventing the wheel.
 
@@ -25,6 +25,7 @@ Most of the five patterns below are workflow patterns. For many problems, a well
 ## The Five Patterns
 
 ### 1. Prompt Chaining
+
 _Sequential steps, each building on the last._
 
 The output of one LLM call becomes the input for the next, forming a pipeline. Each step is focused and independently optimizable. Because every handoff is inspectable, this is the easiest pattern to debug. It works well for tasks with a clear sequence, such as document transformation or multi-step code generation.
@@ -34,6 +35,7 @@ The output of one LLM call becomes the input for the next, forming a pipeline. E
 ---
 
 ### 2. Routing
+
 _Classify the input, then dispatch to a specialist._
 
 An initial LLM call categorizes the input and routes it to a handler optimized for that specific task. This allows you to tune each route independently. Use this for systems handling diverse inputs, like support triage or intent classification.
@@ -43,9 +45,11 @@ An initial LLM call categorizes the input and routes it to a handler optimized f
 ---
 
 ### 3. Parallelization
+
 _Run independent subtasks concurrently._
 
 This pattern has two main variants:
+
 - **Sectioning:** Dividing a task into parallel workstreams (e.g., three agents reviewing three different files simultaneously).
 - **Voting:** Running the same task multiple times across independent agents and aggregating the results to reach a consensus.
 
@@ -54,6 +58,7 @@ This pattern has two main variants:
 ---
 
 ### 4. Orchestrator-Workers
+
 _A coordinator delegates to specialists at runtime._
 
 A central LLM (the orchestrator) dynamically breaks down a complex task and assigns subtasks to worker LLMs. The orchestrator determines the shape of the work as it goes. This works for problems where planning and "doing" must be interleaved, such as complex refactoring.
@@ -63,6 +68,7 @@ A central LLM (the orchestrator) dynamically breaks down a complex task and assi
 ---
 
 ### 5. Evaluator-Optimizer
+
 _Generate, critique, refine._
 
 One LLM generates an output; a separate evaluator critiques it against defined quality criteria; the generator then revises the work. The loop continues until the "gate" is passed. This pattern pays off when quality is measurable and iterative refinement adds clear value.
@@ -82,4 +88,5 @@ The design principle Anthropic emphasizes is: **start simple.** Complexity intro
 > **Note:** These five patterns are architectural structures for autonomous systems. To see how you can manually apply these same principles as tactical habits during a "piloted session," read the companion post: [Coding with AI: The SPAR Patterns](/blog/2026-04-19-coding-with-ai-the-spar-patterns/).
 
 [^1]: Anthropic, [Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)
+
 [^2]: Gamma, Helm, Johnson, Vlissides, [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
