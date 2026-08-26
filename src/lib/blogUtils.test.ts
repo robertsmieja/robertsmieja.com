@@ -1,34 +1,52 @@
 import test from "node:test"
 import assert from "node:assert"
-import { sortPostsByDate, generateBlogPaths } from "./blogUtils.ts"
+import { sortBlogPosts } from "./blogUtils.ts"
 
-test("sortPostsByDate sorts posts from newest to oldest", () => {
+test("sortBlogPosts sorts by date descending", () => {
   const posts = [
-    { data: { date: "2023-01-01" } },
-    { data: { date: "2024-01-01" } },
-    { data: { date: "2022-01-01" } },
+    { id: 1, data: { date: "2023-01-01" } },
+    { id: 2, data: { date: "2024-01-01" } },
+    { id: 3, data: { date: "2022-01-01" } },
   ]
-  const sorted = sortPostsByDate(posts)
-  assert.strictEqual(sorted[0].data.date, "2024-01-01")
-  assert.strictEqual(sorted[1].data.date, "2023-01-01")
-  assert.strictEqual(sorted[2].data.date, "2022-01-01")
+
+  const sorted = sortBlogPosts(posts)
+
+  assert.strictEqual(sorted[0].id, 2) // 2024
+  assert.strictEqual(sorted[1].id, 1) // 2023
+  assert.strictEqual(sorted[2].id, 3) // 2022
 })
 
-test("generateBlogPaths generates correct paths with previous and next", () => {
-  const posts = [{ slug: "post-1" }, { slug: "post-2" }, { slug: "post-3" }]
-  const paths = generateBlogPaths(posts)
+test("sortBlogPosts preserves post objects and prototypes", () => {
+  class TestPost {
+    id: number
+    data: { date: string }
 
-  assert.strictEqual(paths.length, 3)
+    constructor(id: number, date: string) {
+      this.id = id
+      this.data = { date }
+    }
 
-  assert.strictEqual(paths[0].params.slug, "post-1")
-  assert.strictEqual(paths[0].props.previous?.slug, "post-2")
-  assert.strictEqual(paths[0].props.next, null)
+    render() {
+      return "rendered"
+    }
+  }
 
-  assert.strictEqual(paths[1].params.slug, "post-2")
-  assert.strictEqual(paths[1].props.previous?.slug, "post-3")
-  assert.strictEqual(paths[1].props.next?.slug, "post-1")
+  const posts = [new TestPost(1, "2023-01-01"), new TestPost(2, "2024-01-01")]
 
-  assert.strictEqual(paths[2].params.slug, "post-3")
-  assert.strictEqual(paths[2].props.previous, null)
-  assert.strictEqual(paths[2].props.next?.slug, "post-2")
+  const sorted = sortBlogPosts(posts)
+
+  assert.strictEqual(sorted[0] instanceof TestPost, true)
+  assert.strictEqual(sorted[0].render(), "rendered")
+})
+
+test("sortBlogPosts does not mutate the original array", () => {
+  const posts = [
+    { id: 1, data: { date: "2023-01-01" } },
+    { id: 2, data: { date: "2024-01-01" } },
+  ]
+
+  const originalCopy = [...posts]
+  sortBlogPosts(posts)
+
+  assert.deepStrictEqual(posts, originalCopy)
 })
