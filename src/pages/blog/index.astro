@@ -5,10 +5,8 @@ import { sortBlogPosts } from "../../lib/blogUtils"
 
 const posts = sortBlogPosts(await getCollection("blog"))
 
-// ⚡ Bolt Optimization: Using a single Intl.DateTimeFormat instance
-// instead of calling toLocaleDateString inside the map loop prevents
-// re-evaluating the locale formatting options repeatedly, significantly
-// reducing SSG build overhead.
+// ⚡ Bolt: Extracted Intl.DateTimeFormat instantiation out of the loop
+// to avoid expensive re-instantiations for every blog post
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",

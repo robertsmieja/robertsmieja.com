@@ -2,10 +2,10 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import Giscus from "../../components/Giscus.astro"
-import { sortPostsByDate } from "../../lib/blogUtils"
+import { sortBlogPosts } from "../../lib/blogUtils"
 
 export async function getStaticPaths() {
-  const posts = sortPostsByDate(await getCollection("blog"))
+  const posts = sortBlogPosts(await getCollection("blog"))
   return posts.map((post, index) => ({
     params: { slug: post.slug },
     props: {
@@ -19,9 +19,8 @@ export async function getStaticPaths() {
 const { post, previous, next } = Astro.props
 const { Content } = await post.render()
 
-// ⚡ Bolt Optimization: Extracting Intl.DateTimeFormat instantiation
-// outside the formatDate function avoids recreating the locale options on
-// every call, which improves SSG rendering performance.
+// ⚡ Bolt: Extracted Intl.DateTimeFormat instantiation out of the function
+// to avoid expensive re-instantiations
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
