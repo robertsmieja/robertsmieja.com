@@ -3,6 +3,7 @@ import { getCollection } from "astro:content"
 import { sortBlogPosts } from "../lib/blogUtils.ts"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import type { APIContext } from "astro"
+import { sortBlogPosts } from "../lib/blogUtils.ts"
 
 export async function GET(context: APIContext) {
   const posts = sortBlogPosts(await getCollection("blog"))
