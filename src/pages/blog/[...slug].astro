@@ -19,12 +19,12 @@ export async function getStaticPaths() {
 const { post, previous, next } = Astro.props
 const { Content } = await post.render()
 
-// ⚡ Bolt: Extract Intl.DateTimeFormat instantiation out of the render loop to optimize SSG build performance
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 })
+
 const formatDate = (d: string) => dateFormatter.format(new Date(d))
 
 const formattedDate = formatDate(post.data.date)
