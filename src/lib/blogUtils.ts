@@ -1,11 +1,21 @@
-export function sortBlogPosts<T extends { data: { date: Date | string } }>(posts: T[]): T[] {
-  // Use a map-sort-map pattern (Schwartzian transform) to cache parsed date values
-  // This reduces Date parsing from O(N log N) to O(N), improving performance
+export function sortPostsByDate<T extends { data: { date: Date | string } }>(
+  posts: T[]
+): T[] {
   return posts
-    .map((post) => ({
-      post,
-      dateValue: new Date(post.data.date).valueOf(),
-    }))
+    .map((post) => ({ post, dateValue: new Date(post.data.date).valueOf() }))
     .sort((a, b) => b.dateValue - a.dateValue)
-    .map(({ post }) => post);
+    .map(({ post }) => post)
+}
+
+export function generateBlogPaths<T extends { slug: string }>(
+  sortedPosts: T[]
+) {
+  return sortedPosts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      previous: index < sortedPosts.length - 1 ? sortedPosts[index + 1] : null,
+      next: index > 0 ? sortedPosts[index - 1] : null,
+    },
+  }))
 }
