@@ -19,8 +19,7 @@ export async function getStaticPaths() {
 const { post, previous, next } = Astro.props
 const { Content } = await post.render()
 
-// ⚡ Bolt: Extracted Intl.DateTimeFormat instantiation out of the function
-// to avoid expensive re-instantiations
+// ⚡ Bolt: Extract Intl.DateTimeFormat for consistency and performance
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
