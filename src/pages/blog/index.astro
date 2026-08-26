@@ -5,8 +5,8 @@ import { sortBlogPosts } from "../../lib/blogUtils"
 
 const posts = sortBlogPosts(await getCollection("blog"))
 
-// ⚡ Bolt: Cache Intl.DateTimeFormat to prevent expensive re-instantiation in the loop below.
-// This reduces the format time by ~20x (e.g., from ~1000ms to ~45ms for 10k items).
+// ⚡ Bolt: Extract Intl.DateTimeFormat out of the component loop
+// to prevent instantiating a new formatter object for every blog post.
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
