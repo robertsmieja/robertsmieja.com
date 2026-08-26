@@ -5,8 +5,7 @@ import { sortBlogPosts } from "../../lib/blogUtils"
 
 const posts = sortBlogPosts(await getCollection("blog"))
 
-// ⚡ Bolt: Cache Intl.DateTimeFormat instance to avoid recreating it in the loop
-// This improves SSG performance by ~22x for date formatting (from ~980ms to ~43ms per 10k dates)
+// ⚡ Bolt: Extract Intl.DateTimeFormat instantiation out of the render loop to avoid creating a new object on every post render
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
