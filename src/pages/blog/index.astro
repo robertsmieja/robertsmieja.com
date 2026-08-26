@@ -5,7 +5,7 @@ import { sortBlogPosts } from "../../lib/blogUtils"
 
 const posts = sortBlogPosts(await getCollection("blog"))
 
-// ⚡ Bolt: Extract Intl.DateTimeFormat instantiation out of the render loop to avoid creating a new object on every post render
+// ⚡ Bolt: Cache Intl.DateTimeFormat to avoid re-instantiation overhead within the map loop
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
