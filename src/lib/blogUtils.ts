@@ -9,3 +9,6 @@ export function sortPostsByDate<T extends { data: { date: Date | string } }>(
     .sort((a, b) => b.dateValue - a.dateValue)
     .map(({ post }) => post)
 }
+
+/** Backward-compatible alias used by blog pages (renamed function kept on disk). */
+export const sortBlogPosts = sortPostsByDate;
