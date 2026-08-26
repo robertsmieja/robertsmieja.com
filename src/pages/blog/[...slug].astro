@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 const { post, previous, next } = Astro.props
 const { Content } = await post.render()
 
-// ⚡ Bolt: Use a single Intl.DateTimeFormat instance instead of toLocaleDateString
+// ⚡ Bolt: Cache Intl.DateTimeFormat instance to optimize date formatting
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
