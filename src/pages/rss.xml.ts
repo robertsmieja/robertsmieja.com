@@ -1,12 +1,11 @@
 import rss from "@astrojs/rss"
 import { getCollection } from "astro:content"
-import { sortBlogPosts } from "../lib/blogUtils.ts"
+import { sortPosts } from "../lib/blogUtils"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 import type { APIContext } from "astro"
-import { sortBlogPosts } from "../lib/blogUtils.ts"
 
 export async function GET(context: APIContext) {
-  const posts = sortBlogPosts(await getCollection("blog"))
+  const posts = sortPosts(await getCollection("blog"))
 
   return rss({
     title: `${SITE_TITLE}'s Blog RSS Feed`,

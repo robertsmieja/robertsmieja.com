@@ -27,6 +27,6 @@
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
 
-## 2026-04-23 - Date Parsing Bottleneck in Blog Posts Sorting
-**Learning:** Repeated `Date` instantiation within sort comparators for blog collections is a performance bottleneck in Astro statically generated blogs. Instantiating `Date` objects inside the `.sort()` comparator parses the date string on every comparison, resulting in O(N log N) date parsing operations.
-**Action:** Use a Schwartzian transform (map-sort-map pattern) to cache parsed date values before sorting. This reduces the number of date parsing operations from O(N log N) to O(N), significantly improving the build time when handling large numbers of blog posts.
+## 2025-04-24 - Optimized Blog Post Sorting via Schwartzian Transform
+**Learning:** In Astro components, the inline sorting of blog posts used `new Date().valueOf()` directly within the array sort comparator. Because sort compares elements $O(N \log N)$ times, this caused redundant `Date` object parsing and allocations for the same blog posts multiple times.
+**Action:** Utilized a map-sort-map pattern (Schwartzian transform) to cache the parsed date values into wrapper objects prior to sorting, reducing date parsing to $O(N)$ and substantially improving the sort performance for large collections.
