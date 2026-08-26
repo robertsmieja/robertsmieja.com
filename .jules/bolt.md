@@ -27,6 +27,6 @@
 **Learning:** Extracting inline Emotion `css={css\`...\`}` prop template literals into constant variables outside of React component definitions in static components (like the resume entries) is considered a micro-optimization with NO measurable impact.
 **Action:** Do not extract static CSS template strings or inline styles out of components if there is no measurable performance bottleneck, as this violates Bolt's rule against unmeasurable micro-optimizations.
 
-## 2024-04-30 - Date parsing in sort bottleneck
-**Learning:** Parsing `Date` objects repeatedly during $O(N \log N)$ sort comparisons is a significant performance bottleneck.
-**Action:** Use a Schwartzian transform (map-sort-map) to extract date timestamps once in $O(N)$ time, sort the primitive numbers efficiently, and then extract the objects. This reduces date parsing overhead and is much faster for large arrays.
+## 2026-05-01 - O(N log N) Date Parsing Bottleneck in Blog Sorting
+**Learning:** Repeated `Date` instantiation within sort comparators for blog collections (e.g., `(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()`) is a performance bottleneck. The `sort` method calls the comparator multiple times for the same items, resulting in O(N log N) redundant date parsings which can slow down build times for large collections.
+**Action:** Use a map-sort-map pattern (Schwartzian transform) to parse and cache date values once per item before sorting. This reduces date parsing from O(N log N) to O(N), significantly improving sort performance for large collections.

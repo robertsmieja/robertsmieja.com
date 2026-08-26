@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import Giscus from "../../components/Giscus.astro"
-import { sortPostsByDate } from "../../lib/blogUtils.ts"
+import { sortPostsByDate } from "../../lib/blogUtils"
 
 export async function getStaticPaths() {
   const posts = sortPostsByDate(await getCollection("blog"))
