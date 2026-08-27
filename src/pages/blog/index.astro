@@ -33,12 +33,12 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
       ) : (
         <ul class="post-list">
           {posts.map((post) => {
-            const title = post.data.title || post.slug
+            const title = post.data.title || post.id
             const formattedDate = dateFormatter.format(new Date(post.data.date))
             return (
               <li class="post-item">
                 <h3 class="post-title">
-                  <a href={`/blog/${post.slug}/`}>{title}</a>
+                  <a href={`/blog/${post.id}/`}>{title}</a>
                 </h3>
                 <time class="post-date" datetime={post.data.date}>
                   {formattedDate}
