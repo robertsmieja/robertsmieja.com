@@ -4,6 +4,7 @@ import remarkSmartypants from "remark-smartypants"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeExternalLinks from "rehype-external-links"
+import { unified } from "@astrojs/markdown-remark"
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,14 +15,16 @@ export default defineConfig({
     shikiConfig: {
       theme: "one-dark-pro",
     },
-    remarkPlugins: [remarkSmartypants],
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: "wrap" }],
-      [
-        rehypeExternalLinks,
-        { target: "_blank", rel: ["noopener", "noreferrer"] },
+    processor: unified({
+      remarkPlugins: [remarkSmartypants],
+      rehypePlugins: [
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: "wrap" }],
+        [
+          rehypeExternalLinks,
+          { target: "_blank", rel: ["noopener", "noreferrer"] },
+        ],
       ],
-    ],
+    }),
   },
 })

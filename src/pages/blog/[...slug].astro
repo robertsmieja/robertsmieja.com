@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection, render } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import Giscus from "../../components/Giscus.astro"
 import { sortBlogPosts } from "../../lib/blogUtils"
@@ -7,7 +7,7 @@ import { sortBlogPosts } from "../../lib/blogUtils"
 export async function getStaticPaths() {
   const posts = sortBlogPosts(await getCollection("blog"))
   return posts.map((post, index) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: {
       post,
       previous: index < posts.length - 1 ? posts[index + 1] : null,
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const { post, previous, next } = Astro.props
-const { Content } = await post.render()
+const { Content } = await render(post)
 
 // OPTIMIZATION: Extract Intl.DateTimeFormat instantiation to reuse formatter.
 // Using new Date().toLocaleDateString() creates a new formatter implicitly on each call,
@@ -75,7 +75,7 @@ const formattedUpdated =
       <li>
         {
           previous && (
-            <a href={`/blog/${previous.slug}/`} rel="prev">
+            <a href={`/blog/${previous.id}/`} rel="prev">
               &larr; {previous.data.title}
             </a>
           )
@@ -84,7 +84,7 @@ const formattedUpdated =
       <li>
         {
           next && (
-            <a href={`/blog/${next.slug}/`} rel="next">
+            <a href={`/blog/${next.id}/`} rel="next">
               {next.data.title} &rarr;
             </a>
           )
